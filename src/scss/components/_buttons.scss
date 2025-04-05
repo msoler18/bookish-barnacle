@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as *;
+
+.btn {
+  display: inline-block;
+  padding: px-to-rem(12px) px-to-rem(24px);
+  font-size: font-size(0);
+  text-align: center;
+  border-radius: px-to-rem(8px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 px-to-rem(8px) px-to-rem(16px) rgba($color-black, 0.1);
+  }
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background-color: lighten($color-primary, 10%);
+  }
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  color: $color-black;
+
+  &:hover {
+    background-color: lighten($color-secondary, 10%);
+  }
+}
+
+.btn-accent {
+  background-color: $color-accent;
+  color: $color-white;
+
+  &:hover {
+    background-color: lighten($color-accent, 10%);
+  }
+}

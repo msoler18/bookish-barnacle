@@ -1,0 +1,8 @@
+@function px-to-rem($px) {
+  $rem-value: $px / 16px;
+  @return #{$rem-value}rem;
+}
+
+@function font-size($level: 0) {
+  @return px-to-rem($font-size-base * ($font-scale * $level));
+}
