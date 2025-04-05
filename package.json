@@ -13,5 +13,13 @@
     "css"
   ],
   "author": "msoler18",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "esbuild": "^0.25.2",
+    "esbuild-plugin-babel": "^0.2.3",
+    "esbuild-sass-plugin": "^3.3.1",
+    "sass": "^1.86.3"
+  }
 }

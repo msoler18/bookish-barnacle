@@ -1,24 +1,23 @@
 const esbuild = require('esbuild');
 const { sassPlugin } = require('esbuild-sass-plugin');
-const babelPlugin = require('esbuild-plugin-babel');
 
 const watchMode = process.argv.includes('--watch');
 
 (async () => {
   try {
+    const { default: babelPlugin } = await import('esbuild-plugin-babel');
+
     const ctx = await esbuild.context({
       entryPoints: [
-        'src/js/theme.js',         
-        'src/scss/main.scss'      
+        'src/js/theme.js',
+        'src/scss/main.scss'
       ],
       outdir: 'assets',
       entryNames: '[name]',
       bundle: true,
-      minify: !watchMode, 
+      minify: !watchMode,
       plugins: [
-        sassPlugin({
-          type: 'css'
-        }),
+        sassPlugin({ type: 'css' }),
         babelPlugin({
           filter: /\.(js|jsx)$/,
           babelOptions: {
