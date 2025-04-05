@@ -1,0 +1,25 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-base;
+  color: variables.$color-gray-dark;
+  background-color: variables.$color-white;
+}
+
+img, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}

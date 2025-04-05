@@ -1,0 +1,31 @@
+{% comment %}
+  Modified preload-css.liquid snippet:
+  Parameters:
+  - asset: base of the name or full URL of the resource.
+  - ext: extension (e.g., “.css”) if asset is relative; if asset already contains “http”, it is used as is.
+  - integrity: (optional) integrity attribute.
+  - crossorigin: (optional) crossorigin attribute.
+{% endcomment %}
+
+{% if asset contains 'http' %}
+  {% assign css_href = asset | append: ext %}
+{% else %}
+  {% assign css_href = asset | append: ext | asset_url %}
+{% endif %}
+
+<link
+  rel="preload"
+  href="{{ css_href }}"
+  as="style"
+  {% if integrity %} integrity="{{ integrity }}" {% endif %}
+  {% if crossorigin %} crossorigin="{{ crossorigin }}" {% endif %}
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="{{ css_href }}"
+    {% if integrity %} integrity="{{ integrity }}" {% endif %}
+    {% if crossorigin %} crossorigin="{{ crossorigin }}" {% endif %}
+  >
+</noscript>

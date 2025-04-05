@@ -1,0 +1,25 @@
+{
+  "name": "ravekit",
+  "version": "1.0.0",
+  "description": "Ravekit website",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "keywords": [
+    "js",
+    "liquid",
+    "css"
+  ],
+  "author": "msoler18",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "esbuild": "^0.25.2",
+    "esbuild-plugin-babel": "^0.2.3",
+    "esbuild-sass-plugin": "^3.3.1",
+    "sass": "^1.86.3"
+  }
+}
