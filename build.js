@@ -1,40 +1,28 @@
-/**
- * build.js
- * Script to bundle and transpile JavaScript (via Babel) and compile SASS using esbuild,
- * outputting minified files directly into the Shopify theme's assets folder.
- *
- * Usage:
- *   npm run build    -> One-time production build (minified)
- *   npm run watch    -> Watch mode with source maps enabled for development
- */
-
 const esbuild = require('esbuild');
 const { sassPlugin } = require('esbuild-sass-plugin');
+const babelPlugin = require('esbuild-plugin-babel');
 
 const watchMode = process.argv.includes('--watch');
 
 (async () => {
   try {
-
-    const { default: babelPlugin } = await import('esbuild-plugin-babel');
-
     const ctx = await esbuild.context({
       entryPoints: [
-        'src/js/tabs.js',           
-        'src/scss/landing-rse.scss'  
+        'src/js/theme.js',         
+        'src/scss/main.scss'      
       ],
-      outdir: 'assets',             
-      entryNames: '[name]',         
+      outdir: 'assets',
+      entryNames: '[name]',
       bundle: true,
-      minify: true,
+      minify: !watchMode, 
       plugins: [
         sassPlugin({
-          type: 'css'              
+          type: 'css'
         }),
         babelPlugin({
           filter: /\.(js|jsx)$/,
           babelOptions: {
-            presets: ['@babel/preset-env']  
+            presets: [['@babel/preset-env', { targets: 'defaults' }]]
           }
         })
       ],
@@ -43,18 +31,19 @@ const watchMode = process.argv.includes('--watch');
         '.svg': 'dataurl'
       },
       sourcemap: watchMode,
-      target: ['es2015']  
+      target: ['es2015']
     });
-    
+
     if (watchMode) {
       await ctx.watch();
-      console.log('Watching for changes...');
+      console.log('👀 Watching for changes...');
     } else {
       await ctx.rebuild();
-      console.log('Build succeeded');
+      console.log('🚀 Build succeeded');
+      await ctx.dispose();
     }
   } catch (err) {
-    console.error('Build error:', err);
+    console.error('❌ Build error:', err);
     process.exit(1);
   }
 })();

@@ -1,0 +1,17 @@
+{
+  "name": "ravekit",
+  "version": "1.0.0",
+  "description": "Ravekit website",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch"
+  },
+  "keywords": [
+    "js",
+    "liquid",
+    "css"
+  ],
+  "author": "msoler18",
+  "license": "ISC"
+}
