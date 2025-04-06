@@ -1,2 +1,35 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  width: 100%;
+  padding: px-to-rem(12px) px-to-rem(20px);
+  position: relative;
+  z-index: 100;
+  transition: all 0.3s ease;
+
+  &__container {
+    @include flex-center(row);
+    justify-content: space-between;
+  }
+
+  &__logo img {
+    max-width: px-to-rem(120px);
+    height: auto;
+    display: block;
+  }
+
+  &__cart {
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    color: $color-secondary;
+  }
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0 px-to-rem(2px) px-to-rem(10px) rgba($color-black, 0.2);
+  }
+}

@@ -1,4 +1,8 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+@use 'sass:math';
 
 .row {
   display: flex;
@@ -15,16 +19,16 @@
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    flex: 0 0 percentage($i / $grid-columns);
-    max-width: percentage($i / $grid-columns);
+    flex: 0 0 math.percentage(math.div($i, $grid-columns));
+    max-width: math.percentage(math.div($i, $grid-columns));
   }
 }
 
 @include respond-to(medium) {
   @for $i from 1 through $grid-columns {
     .col-md-#{$i} {
-      flex: 0 0 percentage($i / $grid-columns);
-      max-width: percentage($i / $grid-columns);
+      flex: 0 0 math.percentage(math.div($i, $grid-columns));
+      max-width: math.percentage(math.div($i, $grid-columns));
     }
   }
 }

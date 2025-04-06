@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+@use '../abstracts' as *;
+
+.free-shipping-banner {
+
+  &__text-container {
+    background-color: $color-secondary;
+    padding: px-to-rem(10px) px-to-rem(5px);
+    text-align: center;
+
+    .free-shipping-banner__text {
+      font-family: $font-family-headings !important;
+      font-size: font-size(-4);
+      color: $color-black;
+      font-weight: $font-weight-bold;
+      margin: 0 auto;
+    
+      p, span {
+        font-family: inherit !important;
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        text-transform: uppercase;
+        margin: 0;
+      }
+    }
+    
+  }
+
+  &__image-container {
+    .free-shipping-banner__image {
+      width: 100%;
+      max-width: px-to-rem(1380px);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Responsive Desktop
+@include respond-to(medium) {
+  .free-shipping-banner {
+    &__text-container {
+      padding: px-to-rem(24px);
+
+      .free-shipping-banner__text {
+        font-size: font-size(3);
+      }
+    }
+
+    &__image-container {
+      padding: px-to-rem(24px) 0;
+    }
+  }
+}

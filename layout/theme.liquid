@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    {% render 'preload-css', asset: 'main', ext: '.css' %}
+
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
@@ -299,5 +302,6 @@
     {%- endif -%}
 
     <script src="{{ 'global.bundle.js' | asset_url }}" type="module"></script>
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
   </body>
 </html>

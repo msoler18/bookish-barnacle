@@ -23,8 +23,8 @@ ol {
   list-style: none;
 }
 body {
-  font-family: "Inter", sans-serif;
-  font-size: font-size(0);
+  font-family: "CocogooseRegular", sans-serif;
+  font-size: 1rem;
   line-height: 1.6;
   color: #333333;
 }
@@ -34,37 +34,252 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "PPMonumentExtended", sans-serif;
   font-weight: 700;
-  margin-bottom: px-to-rem(12px);
+  margin-bottom: 0.75rem;
   line-height: 1.2;
 }
 h1 {
-  font-size: font-size(4);
+  font-size: 2.0736rem;
 }
 h2 {
-  font-size: font-size(3);
+  font-size: 1.728rem;
 }
 h3 {
-  font-size: font-size(2);
+  font-size: 1.44rem;
 }
 h4 {
-  font-size: font-size(1);
+  font-size: 1.2rem;
 }
 h5 {
-  font-size: font-size(0);
+  font-size: 1rem;
 }
 h6 {
-  font-size: font-size(-1);
+  font-size: 0.8333333333rem;
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: font-size(5);
+    font-size: 2.48832rem;
   }
   h2 {
-    font-size: font-size(4);
+    font-size: 2.0736rem;
   }
   h3 {
-    font-size: font-size(3);
+    font-size: 1.728rem;
   }
+}
+.btn {
+  font-family: "FS Koopman", sans-serif;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+  background-color: #6A0DAD;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: rgb(135.064516129, 16.564516129, 220.435483871);
+}
+.btn-secondary {
+  background-color: #00FFA3;
+  color: #000000;
+}
+.btn-secondary:hover {
+  background-color: rgb(51, 255, 181.4);
+}
+.btn-accent {
+  background-color: #FF006E;
+  color: #ffffff;
+}
+.btn-accent:hover {
+  background-color: #ff338b;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+[class^=col-] {
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: 1 0 100%;
+}
+.col-1 {
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
+}
+.col-2 {
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+}
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.col-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+}
+.col-5 {
+  flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
+}
+.col-8 {
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+}
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.col-10 {
+  flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
+}
+.col-11 {
+  flex: 0 0 91.6666666667%;
+  max-width: 91.6666666667%;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .col-md-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .col-md-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-md-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .col-md-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-md-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .col-md-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-md-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .col-md-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.free-shipping-banner__text-container {
+  background-color: #00FFA3;
+  padding: 0.625rem 0.3125rem;
+  text-align: center;
+}
+.free-shipping-banner__text-container .free-shipping-banner__text {
+  font-family: "PPMonumentExtended", sans-serif !important;
+  font-size: 0.4822530864rem;
+  color: #000000;
+  font-weight: 700;
+  margin: 0 auto;
+}
+.free-shipping-banner__text-container .free-shipping-banner__text p,
+.free-shipping-banner__text-container .free-shipping-banner__text span {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-transform: uppercase;
+  margin: 0;
+}
+.free-shipping-banner__image-container .free-shipping-banner__image {
+  width: 100%;
+  max-width: 86.25rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .free-shipping-banner__text-container {
+    padding: 1.5rem;
+  }
+  .free-shipping-banner__text-container .free-shipping-banner__text {
+    font-size: 1.728rem;
+  }
+  .free-shipping-banner__image-container {
+    padding: 1.5rem 0;
+  }
+}
+.header {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo img {
+  max-width: 7.5rem;
+  height: auto;
+  display: block;
+}
+.header__cart {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #00FFA3;
+}
+.header--sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */
