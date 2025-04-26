@@ -1,34 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    const buttons = document.querySelectorAll(
-        "#shopify-section-template--16358403276890__image_with_text_nFTifR .push-btn, " +
-        "#shopify-section-template--16358403276890__rich_text_VFiiaa .push-btn, " +
-        "#shopify-section-template--16358403276890__rich_text_hikhyV .push-btn"
-    );
-
-    // Sección de destino
-    const targetSection = document.getElementById("shopify-section-template--16358403276890__rich_text_QF7WNj");
-    
-    if (!targetSection) {
-        console.error("Section doesn't exist");
-        return;
-    }
-    
-  
-    buttons.forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-            targetSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
-    });
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
     
     const productVariants = {
         "one-package": "41680956719194",

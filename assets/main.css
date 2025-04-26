@@ -293,6 +293,7 @@ h6 {
 }
 .hero-product__subtitle {
   font-family: "CocogooseRegular", sans-serif;
+  font-size: 0.8333333333rem;
   color: #f7f7f7;
   margin-top: 0.5rem;
 }
@@ -405,6 +406,86 @@ h6 {
   .marquee__group span {
     font-size: 1.44rem;
   }
+}
+.science-accordion {
+  padding: 1.875rem;
+}
+.science-accordion__title {
+  text-align: center;
+}
+.science-accordion__subtitle {
+  font-size: 0.5787037037rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+.science-accordion__titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.science-accordion__item-title {
+  font-family: "PPMonumentExtended", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s, font-weight 0.3s;
+  font-size: 0.8333333333rem;
+}
+.science-accordion__item-title.is-active {
+  font-weight: 700;
+  color: #00FFA3;
+}
+.science-accordion__contents {
+  margin-top: 1.5rem;
+}
+.science-accordion__item-content {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  font-size: 0.4822530864rem;
+}
+.science-accordion__item-content.is-active {
+  display: block;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rte ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 0;
+}
+.rte ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.6944444444rem;
+}
+.rte ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.125rem;
+  height: 1.125rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 .header {
   width: 100%;

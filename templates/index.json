@@ -1,16 +1,82 @@
-{
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+ {
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/Logo_Footer_4x_42bee62c-9b37-41a9-8218-c40e4d548a64.webp",
+        "header_bg": "#000000",
+        "header_sticky": true
+      }
     },
     "free-shipping-banner": {
       "type": "free-shipping-banner",
-      "settings": {}
+      "settings": {
+        "banner_text": "<p>Envío gratis a partir de $65.000 en compras</p>",
+        "banner_image": "shopify://shop_images/social_proof_3x_1_7a9408b1-a34c-4ff7-b66f-8fbcfe9aa26c.webp"
+      }
+    },
+    "hero_product_aDJwei": {
+      "type": "hero-product",
+      "name": "Hero Product",
+      "settings": {
+        "background_color": "#0A0A0A",
+        "title": "EL SUPLEMENTO <#1> PARA RAVERS",
+        "subtitle": "Siente la música, no el bajón",
+        "texture": "shopify://shop_images/HERO-FONDO.webp",
+        "product": "shopify://shop_images/FOTO_PRODUCTO.png",
+        "sticker": "shopify://shop_images/sticker.webp",
+        "button_text": "Comprar Ahora",
+        "button_link": "",
+        "safe_text": "Compra segura"
+      }
+    },
+    "marquee_banner_jAnxqT": {
+      "type": "marquee-banner",
+      "blocks": {
+        "text_hHMWzg": {
+          "type": "text",
+          "settings": {
+            "text": "Paga en linea con nuestro checkout seguro"
+          }
+        },
+        "text_6qwEmi": {
+          "type": "text",
+          "settings": {
+            "text": "Envíos seguros"
+          }
+        },
+        "text_bLQEcF": {
+          "type": "text",
+          "settings": {
+            "text": "📦 Recibe tu pedido hoy mismo 📦 En Bogotá, Medellín y Cali 🚀"
+          }
+        }
+      },
+      "block_order": [
+        "text_hHMWzg",
+        "text_6qwEmi",
+        "text_bLQEcF"
+      ],
+      "name": "Marquee Banner",
+      "settings": {
+        "enable_marquee": true,
+        "background_color": "#ff00ff"
+      }
     }
   },
   "order": [
     "header",
-    "free-shipping-banner"
+    "free-shipping-banner",
+    "hero_product_aDJwei",
+    "marquee_banner_jAnxqT"
   ]
 }

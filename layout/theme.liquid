@@ -300,7 +300,8 @@
       {% render 'drawer-cart' %}
     {%- endif -%}
 
-    <script src="{{ 'global.bundle.js' | asset_url }}" type="module"></script>
+    {% comment %} <script src="{{ 'global.bundle.js' | asset_url }}" type="module"></script> {% endcomment %}
+    <script src="{{ 'theme.js' | asset_url }}" async="async"></script>
     <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
   </body>
 </html>

@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+.science-accordion {
+  padding: px-to-rem(30px);
+  &__title {
+    text-align: center;
+  }
+  &__subtitle {
+    font-size:font-size(-3);
+    text-align: center;
+    margin:1rem 0;
+  }
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: px-to-rem(12px);
+    margin-bottom: px-to-rem(24px);
+  }
+
+  &__item-title {
+    font-family: $font-family-headings;
+    font-weight: $font-weight-regular;
+    cursor: pointer;
+    transition: color 0.3s, font-weight 0.3s;
+    font-size: font-size(-1);
+
+    &.is-active {
+      font-weight: $font-weight-bold;
+      color: $color-secondary;
+    }
+  }
+
+  &__contents {
+    margin-top: px-to-rem(24px);
+  }
+
+  &__item-content {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    font-size: font-size(-4);
+
+    &.is-active {
+      display: block;
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      animation: fadeIn 0.4s ease;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rte {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: px-to-rem(32px);
+      margin-bottom: px-to-rem(12px);
+      font-size: font-size(-2);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: px-to-rem(18px);
+        height: px-to-rem(18px);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}
