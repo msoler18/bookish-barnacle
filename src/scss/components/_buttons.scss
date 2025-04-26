@@ -15,11 +15,16 @@
   transition: all 0.3s ease;
   text-decoration: none;
   border: none;
+
+  &:after {
+    border-color: $color-white!important;
+  }
   
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 px-to-rem(8px) px-to-rem(16px) rgba($color-black, 0.1);
   }
+  
 }
 
 .btn-primary {

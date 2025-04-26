@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": [],
-  "sourcesContent": [],
-  "mappings": "",
+  "sources": ["../src/js/utils/animations.js", "../src/js/theme.js"],
+  "sourcesContent": ["export function parallaxOnScroll(elements) {\n  if (!elements || elements.length === 0) return;\n  window.addEventListener('scroll', () => {\n    const scrollTop = window.scrollY;\n    elements.forEach(item => {\n      const {\n        element,\n        speed\n      } = item;\n      if (element) {\n        const translateY = scrollTop * speed;\n        element.style.transform = `translateY(${translateY}px)`;\n      }\n    });\n  });\n}", "import { parallaxOnScroll } from './utils/animations';\ndocument.addEventListener('DOMContentLoaded', () => {\n  const texture = document.querySelector('.hero-product__texture');\n  const product = document.querySelector('.hero-product__product');\n  const sticker = document.querySelector('.hero-product__sticker');\n  parallaxOnScroll([{\n    element: texture,\n    speed: 0.05\n  }, {\n    element: product,\n    speed: 0.1\n  }, {\n    element: sticker,\n    speed: 0.08\n  }]);\n});"],
+  "mappings": ";;AAAO,WAAS,iBAAiB,UAAU;AACzC,QAAI,CAAC,YAAY,SAAS,WAAW,EAAG;AACxC,WAAO,iBAAiB,UAAU,MAAM;AACtC,YAAM,YAAY,OAAO;AACzB,eAAS,QAAQ,UAAQ;AACvB,cAAM;AAAA,UACJ;AAAA,UACA;AAAA,QACF,IAAI;AACJ,YAAI,SAAS;AACX,gBAAM,aAAa,YAAY;AAC/B,kBAAQ,MAAM,YAAY,cAAc,UAAU;AAAA,QACpD;AAAA,MACF,CAAC;AAAA,IACH,CAAC;AAAA,EACH;;;ACdA,WAAS,iBAAiB,oBAAoB,MAAM;AAClD,UAAM,UAAU,SAAS,cAAc,wBAAwB;AAC/D,UAAM,UAAU,SAAS,cAAc,wBAAwB;AAC/D,UAAM,UAAU,SAAS,cAAc,wBAAwB;AAC/D,qBAAiB,CAAC;AAAA,MAChB,SAAS;AAAA,MACT,OAAO;AAAA,IACT,GAAG;AAAA,MACD,SAAS;AAAA,MACT,OAAO;AAAA,IACT,GAAG;AAAA,MACD,SAAS;AAAA,MACT,OAAO;AAAA,IACT,CAAC,CAAC;AAAA,EACJ,CAAC;",
   "names": []
 }

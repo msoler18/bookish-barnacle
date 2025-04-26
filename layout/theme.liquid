@@ -222,13 +222,13 @@
     {% endunless %}
     {% # theme-check-enable AssetPreload %}
 
-    <script>
+    {% comment %} <script>
       document.addEventListener("DOMContentLoaded", function () {
         if (window.location.pathname === "/") {
           window.location.href = "/products/ravekit";
         }
       });
-    </script>
+    </script> {% endcomment %}
 
   </head>
 
@@ -264,8 +264,7 @@
     <a class="skip-link" href="#MainContent">
       {{- 'general.accessibility.skip_to_content' | t -}}
     </a>
-    {%- sections 'header-group' -%}
-    {% render 'header-group-support' %}
+
     <main id="MainContent" class="overflow-hidden">
       {{ content_for_layout }}
     </main>

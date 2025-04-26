@@ -1,0 +1,129 @@
+
+{% assign title_formatted = section.settings.title | replace: '<', '<span class="highlight">' | replace: '>', '</span>' %}
+
+<section class="hero-product" style="background-color: {{ section.settings.background_color }}">
+  <div class="container hero-product__container">
+
+    <div class="hero-product__text-wrapper">
+      <h1 class="hero-product__title">
+        {{ title_formatted }}
+      </h1>
+      <p class="hero-product__subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+
+    <div class="hero-product__images">
+      {% if section.settings.texture %}
+        {% render 'render-image',
+          class: "hero-product__texture lazyloadimage lazyload blur-up",
+          img_src: section.settings.texture | image_url: width: 1380,
+          img: section.settings.texture,
+          alt: section.settings.texture.alt,
+          width: "1380",
+          height: "800",
+          size: "400 800 1200 1380"
+        %}
+      {% endif %}
+
+      {% if section.settings.product %}
+        {% render 'render-image',
+          class: "hero-product__product lazyloadimage lazyload blur-up",
+          img_src: section.settings.product | image_url: width: 600,
+          img: section.settings.product,
+          alt: section.settings.product.alt,
+          width: "600",
+          height: "800",
+          size: "300 600 900 1200"
+        %}
+      {% endif %}
+
+      {% if section.settings.sticker %}
+        {% render 'render-image',
+          class: "hero-product__sticker lazyloadimage lazyload blur-up",
+          img_src: section.settings.sticker | image_url: width: 120,
+          img: section.settings.sticker,
+          alt: section.settings.sticker.alt,
+          width: "120",
+          height: "120",
+          size: "60 90 120"
+        %}
+      {% endif %}
+    </div>
+
+    <div class="hero-product__cta">
+      <a href="{{ section.settings.button_link }}" class="btn btn-primary">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+
+    <div class="hero-product__safe-text">
+      <div class="icon-wrapper">
+        {% render 'icon-shield' %}
+      </div>
+      <span>{{ section.settings.safe_text }}</span>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Product",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#0A0A0A"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título principal"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo"
+    },
+    {
+      "type": "image_picker",
+      "id": "texture",
+      "label": "Imagen textura de fondo"
+    },
+    {
+      "type": "image_picker",
+      "id": "product",
+      "label": "Imagen producto Ravekit"
+    },
+    {
+      "type": "image_picker",
+      "id": "sticker",
+      "label": "Sticker pequeño (bandera)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "Comprar Ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link del botón"
+    },
+    {
+      "type": "text",
+      "id": "safe_text",
+      "label": "Texto de compra segura",
+      "default": "Compra segura"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Product"
+    }
+  ]
+}
+{% endschema %}
