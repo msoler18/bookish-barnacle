@@ -1,0 +1,62 @@
+<section class="marquee {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}" style="background-color: {{ section.settings.background_color }}">
+  <div class="marquee__inner">
+    {% if section.settings.enable_marquee %}
+      <div class="marquee__group">
+        {% for block in section.blocks %}
+          <span>{{ block.settings.text }}</span>
+        {% endfor %}
+      </div>
+      <div class="marquee__group" aria-hidden="true">
+        {% for block in section.blocks %}
+          <span>{{ block.settings.text }}</span>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="marquee__group">
+        {% if section.blocks.size > 0 %}
+          <span>{{ section.blocks.first.settings.text }}</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marquee Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_marquee",
+      "label": "Enable Marquee Animation",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ff00ff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Frase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto de la frase"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Marquee Banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}

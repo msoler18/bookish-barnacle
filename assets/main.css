@@ -362,6 +362,50 @@ h6 {
     font-size: 1.728rem;
   }
 }
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  background-color: #00FFA3;
+  padding: 0.75rem 0;
+}
+.marquee__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.marquee__group {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  gap: 2rem;
+  justify-content: center;
+}
+.marquee__group span {
+  font-family: "PPMonumentExtended", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #000000;
+  display: inline-block;
+}
+.marquee--active .marquee__inner {
+  animation: marquee 20s linear infinite;
+  min-width: 500%;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (min-width: 768px) {
+  .marquee__group span {
+    font-size: 1.44rem;
+  }
+}
 .header {
   width: 100%;
   padding: 0.75rem 1.25rem;
