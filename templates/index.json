@@ -210,7 +210,7 @@
         "enlarge_active_slide": true,
         "disable_media_style": false,
         "mobile_slide_width": "full_width",
-        "desktop_slide_width": 40,
+        "desktop_slide_width": 20,
         "color_scheme": "scheme3",
         "use_gradient_background": false
       }
