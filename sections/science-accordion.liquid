@@ -4,7 +4,10 @@
   }
 </style>
 
-<section class="science-accordion" style="background-color: {{ section.settings.background_color }}">
+<section
+  class="science-accordion {% if section.settings.wave_image != blank %}science-accordion--with-wave{% endif %}"
+  style="background-color: {{ section.settings.background_color }}">
+  
   <div class="container">
     <h2 class="science-accordion__title">{{ section.settings.heading }}</h2>
 
@@ -49,6 +52,19 @@
       {% endif %}
     </div>
   </div>
+
+  {% if section.settings.wave_image != blank %}
+    <div class="science-accordion__wave">
+      <img
+        src="{{ section.settings.wave_image | img_url: 'master' }}"
+        alt="Wave Divider"
+        loading="lazy"
+        width="auto"
+        height="auto"
+      >
+    </div>
+  {% endif %}
+  
 </section>
 
 {% schema %}
@@ -70,6 +86,11 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_image",
+      "label": "Wave inferior (opcional)"
     }
   ],
   "blocks": [
@@ -102,3 +123,4 @@
   ]
 }
 {% endschema %}
+

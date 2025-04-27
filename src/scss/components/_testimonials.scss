@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.testimonials {
+  position:relative;
+  .section-content {
+    padding-left:5%;
+    .splide__slide {
+      margin-right: 8%;
+      .card:before {
+        background-color:$color-secondary ;
+      }
+    }
+  }
+}
+.padding-top {
+  padding-top: 6rem;
+}
+
+.padding-bottom {
+  padding-bottom: 12rem;
+}
+
+.alien_ravekit {
+  position: absolute;
+  top: 12%;
+  right: 20%;
+  width: 70px;
+  z-index: 99;
+}
