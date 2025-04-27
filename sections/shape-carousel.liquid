@@ -25,9 +25,14 @@
 {%- endfor -%}
 
 <section
-  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
+  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}"
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
+
+  {% if section.settings.wave_top_image != blank %}
+    <img src="{{ section.settings.wave_top_image | image_url }}" alt="Wave top" class="absolute top-0 w-full z-10">
+  {% endif %}
+
   <div class="section-content relative py-section-vertical-spacing">
     {% unless section.settings.title == blank %}
       <div class="mx-auto max-w-site px-section">
@@ -36,6 +41,24 @@
         </h2>
       </div>
     {% endunless %}
+
+
+    {% unless section.settings.subtitle == blank %}
+      <div class="general__subtitle">
+        {{ section.settings.subtitle }}
+      </div>
+    {% endunless %}
+
+    {% if section.settings.certification_icon_1 != blank or section.settings.certification_icon_2 != blank %}
+      <div class="flex justify-center items-center gap-5 mt-5">
+        {% if section.settings.certification_icon_1 != blank %}
+          <img src="{{ section.settings.certification_icon_1 | image_url: width: 100 }}" alt="Certificado 1" class="w-16">
+        {% endif %}
+        {% if section.settings.certification_icon_2 != blank %}
+          <img src="{{ section.settings.certification_icon_2 | image_url: width: 100 }}" alt="Certificado 2" class="w-16">
+        {% endif %}
+      </div>
+    {% endif %}
 
     <div
       {% if section.blocks.size > 0 %}
@@ -195,6 +218,9 @@
       endcase
     endfor
   -%}
+  {% if section.settings.wave_bottom_image != blank %}
+    <img src="{{ section.settings.wave_bottom_image | image_url }}" alt="Wave bottom" class="absolute bottom-0 w-full z-10">
+  {% endif %}
 </section>
 
 {%- liquid
@@ -232,6 +258,41 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_top_image",
+      "label": "Wave superior"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_bottom_image",
+      "label": "Wave inferior"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtítulo debajo del título"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_1",
+      "label": "Certificado 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_2",
+      "label": "Certificado 2"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Texto del botón/link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL del botón/link"
     },
     {
       "type": "select",
@@ -3393,8 +3454,7 @@
             }
           ],
           "default": ""
-        }
-      ]
+        }      ]
     }
   ],
   "presets": [

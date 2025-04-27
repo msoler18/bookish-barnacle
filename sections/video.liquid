@@ -210,8 +210,18 @@
           </data-island>
         {% endif %}
       </div>
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <div class="mt-8 text-center">
+          <a href="{{ section.settings.button_link }}" class="push-btn inline-block">
+            <span class="push-btn__surface">{{ section.settings.button_label }}</span>
+          </a>
+        </div>
+      {%- endif -%}
     </div>
   </div>
+  {%- if section.settings.wave_bottom_image != blank -%}
+    <img src="{{ section.settings.wave_bottom_image | image_url }}" alt="Wave bottom" class="absolute bottom-0 w-full z-10 pointer-events-none">
+  {%- endif -%}
 </section>
 
 {%- liquid
@@ -331,6 +341,29 @@
       ],
       "default": "inline",
       "info": "t:sections.video.settings.playback.info"
+    },
+    { 
+      "type": "header", 
+      "content": "Button Settings" 
+    },
+    { 
+      "id": "button_label", 
+      "type": "text", 
+      "label": "Button Text" 
+    },
+    { 
+      "id": "button_link", 
+      "type": "url", 
+      "label": "Button Link" 
+    },
+    { 
+      "type": "header", 
+      "content": "Wave Settings" 
+    },
+    { 
+      "id": "wave_bottom_image", 
+      "type": "image_picker", 
+      "label": "Wave Bottom Image" 
     },
     {
       "type": "header",

@@ -224,6 +224,8 @@
             "image": "shopify://shop_images/testimonio-ravekit-1.png",
             "rating": "5_stars",
             "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
             "source": "LIZ S"
           }
         },
@@ -233,6 +235,8 @@
             "image": "shopify://shop_images/testimonio-ravekit-1.png",
             "rating": "5_stars",
             "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
             "source": "LIZ S"
           }
         },
@@ -242,6 +246,8 @@
             "image": "shopify://shop_images/testimonio-ravekit-1.png",
             "rating": "5_stars",
             "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
             "source": "LIZ S"
           }
         },
@@ -251,6 +257,8 @@
             "image": "shopify://shop_images/testimonio-ravekit-1.png",
             "rating": "5_stars",
             "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
             "source": "LIZ S"
           }
         }
@@ -264,7 +272,10 @@
       "name": "t:sections.testimonials.name",
       "settings": {
         "display_on_card": true,
+        "is_step": false,
         "title": "Más de 500 ravers felices",
+        "subtitle": "",
+        "text_color": "#000000",
         "max_width": 240,
         "disable_media_style": false,
         "crop": "",
@@ -277,6 +288,225 @@
         "color_scheme": "scheme1",
         "use_gradient_background": false
       }
+    },
+    "testimonials_ADyNHj": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_3jQci8": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_1_1.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 1: vitaminas",
+            "step_description": "<p>Prepara tu cuerpo para él estalle con vitaminas y antioxidantes.</p>",
+            "source": ""
+          }
+        },
+        "testimonial_zqrQmn": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_2.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 2: chicles",
+            "step_description": "<p><strong>DURANTE EL RAVE</strong></p><p>Prueba estos chicles de magnesio y dile \"bye bye\" al bruxismo.</p>",
+            "source": ""
+          }
+        },
+        "testimonial_cNe87X": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_3.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 3: Hidrantante",
+            "step_description": "<p><strong>AL LLEGAR A CASA. </strong></p><p>Bebe este rehidratante con melatonina y recuperate mientras duermes.</p>",
+            "source": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_3jQci8",
+        "testimonial_zqrQmn",
+        "testimonial_cNe87X"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "display_on_card": true,
+        "is_step": true,
+        "title": "Cuídate en 3 simples pasos",
+        "subtitle": "Antes, durante y después de ponerte astral",
+        "text_color": "#ffffff",
+        "max_width": 370,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "color_scheme": "scheme-62501108-4b3c-4a36-a249-ed0f905e2bd1",
+        "use_gradient_background": false
+      }
+    },
+    "video_LVhPQK": {
+      "type": "video",
+      "name": "t:sections.video.name",
+      "settings": {
+        "title": "Lo que dicen de nosotros 👀 👇",
+        "style": "inset",
+        "aspect_ratio": "natural",
+        "video": "shopify://files/videos/VideoDocThomas.mp4",
+        "mode": "autoplay",
+        "playback": "inline",
+        "button_label": "¡ Pedir mi ravekit !",
+        "button_link": "#buy",
+        "color_scheme": "scheme3",
+        "use_gradient_background": false
+      }
+    },
+    "shape_carousel_Urp7Kn": {
+      "type": "shape-carousel",
+      "blocks": {
+        "image_chMfaC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_62_2x_9ee60b4b-c6de-4a7b-801d-c903365cdbda.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_GWkjqr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_61_2x_b8ec9602-bee4-4614-9e64-d28ee46f317a.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_B6MBBM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_60_2x_750b3e5e-f1d9-49a8-bc59-b4ab30b97812.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_JdiX8d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_59_2x_1d977630-48d7-40e8-968f-d020b9d401f9.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_NqN7xR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_58_2x_8ee4578d-f09a-45f9-8146-f96ff475b718.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_k6ErUM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_57_2x_6974655e-fa29-43d5-af80-70d1095bc661.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_chMfaC",
+        "image_GWkjqr",
+        "image_B6MBBM",
+        "image_JdiX8d",
+        "image_NqN7xR",
+        "image_k6ErUM"
+      ],
+      "name": "t:sections.shape_slideshow.name",
+      "settings": {
+        "title": "Los ingredientes más pro  😎",
+        "slideshow_focus": "center",
+        "wave_top_image": "shopify://shop_images/FINAL_SECCION_7_1_4f8025a7-8cda-49e4-9766-50d4dabab2e2.webp",
+        "wave_bottom_image": "shopify://shop_images/SEPARADORESSECCION_9_MOB_1.webp",
+        "subtitle": "<p><strong>Ingredientes de origen natural,</strong></p><p>científicamente comprobados y registrados por la FDA con buenas prácticas de manufactura.</p><p></p>",
+        "certification_icon_1": "shopify://shop_images/LOGO_FDA_2.svg",
+        "certification_icon_2": "shopify://shop_images/LOGO_GMP.svg",
+        "link_text": "",
+        "link_url": "",
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "crop": "",
+        "button_style": "push-btn__surface",
+        "show_buttons_on_mobile": false,
+        "only_show_button_on_hover": true,
+        "color_scheme": "",
+        "use_gradient_background": false
+      }
+    },
+    "ravekit_comparison_tacR86": {
+      "type": "ravekit-comparison",
+      "blocks": {
+        "comparison_item_HaEH7j": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Solución integral de ravers para ravers</p>",
+            "right_text": "<p>Productos farma-ceuticos tradicionales</p>"
+          }
+        },
+        "comparison_item_CMPezj": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Previene la severidad de los síntomas</p>",
+            "right_text": "<p>Tratan, más no previenen síntomas</p>"
+          }
+        },
+        "comparison_item_f7f3PD": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Suplementos de vitaminas & minerales</p>",
+            "right_text": "<p>Medicamentos con efectos secundarios</p>"
+          }
+        },
+        "comparison_item_76YfCw": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Un kit que trae todo lo que necesitas</p>",
+            "right_text": "<p>Debes armar tu propia \"solución\"</p>"
+          }
+        },
+        "comparison_item_T6e9Pt": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Llega GRATIS a tu casa</p>",
+            "right_text": "<p>Pierdes tiempo y energía buscándolos</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_HaEH7j",
+        "comparison_item_CMPezj",
+        "comparison_item_f7f3PD",
+        "comparison_item_76YfCw",
+        "comparison_item_T6e9Pt"
+      ],
+      "name": "Ravekit vs El Resto",
+      "settings": {
+        "title": "RAVEKIT VS EL RESTO",
+        "title_color": "#ffffff",
+        "main_image": "shopify://shop_images/Screenshot_2025-04-26_at_11.21.31_PM.png",
+        "background_color": "#000000",
+        "button_text": "LO QUIERO AHORA",
+        "button_link": "#buy"
+      }
     }
   },
   "order": [
@@ -286,6 +516,10 @@
     "marquee_banner_jAnxqT",
     "science_accordion_ixbjxR",
     "image_focus_carousel_mm9UR3",
-    "testimonials_fXHeBU"
+    "testimonials_fXHeBU",
+    "testimonials_ADyNHj",
+    "video_LVhPQK",
+    "shape_carousel_Urp7Kn",
+    "ravekit_comparison_tacR86"
   ]
 }

@@ -1,0 +1,18 @@
+.gallery {
+  .general__subtitle {
+    max-width: 70%;
+    margin:0 auto;
+  }
+  .gallery-item {
+    max-width: 70%;
+  }
+  .splide__slide  {
+    margin-right: 0!important;
+    img {
+      max-width: 100%;
+      border: none;
+    }
+    
+  }
+}
+  
