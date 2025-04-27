@@ -653,10 +653,7 @@ h6 {
   font-size: 0.6944444444rem;
 }
 .ravekit-product {
-  padding-top: 48px;
-  padding-bottom: 48px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 8% 5%;
   background-color: #000000;
   color: #ffffff;
   text-align: center;
@@ -732,9 +729,13 @@ h6 {
 .ravekit-product__cart {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
   margin-top: 32px;
+}
+.ravekit-product__cart .qty-title {
+  font-size: 1rem;
+  font-weight: bold;
 }
 .ravekit-product__cart .quantity-selector {
   display: flex;
@@ -743,18 +744,30 @@ h6 {
 }
 .ravekit-product__cart .quantity-selector .quantity-input {
   width: 60px;
+  height: 40px;
   text-align: center;
   border: 1px solid #333333;
   font-size: 1.25rem;
-  background: #ffffff;
-  color: #000000;
+  font-family: "PPMonumentExtended", sans-serif;
+  background: #000000;
+  color: #ffffff;
+  border: none;
   font-weight: 700;
+}
+.ravekit-product__cart .quantity-selector .quantity-decrease {
+  background-color: #ff31ed;
+}
+.ravekit-product__cart .quantity-selector .quantity-increase {
+  background-color: #00FFA3;
 }
 .ravekit-product__cart .quantity-selector .quantity-decrease,
 .ravekit-product__cart .quantity-selector .quantity-increase {
-  background-color: #ff31ed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  color: #ffffff;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: bold;
   width: 40px;
@@ -762,6 +775,18 @@ h6 {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.ravekit-product__cart .quantity-selector .quantity-decrease:after,
+.ravekit-product__cart .quantity-selector .quantity-increase:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -4px;
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  z-index: -1;
 }
 .ravekit-product__cart .quantity-selector .quantity-decrease:hover,
 .ravekit-product__cart .quantity-selector .quantity-increase:hover {

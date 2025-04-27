@@ -3,7 +3,7 @@
   assign product = all_products[product_handle]
 -%}
 
-<section class="ravekit-product py-section-vertical-spacing">
+<section class="ravekit-product">
   <div class="section-content text-center">
     {% if product %}
       <h2 class="ravekit-product__title mb-6">
@@ -71,7 +71,10 @@
         </div>
       {% endif %}
 
-      <div class="ravekit-product__cart flex flex-col items-center gap-4">
+      <div class="ravekit-product__cart gap-4">
+        <span class="qty-title">
+          Cantidad
+        </span>
         <div class="quantity-selector flex items-center gap-2">
           <button type="button" class="quantity-decrease px-4 py-2 font-bold text-xl">-</button>
           <input type="number" class="quantity-input w-16 text-center border rounded" min="1" value="1">
@@ -79,7 +82,7 @@
         </div>
 
         <button type="button" class="push-btn add-to-cart mt-4">
-          <span class="push-btn__surface">Agregar al carrito</span>
+          <span class="push-btn__surface">Añadir al carrito</span>
         </button>
       </div>
 
