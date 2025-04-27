@@ -79,26 +79,139 @@
           "type": "block",
           "settings": {
             "title": "😭 Reduce el bajón post sustancias",
-            "content": "<ul><li>El complejo B y el magnesio contribuyen al equilibrio de neurotransmisores, favoreciendo un mejor estado de ánimo y reduciendo el estrés post-consumo.</li><li>El hidroxitriptófano, precursor de la serotonina, ayuda a restaurar los niveles de este neurotransmisor, disminuyendo la sensación de bajón.</li></ul>"
+            "content": "<ul><li>El complejo B y el magnesio contribuyen al equilibrio de neurotransmisores, favoreciendo un mejor estado de ánimo y reduciendo el estrés post-consumo.</li><li>El hidroxitriptófano, precursor de la serotonina, ayuda a restaurar los niveles de este neurotransmisor, disminuyendo la sensación de bajón.</li></ul>",
+            "short_content": "<p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Boyle, N., Lawton, C., & Dye, L. (2017). The effects of magnesium supplementation on subjective anxiety and stress—a systematic review.</p><p>Wang, X., Baumann, M. H., Dersch, C. M., & Rothman, R. B. (2007). Restoration of 3,4-methylenedioxymethamphetamine-induced 5-HT depletion by the administration of L-5-hydroxytryptophan.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
           }
         },
         "block_6GKAWc": {
           "type": "block",
           "settings": {
             "title": "🧠 Protege tu cerebro de la neurotoxicidad",
-            "content": "<ul><li>Los antioxidantes como la vitamina C, el ácido alfa lipoico y la vitamina E protegen las células cerebrales del daño oxidativo causado por el consumo de sustancias.</li><li>El zinc fortalece el sistema inmunológico y contribuye a la regeneración celular, protegiendo el cerebro.</li></ul>"
+            "content": "<ul><li>Los antioxidantes como la vitamina C, el ácido alfa lipoico y la vitamina E protegen las células cerebrales del daño oxidativo causado por el consumo de sustancias.</li><li>El zinc fortalece el sistema inmunológico y contribuye a la regeneración celular, protegiendo el cerebro.</li></ul>",
+            "short_content": "<p>Rochette, L., Ghibu, S., Richard, C., Zeller, M., Cottin, Y., & Vergely, C. (2013). Direct and indirect antioxidant properties of α‐lipoic acid and therapeutic potential.</p><p>Mocchegiani, E., & Muzzioli, M. (2000). Therapeutic application of zinc in human immunodeficiency virus against opportunistic infections.</p>"
+          }
+        },
+        "block_YzF47W": {
+          "type": "block",
+          "settings": {
+            "title": "💧Rehidrata tu cuerpo",
+            "content": "<ul><li>Electrolitos esenciales como sodio, potasio y zinc reponen los minerales perdidos y restauran el equilibrio hídrico.</li><li>La rehidratación adecuada reduce la fatiga y mejora la recuperación física tras el consumo de sustancias.</li></ul>",
+            "short_content": "<p>Maughan, R. J., & Shirreffs, S. M. (1997). Recovery from prolonged exercise: Restoration of water and electrolyte balance.</p>"
+          }
+        },
+        "block_aWVnYy": {
+          "type": "block",
+          "settings": {
+            "title": "😴 Duerme y descansa profundamente",
+            "content": "<ul><li>La melatonina y el GABA facilitan el inicio del sueño y mejoran su calidad, combatiendo el insomnio post-consumo.</li><li>La L-teanina reduce la ansiedad y promueve un estado de relajación sin sedación excesiva.</li></ul><p></p>",
+            "short_content": "<p>Zisapel, N. (2018). New perspectives on the role of melatonin in human sleep, circadian rhythms and their regulation.</p><p>Hidese, S., Ota, M., Wakabayashi, C., Noda, T., Ozawa, H., Okubo, T., & Kunugi, H. (2017). Effects of chronic l-theanine administration in patients with major depressive disorder: an open-label study.</p>"
+          }
+        },
+        "block_qYd6j8": {
+          "type": "block",
+          "settings": {
+            "title": "🤩 Levántate fresh",
+            "content": "<ul><li>La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li><li> La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li></ul><p></p>",
+            "short_content": "<p>Rochette, L., Ghibu, S., Richard, C., Zeller, M., Cottin, Y., & Vergely, C. (2013). Direct and indirect antioxidant properties of α‐lipoic acid and therapeutic potential.</p><p>Maughan, R. J., & Shirreffs, S. M. (1997). Recovery from prolonged exercise: Restoration of water and electrolyte balance.</p><p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
           }
         }
       },
       "block_order": [
         "block_P9B7Rh",
-        "block_6GKAWc"
+        "block_6GKAWc",
+        "block_YzF47W",
+        "block_aWVnYy",
+        "block_qYd6j8"
       ],
       "name": "Science Accordion",
       "settings": {
         "heading": "NO ES MAGIA, ES CIENCIA",
         "subtitle": "Usamos ingredientes de origen natural, cuya efectividad está avalada por diversos estudios científicos. Todas las formulaciones tienen registro FDA y buenas prácticas de manufactura",
-        "background_color": "#FFFFFF"
+        "background_color": "#ffffff"
+      }
+    },
+    "image_focus_carousel_mm9UR3": {
+      "class":"carousel__general",
+      "type": "image-focus-carousel",
+      "blocks": {
+        "image_9wMm7p": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_1_1.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_VAWBV3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_2.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_4pmFUt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_3.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_FzUtJx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_4.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_3aU8GH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_5.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_9wMm7p",
+        "image_VAWBV3",
+        "image_4pmFUt",
+        "image_FzUtJx",
+        "image_3aU8GH"
+      ],
+      "name": "t:sections.image_focus_carousel.name",
+      "settings": {
+        "title": "Somos la nueva generación de ravers",
+        "subheading": "¿Te vas a quedar atrás? 😏",
+        "enlarge_active_slide": true,
+        "disable_media_style": false,
+        "mobile_slide_width": "full_width",
+        "desktop_slide_width": 40,
+        "color_scheme": "scheme3",
+        "use_gradient_background": false
       }
     }
   },
@@ -107,6 +220,7 @@
     "free-shipping-banner",
     "hero_product_aDJwei",
     "marquee_banner_jAnxqT",
-    "science_accordion_ixbjxR"
+    "science_accordion_ixbjxR",
+    "image_focus_carousel_mm9UR3"
   ]
 }
