@@ -13,7 +13,7 @@
 
   {% if section.settings.wave_top_image %}
     {% render 'render-image',
-      class: "wave-top absolute top-0 w-full z-10",
+      class: "wave-top w-full z-10",
       img_src: section.settings.wave_top_image | image_url: width: 1920,
       img: section.settings.wave_top_image,
       alt: section.settings.wave_top_image.alt,

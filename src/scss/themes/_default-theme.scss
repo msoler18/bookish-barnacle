@@ -12,3 +12,14 @@
 .highlighted {
   color:$color-secondary;
 }
+
+@include respond-to(xlarge) {
+  
+  .video-main {
+    .section-content-top-margin {
+      padding:0 40%;
+    }
+  }
+
+}
+

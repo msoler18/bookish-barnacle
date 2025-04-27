@@ -125,3 +125,31 @@
     }
   }
 }
+
+
+@include respond-to(xlarge) {
+  .science-accordion {
+    padding: px-to-rem(60px) px-to-rem(200px);
+  }
+
+  .science-accordion__wave img {
+    height: 300px;
+  }
+
+  .science-accordion--with-wave {
+    padding-bottom:20rem;
+  }
+
+  .science-accordion__titles {
+    gap:2rem;
+  }
+
+  .rte ul li {
+    font-size:px-to-rem(18px);
+  }
+
+  .rte .small__text {
+    font-size:px-to-rem(13px);
+  }
+
+}

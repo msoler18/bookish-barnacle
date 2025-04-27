@@ -52,3 +52,20 @@
     }
   }
 }
+
+
+@include respond-to(xlarge) {
+  
+  .testimonials {
+    .padding-top {
+      padding-top:2rem;
+    }
+    .padding-bottom {
+      padding-bottom: 2rem;
+    }
+    .wave-bottom {
+      height: 200px;
+    }
+  }
+
+}

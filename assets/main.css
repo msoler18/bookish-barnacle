@@ -59,27 +59,27 @@ h5 {
 h6 {
   font-size: 0.4822530864rem !important;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   body {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
   h1 {
-    font-size: 2.48832rem;
+    font-size: 2.48832rem !important;
   }
   h2 {
-    font-size: 2.0736rem;
+    font-size: 2.0736rem !important;
   }
   h3 {
-    font-size: 1.728rem;
+    font-size: 1.728rem !important;
   }
   h4 {
-    font-size: 1.44rem;
+    font-size: 1.44rem !important;
   }
   h5 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
   h6 {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 }
 .btn {
@@ -275,14 +275,29 @@ h6 {
   display: block;
   margin: 0 auto;
 }
+@media (min-width: 1200px) {
+  .free-shipping-banner__text-container {
+    padding: 1rem !important;
+  }
+  .free-shipping-banner__text-container .free-shipping-banner__text p {
+    font-size: 1.25rem !important;
+  }
+  .free-shipping-banner__image {
+    width: 60% !important;
+  }
+}
 @media (min-width: 768px) {
   .free-shipping-banner__text-container {
+    display: flex;
+    justify-content: center;
     padding: 1.5rem;
   }
   .free-shipping-banner__text-container .free-shipping-banner__text {
     font-size: 1.728rem;
   }
   .free-shipping-banner__image-container {
+    display: flex;
+    justify-content: center;
     padding: 1.5rem 0;
   }
 }
@@ -331,30 +346,30 @@ h6 {
   height: auto;
 }
 .hero-product__images .hero-product__sticker {
-  animation: floatingAnimation 2s ease-in-out infinite alternate;
+  animation: wiggleAnimation 16s ease-in-out infinite alternate;
 }
-@keyframes floatingAnimation {
+@keyframes wiggleAnimation {
   0% {
-    transform: translateY(0);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translateY(5px);
+    transform: rotate(10px);
   }
 }
 .hero-product__images .hero-product__texture {
-  animation: floatingAnimation 3s ease-in-out infinite alternate;
+  animation: wiggleAnimation 14s ease-in-out infinite alternate;
 }
-@keyframes floatingAnimation {
+@keyframes wiggleAnimation {
   0% {
-    transform: translateY(0);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translateY(30px);
+    transform: rotate(20px);
   }
 }
 .hero-product__images .hero-product__product {
   position: absolute;
-  animation: floatingAnimation 1s ease-in-out infinite alternate;
+  animation: floatingAnimation 5s ease-in-out infinite alternate;
 }
 @keyframes floatingAnimation {
   0% {
@@ -398,9 +413,24 @@ h6 {
   max-height: 1.125rem;
   display: inline-block;
 }
+@media (min-width: 1200px) {
+  .hero-product {
+    padding: 7.5rem 20rem;
+  }
+  .hero-product__sticker {
+    width: 6.25rem;
+    right: 30%;
+  }
+  .hero-product__texture {
+    width: 50%;
+  }
+  .hero-product__product {
+    width: 30%;
+  }
+}
 @media (min-width: 768px) {
   .hero-product {
-    padding: 7.5rem 0;
+    padding: 3.75rem 0;
   }
   .hero-product__images {
     flex-direction: row;
@@ -571,6 +601,26 @@ h6 {
   background-position: center;
   background-size: contain;
 }
+@media (min-width: 1200px) {
+  .science-accordion {
+    padding: 3.75rem 12.5rem;
+  }
+  .science-accordion__wave img {
+    height: 300px;
+  }
+  .science-accordion--with-wave {
+    padding-bottom: 20rem;
+  }
+  .science-accordion__titles {
+    gap: 2rem;
+  }
+  .rte ul li {
+    font-size: 1.125rem;
+  }
+  .rte .small__text {
+    font-size: 0.8125rem;
+  }
+}
 .testimonials {
   position: relative;
 }
@@ -622,6 +672,17 @@ h6 {
   font-size: 0.6944444444rem;
   margin-top: 5%;
 }
+@media (min-width: 1200px) {
+  .testimonials .padding-top {
+    padding-top: 2rem;
+  }
+  .testimonials .padding-bottom {
+    padding-bottom: 2rem;
+  }
+  .testimonials .wave-bottom {
+    height: 200px;
+  }
+}
 .gallery .general__subtitle {
   max-width: 70%;
   margin: 0 auto;
@@ -635,6 +696,18 @@ h6 {
 .gallery .splide__slide img {
   max-width: 100%;
   border: none;
+}
+.gallery.padding-top {
+  padding-top: 0;
+}
+.gallery.padding-bottom {
+  padding-bottom: 0;
+}
+@media (min-width: 1200px) {
+  .shape-wave-top,
+  .shape-wave-bottom {
+    height: 200px;
+  }
 }
 .ravekit-comparison {
   background-color: #000000;
@@ -707,6 +780,15 @@ h6 {
   max-width: 50%;
   min-width: 50%;
 }
+@media (min-width: 1200px) {
+  .ravekit-comparison {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .ravekit-comparison .comparison-items__item {
+    font-size: 0.9375rem;
+  }
+}
 .faq h2 {
   font-size: 1.728rem !important;
 }
@@ -718,6 +800,17 @@ h6 {
 }
 .faq .card .card__surface .rte p {
   font-size: 0.6944444444rem;
+}
+@media (min-width: 1200px) {
+  .faq.padding-top {
+    padding-top: 0;
+  }
+  .faq .wave-top {
+    height: 200px;
+  }
+  .faq .card__surface .rte p {
+    font-size: 0.9375rem;
+  }
 }
 .ravekit-product {
   padding: 8% 5%;
@@ -883,6 +976,31 @@ h6 {
   font-weight: inherit;
   font-size: inherit;
 }
+@media (min-width: 1200px) {
+  .ravekit-product {
+    padding: 8% 20%;
+  }
+  .ravekit-product__price {
+    text-align: center;
+  }
+  .ravekit-product__description {
+    font-size: unset;
+    text-align: center;
+  }
+  .ravekit-product__features {
+    justify-content: space-evenly;
+  }
+  .ravekit-product__features .feature-item img {
+    width: 80px;
+    height: 80px;
+  }
+  .ravekit-product__variants {
+    justify-content: space-evenly;
+  }
+  .ravekit-product__cart {
+    align-items: center;
+  }
+}
 .header {
   width: 100%;
   padding: 0.75rem 1.25rem;
@@ -913,6 +1031,31 @@ h6 {
   left: 0;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
 }
+@media (min-width: 768px) {
+  .hero-product {
+    padding: 7.5rem 0;
+  }
+  .hero-product__images {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .hero-product__title {
+    font-size: 2.985984rem;
+  }
+  .hero-product__subtitle {
+    font-size: 1.728rem;
+  }
+}
+@media (min-width: 1480px) {
+  .header {
+    display: flex;
+    justify-content: space-around;
+  }
+  .header__logo img {
+    max-width: 10rem;
+    width: 100%;
+  }
+}
 .general__subtitle,
 .general__subtitle p {
   font-family: "CocogooseRegular", sans-serif;
@@ -921,5 +1064,10 @@ h6 {
 }
 .highlighted {
   color: #00FFA3;
+}
+@media (min-width: 1200px) {
+  .video-main .section-content-top-margin {
+    padding: 0 40%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

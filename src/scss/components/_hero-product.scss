@@ -51,16 +51,16 @@
     }
 
     .hero-product__sticker {
-      @include floating(2s, 5px);
+      @include wiggle(16s, 10px);
     }
 
     .hero-product__texture {
-      @include floating(3s, 30px);
+      @include wiggle(14s, 20px);
     }
 
     .hero-product__product {
       position:absolute;
-      @include floating(1s, 15px); 
+      @include floating(5s, 15px); 
     }
 
     .hero-product__sticker {
@@ -105,10 +105,27 @@
   }
 }
 
+@include respond-to(xlarge) {
+  .hero-product {
+    padding:7.5rem 20rem;
+    &__sticker  {
+      width: px-to-rem(100px);
+      right: 30%;
+    }
+    &__texture {
+      width: 50%;
+    }
+    &__product {
+      width: 30%;
+    }
+  }
+
+}
+
 @include respond-to(medium) {
   .hero-product {
-    padding: px-to-rem(120px) 0;
-
+    padding: px-to-rem(60px) 0;
+    
     &__images {
       flex-direction: row;
       justify-content: center;

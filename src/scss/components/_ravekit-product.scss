@@ -187,3 +187,30 @@
     }
   }
 }
+
+@include respond-to(xlarge) {
+  .ravekit-product {
+    padding:8% 20%;
+    &__price {
+      text-align: center;
+    }
+    &__description {
+      font-size:unset;
+      text-align: center;
+    }
+    &__features {
+      justify-content: space-evenly;
+      .feature-item img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    &__variants {
+      justify-content: space-evenly;
+    }
+    &__cart {
+      align-items: center;
+    }
+  }
+
+}

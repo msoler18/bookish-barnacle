@@ -40,10 +40,23 @@
   }
 }
 
-// Responsive Desktop
+@include respond-to(xlarge) {
+  .free-shipping-banner__text-container {
+    padding:1rem!important;
+    .free-shipping-banner__text p {
+      font-size:px-to-rem(20px)!important;
+    }
+  }
+  .free-shipping-banner__image {
+    width: 60%!important;
+  }
+}
+
 @include respond-to(medium) {
   .free-shipping-banner {
     &__text-container {
+      display: flex;
+      justify-content: center;
       padding: px-to-rem(24px);
 
       .free-shipping-banner__text {
@@ -52,7 +65,10 @@
     }
 
     &__image-container {
+      display: flex;
+      justify-content: center;
       padding: px-to-rem(24px) 0;
+      
     }
   }
 }

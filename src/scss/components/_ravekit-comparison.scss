@@ -70,3 +70,14 @@
   min-width: 50%;
 }
 
+@include respond-to(xlarge) {
+  
+  .ravekit-comparison {
+    padding-left: 20%;
+    padding-right: 20%;
+    .comparison-items__item {
+      font-size:px-to-rem(15px);
+    }
+  }
+
+}

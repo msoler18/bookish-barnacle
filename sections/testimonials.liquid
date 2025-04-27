@@ -16,7 +16,10 @@
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
   {%- if section.settings.wave_top_image != blank -%}
-    <img src="{{ section.settings.wave_top_image | image_url }}" alt="Wave top" class="absolute top-0 w-full z-10">
+    <img 
+      src="{{ section.settings.wave_top_image | image_url }}" 
+      alt="Wave top" 
+      class="w-full z-10 wave-top">
   {%- endif -%}
 
   <div class="section-content {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}">
@@ -135,7 +138,10 @@
   </div>
 
   {%- if section.settings.wave_bottom_image != blank -%}
-    <img src="{{ section.settings.wave_bottom_image | image_url }}" alt="Wave bottom" class="absolute bottom-0 w-full z-10">
+    <img 
+      src="{{ section.settings.wave_bottom_image | image_url }}" 
+      alt="Wave bottom" 
+      class="w-full z-10 wave-bottom">
   {%- endif -%}
 
   {%- liquid

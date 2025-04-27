@@ -33,3 +33,39 @@
     box-shadow: 0 px-to-rem(2px) px-to-rem(10px) rgba($color-black, 0.2);
   }
 }
+
+
+@include respond-to(medium) {
+  .hero-product {
+    padding: px-to-rem(120px) 0;
+
+    &__images {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__title {
+      font-size: font-size(6);
+    }
+
+    &__subtitle {
+      font-size: font-size(3);
+    }
+  }
+}
+
+
+@include respond-to(xxlarge) {
+  
+  .header {
+    display: flex;
+    justify-content: space-around;
+    &__logo {
+      img {
+        max-width: 10rem;
+        width: 100%;
+      }
+    }
+  }
+
+}

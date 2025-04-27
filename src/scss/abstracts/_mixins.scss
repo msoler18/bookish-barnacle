@@ -11,6 +11,9 @@
   @else if $breakpoint == 'xlarge' {
     @media (min-width: 1200px) { @content; }
   }
+  @else if $breakpoint == 'xxlarge' {
+    @media (min-width: 1480px) { @content; }
+  }
 }
 
 @mixin flex-center($direction: row) {
@@ -21,7 +24,7 @@
 }
 
 
-@mixin floating($duration: 4s, $distance: 10px) {
+@mixin floating($duration: 2.5s, $distance: 8px) {
   animation: floatingAnimation $duration ease-in-out infinite alternate;
   
   @keyframes floatingAnimation {

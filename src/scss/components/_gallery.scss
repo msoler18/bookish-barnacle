@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .gallery {
   .general__subtitle {
     max-width: 70%;
@@ -15,4 +17,21 @@
     
   }
 }
+
+.gallery.padding-top {
+  padding-top:0;
+}
+.gallery.padding-bottom {
+  padding-bottom: 0;
+}
   
+@include respond-to(xlarge) {
+  
+  .shape-wave-top,
+  .shape-wave-bottom {
+    height: 200px;
+  }
+
+}
+
+
