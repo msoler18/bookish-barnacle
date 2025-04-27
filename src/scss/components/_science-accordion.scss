@@ -5,19 +5,6 @@
   position: relative;
   overflow: hidden;
   &--with-wave {
-    padding-bottom: px-to-rem(160px);
-  }
-  &__wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
   }
   &__title {
     text-align: center;

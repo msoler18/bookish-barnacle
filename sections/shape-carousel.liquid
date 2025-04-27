@@ -24,14 +24,13 @@
   -%}
 {%- endfor -%}
 
-<section
-  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}"
-  data-color-scheme="{{ section.settings.color_scheme }}"
->
+
+<div class="wave--container">
 
   {% if section.settings.wave_top_image != blank %}
-    <div class="shape-wave-top w-full z-10">
+    <div class="section-wave">
       {% render 'render-image',
+        class: "shape-wave-top",
         img: section.settings.wave_top_image,
         img_src: section.settings.wave_top_image | image_url: width: 1200,
         alt: 'Wave top',
@@ -41,6 +40,11 @@
       %}
     </div>
   {% endif %}
+
+  <section
+  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}"
+  data-color-scheme="{{ section.settings.color_scheme }}"
+  >
 
   <div class="section-content relative py-section-vertical-spacing">
     {% unless section.settings.title == blank %}
@@ -228,9 +232,12 @@
     endfor
   -%}
 
+  </section>
+
   {% if section.settings.wave_bottom_image != blank %}
-    <div class="shape-wave-bottom w-full z-10">
+    <div class="section-wave">
       {% render 'render-image',
+        class: "shape-wave-bottom",
         img: section.settings.wave_bottom_image,
         img_src: section.settings.wave_bottom_image | image_url: width: 1200,
         alt: 'Wave bottom',
@@ -240,8 +247,9 @@
       %}
     </div>
   {% endif %}
-  
-</section>
+
+</div>
+
 
 {%- liquid
   assign stickers = section.blocks | where: 'type', 'sticker'

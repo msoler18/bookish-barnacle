@@ -6,22 +6,27 @@
   assign question_blocks = section.blocks | where: 'type', 'question'
 -%}
 
-<section
-  class="faq elative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image != blank %}padding-top{% endif %}"
-  data-color-scheme="{{ section.settings.color_scheme }}"
->
+
+<div class="wave--container">
 
   {% if section.settings.wave_top_image %}
-    {% render 'render-image',
-      class: "wave-top w-full z-10",
-      img_src: section.settings.wave_top_image | image_url: width: 1920,
-      img: section.settings.wave_top_image,
-      alt: section.settings.wave_top_image.alt,
-      width: "1920",
-      height: "auto",
-      size: "800 1200 1600 1920"
-    %}
+    <div class="section-wave">
+      {% render 'render-image',
+        class: "wave-top",
+        img_src: section.settings.wave_top_image | image_url: width: 1920,
+        img: section.settings.wave_top_image,
+        alt: section.settings.wave_top_image.alt,
+        width: "1920",
+        height: "auto",
+        size: "800 1200 1600 1920"
+      %}
+    </div>
   {% endif %}
+
+  <section
+  class="faq elative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image != blank %}padding-top{% endif %}"
+  data-color-scheme="{{ section.settings.color_scheme }}"
+  >
 
   <div class="section-content relative z-10 mx-auto max-w-site px-section py-section-vertical-spacing">
 
@@ -86,7 +91,11 @@
       endcase
     endfor
   -%}
-</section>
+  </section>
+
+</div>
+
+
 
 {%- liquid
   assign stickers = section.blocks | where: 'type', 'sticker'

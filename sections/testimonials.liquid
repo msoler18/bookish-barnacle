@@ -11,13 +11,13 @@
   item_count: testimonials.size
 -%}
 
-<section
-  class="testimonials relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.is_step %}step-carrusel{% endif %}"
-  data-color-scheme="{{ section.settings.color_scheme }}"
->
-  {%- if section.settings.wave_top_image != blank -%}
-    <div class="w-full z-10 wave-top">
+
+<div class="wave--container">
+
+  {% if section.settings.wave_top_image %}
+    <div class="section-wave">
       {% render 'render-image',
+        class: "wave-top",
         img: section.settings.wave_top_image,
         img_src: section.settings.wave_top_image | image_url: width: 1200,
         alt: 'Wave top',
@@ -26,7 +26,14 @@
         size: "400 800 1200"
       %}
     </div>
-  {%- endif -%}
+  {% endif %}
+
+
+  <section
+  class="testimonials relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.is_step %}step-carrusel{% endif %}"
+  data-color-scheme="{{ section.settings.color_scheme }}"
+  >
+  
 
   <div class="section-content {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}">
     {% if section.settings.title != blank %}
@@ -143,19 +150,6 @@
     </div>
   </div>
 
-  {%- if section.settings.wave_bottom_image != blank -%}
-    <div class="w-full z-10 wave-bottom">
-      {% render 'render-image',
-        img: section.settings.wave_bottom_image,
-        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
-        alt: 'Wave bottom',
-        width: "1200",
-        height: "auto",
-        size: "400 800 1200"
-      %}
-    </div>
-  {%- endif -%}
-
   {%- liquid
     for block in section.blocks
       case block.type
@@ -166,7 +160,25 @@
       endcase
     endfor
   -%}
-</section>
+  </section>
+
+  {% if section.settings.wave_bottom_image %}
+    <div class="section-wave">
+      {% render 'render-image',
+        class: "wave-bottom",
+        img: section.settings.wave_bottom_image,
+        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
+        alt: 'Wave bottom',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
+  {% endif %}
+
+</div>
+
+
 
 
 

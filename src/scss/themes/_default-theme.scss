@@ -13,6 +13,12 @@
   color:$color-secondary;
 }
 
+.section-wave {
+  img {
+    width: 100%;
+  }
+}
+
 @include respond-to(xlarge) {
   
   .video-main {
@@ -22,6 +28,9 @@
   }
 
 }
+
+
+
 
 @include respond-to(medium) {
   

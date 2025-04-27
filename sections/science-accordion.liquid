@@ -4,10 +4,12 @@
   }
 </style>
 
-<section
+<div class="wave--container">
+
+  <section
   class="science-accordion {% if section.settings.wave_image != blank %}science-accordion--with-wave{% endif %}"
   style="background-color: {{ section.settings.background_color }}">
-  
+
   <div class="container">
     <h2 class="science-accordion__title">{{ section.settings.heading }}</h2>
 
@@ -53,20 +55,23 @@
     </div>
   </div>
 
+  </section>
+
   {% if section.settings.wave_image != blank %}
-    <div class="science-accordion__wave">
-      {% render 'render-image',
-        img: section.settings.wave_image,
-        img_src: section.settings.wave_image | image_url: width: 1200,
-        alt: 'Wave Divider',
-        width: "1200",
-        height: "auto",
-        size: "400 800 1200"
-      %}
-    </div>
+  <div class="section-wave">
+    {% render 'render-image',
+      class: "wave-bottom", 
+      img: section.settings.wave_image,
+      img_src: section.settings.wave_image | image_url: width: 1200,
+      alt: 'Wave Divider',
+      width: "1200",
+      height: "auto",
+      size: "400 800 1200"
+    %}
+  </div>
   {% endif %}
-  
-</section>
+
+</div>
 
 {% schema %}
 {
