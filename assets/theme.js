@@ -45,7 +45,6 @@
   var RavekitProduct = class {
     constructor(container) {
       this.container = container;
-      console.log("[RavekitProduct] Init with container:", container);
       this.variantButtons = container.querySelectorAll(".variant-button");
       this.variantInput = container.querySelector(".variant-id-input");
       this.minusBtn = container.querySelector(".quantity-decrease");
@@ -57,7 +56,6 @@
     }
     bindEvents() {
       var _a, _b, _c;
-      console.log("[RavekitProduct] Binding events...");
       this.variantButtons.forEach((button) => {
         button.addEventListener("click", () => this.selectVariant(button));
       });
@@ -91,10 +89,6 @@
         alert("Por favor selecciona una variante primero.");
         return;
       }
-      console.log("[RavekitProduct] Adding to cart:", {
-        variantId,
-        quantity
-      });
       fetch("/cart/add.js", {
         method: "POST",
         headers: {
@@ -110,11 +104,9 @@
         }
         return response.json();
       }).then((data) => {
-        console.log("[RavekitProduct] Added to cart successfully!", data);
         alert("Producto agregado al carrito exitosamente");
       }).catch((error) => {
         console.error("[RavekitProduct] Failed to add to cart:", error);
-        alert("Ocurri\xF3 un error al agregar el producto al carrito.");
       });
     }
   };

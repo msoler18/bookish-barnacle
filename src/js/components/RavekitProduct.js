@@ -1,7 +1,6 @@
 export default class RavekitProduct {
   constructor(container) {
     this.container = container;
-    console.log('[RavekitProduct] Init with container:', container);
 
     this.variantButtons = container.querySelectorAll('.variant-button');
     this.variantInput = container.querySelector('.variant-id-input'); // (opcional si luego lo necesitas)
@@ -16,7 +15,6 @@ export default class RavekitProduct {
   }
 
   bindEvents() {
-    console.log('[RavekitProduct] Binding events...');
 
     this.variantButtons.forEach(button => {
       button.addEventListener('click', () => this.selectVariant(button));
@@ -60,8 +58,6 @@ export default class RavekitProduct {
       return;
     }
 
-    console.log('[RavekitProduct] Adding to cart:', { variantId, quantity });
-
     fetch('/cart/add.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -77,13 +73,10 @@ export default class RavekitProduct {
         return response.json();
       })
       .then(data => {
-        console.log('[RavekitProduct] Added to cart successfully!', data);
-        // Opcional: Mostrar toast, mensaje de éxito, abrir minicart, etc
         alert('Producto agregado al carrito exitosamente');
       })
       .catch(error => {
         console.error('[RavekitProduct] Failed to add to cart:', error);
-        alert('Ocurrió un error al agregar el producto al carrito.');
       });
   }
 }
