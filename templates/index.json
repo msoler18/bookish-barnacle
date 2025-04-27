@@ -35,7 +35,7 @@
         "product": "shopify://shop_images/FOTO_PRODUCTO.png",
         "sticker": "shopify://shop_images/sticker.webp",
         "button_text": "Comprar Ahora",
-        "button_link": "",
+        "button_link": "#ravekit-product",
         "safe_text": "Compra segura"
       }
     },
@@ -257,9 +257,9 @@
         "feature_image_1": "shopify://shop_images/VEGAN.svg",
         "feature_text_1": "100% vegano",
         "feature_image_2": "shopify://shop_images/KETO_2.svg",
-        "feature_text_2": "keto friendly",
+        "feature_text_2": "Keto friendly",
         "feature_image_3": "shopify://shop_images/FDA_1.svg",
-        "feature_text_3": "registrado en fda"
+        "feature_text_3": "Registrado en FDA"
       }
     },
     "scrolling_logos_bayt9y": {
@@ -438,7 +438,7 @@
         "mode": "autoplay",
         "playback": "inline",
         "button_label": "¡ Pedir mi ravekit !",
-        "button_link": "#buy",
+        "button_link": "#ravekit-product",
         "color_scheme": "scheme3",
         "use_gradient_background": false
       }
@@ -584,7 +584,7 @@
         "main_image": "shopify://shop_images/Screenshot_2025-04-26_at_11.21.31_PM.png",
         "background_color": "#000000",
         "button_text": "LO QUIERO AHORA",
-        "button_link": "#buy"
+        "button_link": "#ravekit-product"
       }
     },
     "curved_text_TtWW9B": {
