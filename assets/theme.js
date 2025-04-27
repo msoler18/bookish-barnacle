@@ -1,22 +1,4 @@
 (() => {
-  // src/js/utils/animations.js
-  function parallaxOnScroll(elements) {
-    if (!elements || elements.length === 0) return;
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
-      elements.forEach((item) => {
-        const {
-          element,
-          speed
-        } = item;
-        if (element) {
-          const translateY = scrollTop * speed;
-          element.style.transform = `translateY(${translateY}px)`;
-        }
-      });
-    });
-  }
-
   // src/js/utils/smoothScrollToRavekit.js
   function initSmoothScrollToRavekit() {
     const links = document.querySelectorAll('a[href="#ravekit-product"]');
@@ -43,18 +25,14 @@
       console.warn("No titles or contents found for science accordion.");
       return;
     }
-    console.log("Accordion titles:", titles.length);
-    console.log("Accordion contents:", contents.length);
     titles.forEach((title) => {
       title.addEventListener("click", (e) => {
         const index = title.dataset.index;
-        console.log("Clicked title index:", index);
         titles.forEach((t) => t.classList.remove("is-active"));
         contents.forEach((c) => c.classList.remove("is-active"));
         title.classList.add("is-active");
         const activeContent = document.querySelector(`.science-accordion__item-content[data-content-index="${index}"]`);
         if (activeContent) {
-          console.log("Activating content for index:", index);
           activeContent.classList.add("is-active");
         } else {
           console.warn("No content found for index:", index);
@@ -133,7 +111,7 @@
         return response.json();
       }).then((data) => {
         console.log("[RavekitProduct] Added to cart successfully!", data);
-        alert("Producto agregado al carrito exitosamente \u{1F389}");
+        alert("Producto agregado al carrito exitosamente");
       }).catch((error) => {
         console.error("[RavekitProduct] Failed to add to cart:", error);
         alert("Ocurri\xF3 un error al agregar el producto al carrito.");
@@ -145,22 +123,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     initScienceAccordion();
     document.querySelectorAll(".ravekit-product").forEach((container) => {
-      console.log("[theme.js] Initializing RavekitProduct for container:", container);
       new RavekitProduct(container);
     });
-    const texture = document.querySelector(".hero-product__texture");
-    const product = document.querySelector(".hero-product__product");
-    const sticker = document.querySelector(".hero-product__sticker");
-    parallaxOnScroll([{
-      element: texture,
-      speed: 0.05
-    }, {
-      element: product,
-      speed: 0.1
-    }, {
-      element: sticker,
-      speed: 0.08
-    }]);
     initSmoothScrollToRavekit();
   });
 })();

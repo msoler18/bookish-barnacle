@@ -10,7 +10,7 @@ export default class RavekitProduct {
     this.quantityInput = container.querySelector('.quantity-input');
     this.addToCartBtn = container.querySelector('.add-to-cart');
 
-    this.selectedVariantId = null; // Guardar ID de variante activa
+    this.selectedVariantId = null; 
 
     this.bindEvents();
   }
@@ -79,7 +79,7 @@ export default class RavekitProduct {
       .then(data => {
         console.log('[RavekitProduct] Added to cart successfully!', data);
         // Opcional: Mostrar toast, mensaje de éxito, abrir minicart, etc
-        alert('Producto agregado al carrito exitosamente 🎉');
+        alert('Producto agregado al carrito exitosamente');
       })
       .catch(error => {
         console.error('[RavekitProduct] Failed to add to cart:', error);
