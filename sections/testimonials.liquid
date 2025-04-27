@@ -16,10 +16,16 @@
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
   {%- if section.settings.wave_top_image != blank -%}
-    <img 
-      src="{{ section.settings.wave_top_image | image_url }}" 
-      alt="Wave top" 
-      class="w-full z-10 wave-top">
+    <div class="w-full z-10 wave-top">
+      {% render 'render-image',
+        img: section.settings.wave_top_image,
+        img_src: section.settings.wave_top_image | image_url: width: 1200,
+        alt: 'Wave top',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
   {%- endif -%}
 
   <div class="section-content {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}">
@@ -138,10 +144,16 @@
   </div>
 
   {%- if section.settings.wave_bottom_image != blank -%}
-    <img 
-      src="{{ section.settings.wave_bottom_image | image_url }}" 
-      alt="Wave bottom" 
-      class="w-full z-10 wave-bottom">
+    <div class="w-full z-10 wave-bottom">
+      {% render 'render-image',
+        img: section.settings.wave_bottom_image,
+        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
+        alt: 'Wave bottom',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
   {%- endif -%}
 
   {%- liquid

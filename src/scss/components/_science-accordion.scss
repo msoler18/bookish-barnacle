@@ -153,3 +153,12 @@
   }
 
 }
+
+
+@include respond-to(medium) {
+  
+  .science-accordion__wave img {
+    height: 100px;
+  }
+
+}

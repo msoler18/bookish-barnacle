@@ -16,11 +16,11 @@
   }
 }
 .padding-top {
-  padding-top: 6rem;
+  padding-top: 2rem;
 }
 
 .padding-bottom {
-  padding-bottom: 12rem;
+  padding-bottom: 2rem;
 }
 
 .alien_ravekit {
@@ -65,6 +65,23 @@
     }
     .wave-bottom {
       height: 200px;
+    }
+  }
+
+}
+
+
+@include respond-to(medium) {
+  
+  .testimonials {
+    .alien_ravekit {
+      right: 15%;
+    }
+    .section-content.padding-bottom {
+      padding-bottom:2rem;
+    }
+    .wave-bottom {
+      height: 100px;
     }
   }
 

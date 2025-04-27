@@ -30,10 +30,16 @@
 >
 
   {% if section.settings.wave_top_image != blank %}
-    <img 
-      src="{{ section.settings.wave_top_image | image_url }}" 
-      alt="Wave top" 
-      class="shape-wave-top w-full z-10">
+    <div class="shape-wave-top w-full z-10">
+      {% render 'render-image',
+        img: section.settings.wave_top_image,
+        img_src: section.settings.wave_top_image | image_url: width: 1200,
+        alt: 'Wave top',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
   {% endif %}
 
   <div class="section-content relative py-section-vertical-spacing">
@@ -221,12 +227,20 @@
       endcase
     endfor
   -%}
+
   {% if section.settings.wave_bottom_image != blank %}
-    <img 
-      src="{{ section.settings.wave_bottom_image | image_url }}" 
-      alt="Wave bottom" 
-      class="shape-wave-bottom w-full z-10">
+    <div class="shape-wave-bottom w-full z-10">
+      {% render 'render-image',
+        img: section.settings.wave_bottom_image,
+        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
+        alt: 'Wave bottom',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
   {% endif %}
+  
 </section>
 
 {%- liquid

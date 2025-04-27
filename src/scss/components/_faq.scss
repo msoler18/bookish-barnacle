@@ -17,14 +17,13 @@
       }
     }
   }
-    
+}
+
+.faq.padding-top {
+  padding-top:0;
 }
 
 @include respond-to(xlarge) {
-
-  .faq.padding-top {
-    padding-top:0;
-  }
   .faq {
     .wave-top {
       height:200px;
@@ -33,6 +32,15 @@
       .rte p {
         font-size:px-to-rem(15px);
       }
+    }
+  }
+
+}
+
+@include respond-to(medium) {
+  .faq {
+    .wave-top {
+      height:180px;
     }
   }
 

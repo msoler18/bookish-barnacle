@@ -55,13 +55,14 @@
 
   {% if section.settings.wave_image != blank %}
     <div class="science-accordion__wave">
-      <img
-        src="{{ section.settings.wave_image | img_url: 'master' }}"
-        alt="Wave Divider"
-        loading="lazy"
-        width="auto"
-        height="auto"
-      >
+      {% render 'render-image',
+        img: section.settings.wave_image,
+        img_src: section.settings.wave_image | image_url: width: 1200,
+        alt: 'Wave Divider',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
     </div>
   {% endif %}
   

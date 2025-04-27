@@ -22,8 +22,12 @@
 
   &__cart {
     width: px-to-rem(24px);
-    height: px-to-rem(24px);
     color: $color-secondary;
+    .cart-icon {
+      svg {
+        width: 30px;
+      }
+    }
   }
 
   &--sticky {

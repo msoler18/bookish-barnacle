@@ -621,6 +621,11 @@ h6 {
     font-size: 0.8125rem;
   }
 }
+@media (min-width: 768px) {
+  .science-accordion__wave img {
+    height: 100px;
+  }
+}
 .testimonials {
   position: relative;
 }
@@ -637,10 +642,10 @@ h6 {
   background-color: white;
 }
 .padding-top {
-  padding-top: 6rem;
+  padding-top: 2rem;
 }
 .padding-bottom {
-  padding-bottom: 12rem;
+  padding-bottom: 2rem;
 }
 .alien_ravekit {
   position: absolute;
@@ -683,6 +688,17 @@ h6 {
     height: 200px;
   }
 }
+@media (min-width: 768px) {
+  .testimonials .alien_ravekit {
+    right: 15%;
+  }
+  .testimonials .section-content.padding-bottom {
+    padding-bottom: 2rem;
+  }
+  .testimonials .wave-bottom {
+    height: 100px;
+  }
+}
 .gallery .general__subtitle {
   max-width: 70%;
   margin: 0 auto;
@@ -707,6 +723,12 @@ h6 {
   .shape-wave-top,
   .shape-wave-bottom {
     height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .shape-wave-top,
+  .shape-wave-bottom {
+    height: 180px;
   }
 }
 .ravekit-comparison {
@@ -801,15 +823,20 @@ h6 {
 .faq .card .card__surface .rte p {
   font-size: 0.6944444444rem;
 }
+.faq.padding-top {
+  padding-top: 0;
+}
 @media (min-width: 1200px) {
-  .faq.padding-top {
-    padding-top: 0;
-  }
   .faq .wave-top {
     height: 200px;
   }
   .faq .card__surface .rte p {
     font-size: 0.9375rem;
+  }
+}
+@media (min-width: 768px) {
+  .faq .wave-top {
+    height: 180px;
   }
 }
 .ravekit-product {
@@ -1022,8 +1049,10 @@ h6 {
 }
 .header__cart {
   width: 1.5rem;
-  height: 1.5rem;
   color: #00FFA3;
+}
+.header__cart .cart-icon svg {
+  width: 30px;
 }
 .header--sticky {
   position: sticky;
@@ -1068,6 +1097,11 @@ h6 {
 @media (min-width: 1200px) {
   .video-main .section-content-top-margin {
     padding: 0 40%;
+  }
+}
+@media (min-width: 768px) {
+  .video-main .section-content-top-margin {
+    padding: 0 30%;
   }
 }
 /*# sourceMappingURL=main.css.map */

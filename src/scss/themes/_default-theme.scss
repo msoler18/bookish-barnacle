@@ -23,3 +23,13 @@
 
 }
 
+@include respond-to(medium) {
+  
+  .video-main {
+    .section-content-top-margin {
+      padding:0 30%;
+    }
+  }
+
+}
+

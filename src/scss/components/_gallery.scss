@@ -35,3 +35,13 @@
 }
 
 
+@include respond-to(medium) {
+  
+  .shape-wave-top,
+  .shape-wave-bottom {
+    height: 180px;
+  }
+
+}
+
+
