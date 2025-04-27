@@ -354,7 +354,7 @@ h6 {
 }
 .hero-product__images .hero-product__product {
   position: absolute;
-  animation: floatingAnimation 5s ease-in-out infinite alternate;
+  animation: floatingAnimation 1s ease-in-out infinite alternate;
 }
 @keyframes floatingAnimation {
   0% {

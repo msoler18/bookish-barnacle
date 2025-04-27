@@ -60,7 +60,7 @@
 
     .hero-product__product {
       position:absolute;
-      @include floating(5s, 15px); 
+      @include floating(1s, 15px); 
     }
 
     .hero-product__sticker {
