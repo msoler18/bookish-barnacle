@@ -507,6 +507,106 @@
         "button_text": "LO QUIERO AHORA",
         "button_link": "#buy"
       }
+    },
+    "curved_text_TtWW9B": {
+      "type": "curved-text",
+      "name": "t:sections.curved_text.name",
+      "settings": {
+        "text": "SOMOS LA NUEVA GENERACIÓN DE RAVERS",
+        "link": "",
+        "wave_height": 250,
+        "wave_width": 250,
+        "speed": 1,
+        "mobile_text_scale": 2,
+        "desktop_text_scale": 4,
+        "font": "font-heading",
+        "enable_animation": true,
+        "pause_on_hover": false,
+        "direction": "rtl",
+        "color_scheme": "scheme-2888fe4e-d88f-4c5d-9729-71801167fff1",
+        "use_gradient_background": false
+      }
+    },
+    "faq_FFLPRM": {
+      "type": "faq",
+      "blocks": {
+        "question_FdDdif": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿RAVEKIT afecta el efecto de s.p.a?",
+            "answer": "<p><strong>De ninguna manera.</strong></p><p>El kit está diseñado para no tener interacción alguna con tu experiencia recreativa. No afecta los efectos de ninguna sustancia spa.</p>"
+          }
+        },
+        "question_33jELk": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo usar el kit si tengo alguna condición médica?",
+            "answer": "<p>Si estás en un tratamiento con antidepresivos o inhibidores IMAO NO consumas Ravekit. 🙅‍♀️⛔🙅‍♂️</p><p>Si es otra condición médica la respuesta es: <strong>Depende</strong>.  Las condiciones médicas son muy variables y algunas implican necesidades y restricciones muy puntuales. Ante la duda, lo mejor siempre será consultar con tu médico</p>"
+          }
+        },
+        "question_enbcbx": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo comprar cada paso por aparte?",
+            "answer": "<p><strong>No.</strong></p><p>Todos los Ravekit vienen sellados. Únicamente ofreceremos chicles de magnesio en presentación individual cuando tengamos participación en eventos físicos.</p>"
+          }
+        },
+        "question_gfLbrY": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Hay algún efecto adverso al usar RaveKit?",
+            "answer": "<p>En algunos casos muy puntuales podrías experimentar malestar estomacal por hipersensibilidad a alguno de sus componentes. Recuerda consultar las tablas nutricionales de Ravekit con tu doctor si tienes alguna condición particular.</p>"
+          }
+        },
+        "question_PnNkbn": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Es seguro mezclar RaveKit con alcohol?",
+            "answer": "<p>No. Si bien Ravekit sólo es un conjunto de vitaminas y suplementos, no se recomienda mezclarlo con alcohol. No por la posible interacción del kit y el alcohol, sino por la interacción misma del alcohol con las sustancias psicoactivas. Recuerda que el alcohol es un potente deshidratante, y al ser mezclado con psicoactivos puede reaccionar y dar lugar a sustancias nocivas en tu cuerpo.</p>"
+          }
+        },
+        "question_UPWdWe": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "Soy vegano, ¿puedo hacer uso de RaveKit?",
+            "answer": "<p><strong>¡Claro que sí! </strong></p><p>Todos nuestros productos son de origen vegetal, libres de crueldad animal y aptos para dietas keto.</p>"
+          }
+        },
+        "question_DTBNdG": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Dónde puedo comprar RaveKit?",
+            "answer": "<p><strong>¡Aquí mismo! </strong></p><p>Sólo busca el botón que dice “Comprar Ahora”, ingresa tus datos y recibirás tu Ravekit directamente en tu casa a la mayor brevedad posible. También puedes encontrarnos en activaciones físicas que anunciemos únicamente en nuestras redes sociales oficiales.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_FdDdif",
+        "question_33jELk",
+        "question_enbcbx",
+        "question_gfLbrY",
+        "question_PnNkbn",
+        "question_UPWdWe",
+        "question_DTBNdG"
+      ],
+      "name": "t:sections.faq.name",
+      "settings": {
+        "display_on_card": true,
+        "heading_text_style": "body",
+        "two_columns_desktop": true,
+        "title": "FAQ",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_FAQ_2.webp",
+        "richtext": "¿Te quedan dudas? Aquí fijo encuentras la respuesta 👇",
+        "color_scheme": "scheme1",
+        "use_gradient_background": false
+      }
     }
   },
   "order": [
@@ -520,6 +620,8 @@
     "testimonials_ADyNHj",
     "video_LVhPQK",
     "shape_carousel_Urp7Kn",
-    "ravekit_comparison_tacR86"
+    "ravekit_comparison_tacR86",
+    "curved_text_TtWW9B",
+    "faq_FFLPRM"
   ]
 }
