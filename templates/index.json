@@ -28,7 +28,7 @@
       "type": "hero-product",
       "name": "Hero Product",
       "settings": {
-        "background_color": "#0A0A0A",
+        "background_color": "#0a0a0a",
         "title": "EL SUPLEMENTO <#1> PARA RAVERS",
         "subtitle": "Siente la música, no el bajón",
         "texture": "shopify://shop_images/HERO-FONDO.webp",
@@ -71,12 +71,42 @@
         "enable_marquee": true,
         "background_color": "#ff00ff"
       }
+    },
+    "science_accordion_ixbjxR": {
+      "type": "science-accordion",
+      "blocks": {
+        "block_P9B7Rh": {
+          "type": "block",
+          "settings": {
+            "title": "😭 Reduce el bajón post sustancias",
+            "content": "<ul><li>El complejo B y el magnesio contribuyen al equilibrio de neurotransmisores, favoreciendo un mejor estado de ánimo y reduciendo el estrés post-consumo.</li><li>El hidroxitriptófano, precursor de la serotonina, ayuda a restaurar los niveles de este neurotransmisor, disminuyendo la sensación de bajón.</li></ul>"
+          }
+        },
+        "block_6GKAWc": {
+          "type": "block",
+          "settings": {
+            "title": "🧠 Protege tu cerebro de la neurotoxicidad",
+            "content": "<ul><li>Los antioxidantes como la vitamina C, el ácido alfa lipoico y la vitamina E protegen las células cerebrales del daño oxidativo causado por el consumo de sustancias.</li><li>El zinc fortalece el sistema inmunológico y contribuye a la regeneración celular, protegiendo el cerebro.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "block_P9B7Rh",
+        "block_6GKAWc"
+      ],
+      "name": "Science Accordion",
+      "settings": {
+        "heading": "NO ES MAGIA, ES CIENCIA",
+        "subtitle": "Usamos ingredientes de origen natural, cuya efectividad está avalada por diversos estudios científicos. Todas las formulaciones tienen registro FDA y buenas prácticas de manufactura",
+        "background_color": "#FFFFFF"
+      }
     }
   },
   "order": [
     "header",
     "free-shipping-banner",
     "hero_product_aDJwei",
-    "marquee_banner_jAnxqT"
+    "marquee_banner_jAnxqT",
+    "science_accordion_ixbjxR"
   ]
 }

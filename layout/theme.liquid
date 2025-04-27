@@ -80,7 +80,7 @@
 
     {{ 'base.bundle.css' | asset_url | stylesheet_tag: preload: true }}
 
-    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    {% comment %} {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }} {% endcomment %}
 
     {% render 'js-bridge' %}
 
@@ -301,7 +301,7 @@
     {%- endif -%}
 
     {% comment %} <script src="{{ 'global.bundle.js' | asset_url }}" type="module"></script> {% endcomment %}
-    <script src="{{ 'theme.js' | asset_url }}" async="async"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
     <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
   </body>
 </html>
