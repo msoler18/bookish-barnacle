@@ -29,6 +29,7 @@
   right: 20%;
   width: 70px;
   z-index: 99;
+  @include bouncing(1.5s, 25px);
 }
 
 .step-carrusel {

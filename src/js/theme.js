@@ -1,6 +1,10 @@
 import { parallaxOnScroll } from './utils/animations';
+import { initSmoothScrollToRavekit } from './utils/smoothScrollToRavekit';
+
 import { initScienceAccordion } from './components/scienceAccordion';
 import RavekitProduct from './components/RavekitProduct';
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initScienceAccordion();
@@ -19,4 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { element: product, speed: 0.1 },
     { element: sticker, speed: 0.08 }
   ]);
+
+  initSmoothScrollToRavekit();
 });

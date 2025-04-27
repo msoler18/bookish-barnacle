@@ -17,6 +17,24 @@
     });
   }
 
+  // src/js/utils/smoothScrollToRavekit.js
+  function initSmoothScrollToRavekit() {
+    const links = document.querySelectorAll('a[href="#ravekit-product"]');
+    if (!links.length) return;
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.getElementById("ravekit-product");
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  }
+
   // src/js/components/scienceAccordion.js
   function initScienceAccordion() {
     const titles = document.querySelectorAll("[data-accordion-trigger]");
@@ -143,6 +161,7 @@
       element: sticker,
       speed: 0.08
     }]);
+    initSmoothScrollToRavekit();
   });
 })();
 //# sourceMappingURL=theme.js.map

@@ -19,3 +19,31 @@
   justify-content: center;
   align-items: center;
 }
+
+
+@mixin floating($duration: 4s, $distance: 10px) {
+  animation: floatingAnimation $duration ease-in-out infinite alternate;
+  
+  @keyframes floatingAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY($distance); }
+  }
+}
+
+@mixin bouncing($duration: 2s, $distance: 20px) {
+  animation: bouncingAnimation $duration ease-in-out infinite;
+
+  @keyframes bouncingAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-$distance); }
+  }
+}
+
+@mixin wiggle($duration: 3s, $angle: 5deg) {
+  animation: wiggleAnimation $duration ease-in-out infinite alternate;
+  
+  @keyframes wiggleAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate($angle); }
+  }
+}

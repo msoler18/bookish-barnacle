@@ -122,6 +122,23 @@ h6 {
 .btn-accent:hover {
   background-color: #ff338b;
 }
+.btn-float-basket {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 99999;
+  cursor: pointer;
+}
+.btn-float-basket svg {
+  width: 30px;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -313,8 +330,39 @@ h6 {
   max-width: 100%;
   height: auto;
 }
+.hero-product__images .hero-product__sticker {
+  animation: floatingAnimation 2s ease-in-out infinite alternate;
+}
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+.hero-product__images .hero-product__texture {
+  animation: floatingAnimation 3s ease-in-out infinite alternate;
+}
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
 .hero-product__images .hero-product__product {
   position: absolute;
+  animation: floatingAnimation 5s ease-in-out infinite alternate;
+}
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
 }
 .hero-product__images .hero-product__sticker {
   position: absolute;
@@ -550,6 +598,15 @@ h6 {
   right: 20%;
   width: 70px;
   z-index: 99;
+  animation: bouncingAnimation 1.5s ease-in-out infinite;
+}
+@keyframes bouncingAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
 }
 .step-carrusel .splide__slide .card:before {
   background-color: #ff31ed !important;
@@ -613,7 +670,7 @@ h6 {
 .ravekit-comparison .comparison-items__item:after {
   content: "";
   position: absolute;
-  top: 5%;
+  top: 2%;
   right: -2%;
   width: 100%;
   height: 50px;
@@ -621,6 +678,15 @@ h6 {
   border: 1px solid white;
   border-radius: 10px;
   z-index: -1;
+  animation: floatingAnimation 1s ease-in-out infinite alternate;
+}
+@keyframes floatingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2px);
+  }
 }
 .bg-secondary {
   background-color: #00FFA3;
