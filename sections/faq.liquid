@@ -7,19 +7,33 @@
 -%}
 
 <section
-  class="relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
+  class="faq elative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image != blank %}padding-top{% endif %}"
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
+
+  {% if section.settings.wave_top_image %}
+    {% render 'render-image',
+      class: "wave-top absolute top-0 w-full z-10",
+      img_src: section.settings.wave_top_image | image_url: width: 1920,
+      img: section.settings.wave_top_image,
+      alt: section.settings.wave_top_image.alt,
+      width: "1920",
+      height: "auto",
+      size: "800 1200 1600 1920"
+    %}
+  {% endif %}
+
   <div class="section-content relative z-10 mx-auto max-w-site px-section py-section-vertical-spacing">
+
     {% if section.settings.title != blank %}
       {%- assign block_heading_level = 'h3' -%}
-      <h2 class="inline-heading-rte font-heading heading-standard  heading-style break-words text-center {{ settings.heading_drop_shadow_style }}">
+      <h2 class="title inline-heading-rte font-heading heading-standard  heading-style break-words text-center {{ settings.heading_drop_shadow_style }}">
         {{ section.settings.title }}
       </h2>
     {% endif %}
 
     {% if section.settings.richtext != blank %}
-      <div class="inline-rte mt-5 text-center font-main leading-snug">
+      <div class="general__subtitle inline-rte">
         {{ section.settings.richtext }}
       </div>
     {% endif %}
@@ -122,6 +136,11 @@
       "id": "title",
       "label": "t:sections.faq.settings.title.label",
       "default": "FAQ"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_top_image",
+      "label": "Wave superior"
     },
     {
       "type": "inline_richtext",
