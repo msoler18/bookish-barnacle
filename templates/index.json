@@ -69,7 +69,8 @@
       "name": "Marquee Banner",
       "settings": {
         "enable_marquee": true,
-        "background_color": "#ff00ff"
+        "background_color": "#ff00ff",
+        "text_color": "#000000"
       }
     },
     "science_accordion_ixbjxR": {
@@ -127,11 +128,11 @@
       "settings": {
         "heading": "NO ES MAGIA, ES CIENCIA",
         "subtitle": "Usamos ingredientes de origen natural, cuya efectividad está avalada por diversos estudios científicos. Todas las formulaciones tienen registro FDA y buenas prácticas de manufactura",
-        "background_color": "#ffffff"
+        "background_color": "#ffffff",
+        "wave_image": "shopify://shop_images/INICIO_SECCION_3_3.webp"
       }
     },
     "image_focus_carousel_mm9UR3": {
-      "class":"carousel__general",
       "type": "image-focus-carousel",
       "blocks": {
         "image_9wMm7p": {
@@ -213,6 +214,69 @@
         "color_scheme": "scheme3",
         "use_gradient_background": false
       }
+    },
+    "testimonials_fXHeBU": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Gm8EHy": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_Dx8r87": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_KyAtYg": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_gpifJe": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "source": "LIZ S"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Gm8EHy",
+        "testimonial_Dx8r87",
+        "testimonial_KyAtYg",
+        "testimonial_gpifJe"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "display_on_card": true,
+        "title": "Más de 500 ravers felices",
+        "max_width": 240,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_5.svg",
+        "wave_bottom_image": "shopify://shop_images/FINAL_SECCION_5_1.webp",
+        "alien_image": "shopify://shop_images/STICKER_ALIEN.webp",
+        "color_scheme": "scheme1",
+        "use_gradient_background": false
+      }
     }
   },
   "order": [
@@ -221,6 +285,7 @@
     "hero_product_aDJwei",
     "marquee_banner_jAnxqT",
     "science_accordion_ixbjxR",
-    "image_focus_carousel_mm9UR3"
+    "image_focus_carousel_mm9UR3",
+    "testimonials_fXHeBU"
   ]
 }

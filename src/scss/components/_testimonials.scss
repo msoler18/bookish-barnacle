@@ -9,6 +9,9 @@
       .card:before {
         background-color:$color-secondary ;
       }
+      .card__surface {
+        background-color:white ;
+      }
     }
   }
 }
@@ -22,8 +25,29 @@
 
 .alien_ravekit {
   position: absolute;
-  top: 12%;
+  top: 20%;
   right: 20%;
   width: 70px;
   z-index: 99;
+}
+
+.step-carrusel {
+  .splide__slide {
+    .card:before {
+      background-color:$color-tertiary!important;
+    }
+  }
+  .push-btn__surface {
+    background-color:$color-tertiary;
+  }
+  .step--title {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .step--subtitle {
+    p {
+      font-size:font-size(-2) ;
+      margin-top:5%;
+    }
+  }
 }

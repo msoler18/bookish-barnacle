@@ -534,6 +534,9 @@ h6 {
 .testimonials .section-content .splide__slide .card:before {
   background-color: #00FFA3;
 }
+.testimonials .section-content .splide__slide .card__surface {
+  background-color: white;
+}
 .padding-top {
   padding-top: 6rem;
 }
@@ -542,10 +545,24 @@ h6 {
 }
 .alien_ravekit {
   position: absolute;
-  top: 12%;
+  top: 20%;
   right: 20%;
   width: 70px;
   z-index: 99;
+}
+.step-carrusel .splide__slide .card:before {
+  background-color: #ff31ed !important;
+}
+.step-carrusel .push-btn__surface {
+  background-color: #ff31ed;
+}
+.step-carrusel .step--title {
+  width: 70%;
+  margin: 0 auto;
+}
+.step-carrusel .step--subtitle p {
+  font-size: 0.6944444444rem;
+  margin-top: 5%;
 }
 .header {
   width: 100%;
@@ -576,5 +593,11 @@ h6 {
   top: 0;
   left: 0;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+.general__subtitle,
+.general__subtitle p {
+  font-family: "CocogooseRegular", sans-serif;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

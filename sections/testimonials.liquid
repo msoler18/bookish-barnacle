@@ -2,6 +2,7 @@
   assign testimonials = section.blocks | where: 'type', 'testimonial'
   assign crop = section.settings.crop
   assign image_count = 0
+  assign is_step = section.settings.is_step
 -%}
 
 {%- render 'collection-shape-defs',
@@ -11,31 +12,35 @@
 -%}
 
 <section
-  class="testimonials relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} 
-  {% if section.settings.wave_top_image != blank %}padding-top{% endif %}
-  {% if section.settings.wave_bottom_image != blank %}padding-bottom{% endif %}"
+  class="testimonials relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.is_step %}step-carrusel{% endif %}"
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
   {%- if section.settings.wave_top_image != blank -%}
     <img src="{{ section.settings.wave_top_image | image_url }}" alt="Wave top" class="absolute top-0 w-full z-10">
   {%- endif -%}
 
-  <div class="section-content py-section-vertical-spacing {% if section.settings.wave_top_image %}pt-32{% endif %} {% if section.settings.wave_bottom_image %}pb-32{% endif %}">
-    {% if section.settings.title != '' %}
-      <h2 class="inline-heading-rte font-heading heading-standard heading-style break-words text-center {{ settings.heading_drop_shadow_style }}">
+  <div class="section-content {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}">
+    {% if section.settings.title != blank %}
+      <h2 
+      style="color: {{ section.settings.text_color }}"
+      class="testimonials--title inline-heading-rte font-heading heading-standard heading-style break-words text-center {{ settings.heading_drop_shadow_style }}">
         {{ section.settings.title }}
       </h2>
     {% endif %}
 
-    {%- if section.settings.alien_image != blank -%}
-      <img 
-        src="{{ section.settings.alien_image | image_url }}" 
-        alt="Alien" 
-        class="alien_ravekit">
-    {%- endif -%}
+    {% if section.settings.subtitle != blank %}
+      <p 
+      style="color: {{ section.settings.text_color }}"
+      class="testimonials--subtitle break-words text-center general__subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    {% endif %}
+
+    {% if section.settings.alien_image != blank %}
+      <img src="{{ section.settings.alien_image | image_url }}" alt="Alien" class="alien_ravekit">
+    {% endif %}
 
     <div {% if testimonials.size > 1 %} id="slideshow-{{ section.id }}" class="splide {% if section.settings.title != '' %}section-content-top-margin{% endif %}" {% endif %}>
-      
       <div class="splide__track">
         <ul class="splide__list w-full {% if section.settings.title != '' %}{% if section.settings.display_on_card %}mt-5{% else %}mt-10{% endif %}{% endif %}">
           {%- for block in testimonials -%}
@@ -45,13 +50,10 @@
                 assign shape_id = section.id | append: '-' | append: forloop.index0
               endif
             -%}
-            <li
-              class="splide__slide w-4/5 {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}"
-              {{ block.shopify_attributes }}
-            >
+            <li class="splide__slide w-4/5 {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}" {{ block.shopify_attributes }}>
               <div class="{% if section.settings.display_on_card %}text-scheme-card-text card{% endif %}">
                 <div class="{% if section.settings.display_on_card %}bg-scheme-card card__surface p-5 h-full{% endif %} text-center relative">
-                  
+
                   {%- if block.settings.image != blank -%}
                     {%- liquid
                       assign image_count = image_count | plus: 1
@@ -65,10 +67,7 @@
                       endif
                       assign max_width_px = section.settings.max_width | append: 'px'
                     -%}
-                    <div
-                      class="mx-auto mb-5 {% unless section.settings.disable_media_style %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}"
-                      style="max-width: {{ max_width_px }}"
-                    >
+                    <div class="mx-auto mb-5 {% unless section.settings.disable_media_style %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}" style="max-width: {{ max_width_px }}">
                       {%- render 'media-image',
                         media: block.settings.image,
                         shape: section.settings.image_shape,
@@ -86,6 +85,18 @@
                     </div>
                   {%- endif -%}
 
+                  {%- if block.settings.step != blank -%}
+                    <h3 class="step--title font-heading text-xl font-bold uppercase mt-4">
+                      {{ block.settings.step }}
+                    </h3>
+                  {%- endif -%}
+
+                  {%- if block.settings.step_description != blank -%}
+                    <div class="step--subtitle">
+                      {{ block.settings.step_description }}
+                    </div>
+                  {%- endif -%}
+
                   <blockquote class="text-center {% if block.settings.image != blank %}mt-5{% endif %}">
                     {%- if block.settings.rating != 'none' -%}
                       {%- assign stars = block.settings.rating | split: '_' | first | plus: 0 -%}
@@ -96,9 +107,11 @@
                       </span>
                     {%- endif -%}
 
-                    <div class="inline-rte font-body text-base">
-                      {{ block.settings.quote | replace: '<p>', '<p>&#8220;' | replace: '</p>', '&#8221;</p>' }}
-                    </div>
+                    {% if block.settings.quote != blank %}
+                      <div class="inline-rte font-body text-base">
+                        {{ block.settings.quote | replace: '<p>', '<p>&#8220;' | replace: '</p>', '&#8221;</p>' }}
+                      </div>
+                    {% endif %}
 
                     {% if block.settings.source != blank %}
                       <footer class="font-heading mt-5 break-words">
@@ -138,9 +151,10 @@
 </section>
 
 
+
 {% schema %}
 {
-  "name": "t:sections.testimonials.name",
+  "name": "Testimonios o pasos",
   "settings": [
     {
       "type": "checkbox",
@@ -149,9 +163,26 @@
       "default": true
     },
     {
+      "type": "checkbox",
+      "id": "is_step",
+      "label": "¿carrusel para steps?",
+      "default": true
+    },
+    {
       "id": "title",
       "type": "inline_richtext",
       "label": "t:common.settings.title.label"
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "label": "Subtitulo"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color texto",
+      "default": "#FFFFFF"
     },
     {
       "type": "range",
@@ -679,6 +710,18 @@
           "id": "quote",
           "label": "t:sections.testimonials.blocks.testimonial.settings.quote.label",
           "default": "A quote from a customer or staff member can help show off your products' unique selling points."
+        },
+        {
+          "type": "text",
+          "id": "step",
+          "label": "Título paso",
+          "default": "Paso X"
+        },
+        {
+          "type": "richtext",
+          "id": "step_description",
+          "label": "Descripción paso",
+          "default": "<p>Prepara tu cuerpo</p>"
         },
         {
           "type": "text",
