@@ -215,6 +215,85 @@
         "use_gradient_background": false
       }
     },
+    "marquee_banner_WCw7px": {
+      "type": "marquee-banner",
+      "blocks": {
+        "text_X8CkgR": {
+          "type": "text",
+          "settings": {
+            "text": "Paga en linea con nuestro checkout seguro"
+          }
+        },
+        "text_mDKn7x": {
+          "type": "text",
+          "settings": {
+            "text": "Envíos seguros"
+          }
+        },
+        "text_6WwYnc": {
+          "type": "text",
+          "settings": {
+            "text": "📦 Recibe tu pedido hoy mismo 📦 En Bogotá, Medellín y Cali 🚀"
+          }
+        }
+      },
+      "block_order": [
+        "text_X8CkgR",
+        "text_mDKn7x",
+        "text_6WwYnc"
+      ],
+      "name": "Marquee Banner",
+      "settings": {
+        "enable_marquee": true,
+        "background_color": "#6a0dad",
+        "text_color": "#ffffff"
+      }
+    },
+    "ravekit_product_U4a6cU": {
+      "type": "ravekit-product",
+      "name": "Ravekit Product Section",
+      "settings": {
+        "product_handle": "3-ravekit",
+        "feature_image_1": "shopify://shop_images/VEGAN.svg",
+        "feature_text_1": "100% vegano",
+        "feature_image_2": "shopify://shop_images/KETO_2.svg",
+        "feature_text_2": "keto friendly",
+        "feature_image_3": "shopify://shop_images/FDA_1.svg",
+        "feature_text_3": "registrado en fda"
+      }
+    },
+    "scrolling_logos_bayt9y": {
+      "type": "scrolling-logos",
+      "blocks": {
+        "logo_Dnj9hh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MEDIOS_DE_PAGO.webp",
+            "link": ""
+          }
+        },
+        "logo_TXUqqk": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MEDIOS_DE_PAGO.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_Dnj9hh",
+        "logo_TXUqqk"
+      ],
+      "name": "t:sections.scrolling_logos.name",
+      "settings": {
+        "title": "",
+        "max_width": 270,
+        "speed": 190,
+        "direction": "normal",
+        "color_scheme": "",
+        "use_gradient_background": false
+      }
+    },
     "testimonials_fXHeBU": {
       "type": "testimonials",
       "blocks": {
@@ -616,6 +695,9 @@
     "marquee_banner_jAnxqT",
     "science_accordion_ixbjxR",
     "image_focus_carousel_mm9UR3",
+    "marquee_banner_WCw7px",
+    "ravekit_product_U4a6cU",
+    "scrolling_logos_bayt9y",
     "testimonials_fXHeBU",
     "testimonials_ADyNHj",
     "video_LVhPQK",

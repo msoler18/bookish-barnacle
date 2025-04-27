@@ -655,48 +655,57 @@ h6 {
 .ravekit-product {
   padding-top: 48px;
   padding-bottom: 48px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #000000;
   color: #ffffff;
   text-align: center;
 }
 .ravekit-product__title {
-  font-family: "PPMonumentExtended", sans-serif;
-  font-size: 2rem;
+  font-style: italic;
+  color: #00FFA3;
+  font-size: 2.48832rem !important;
   color: #00FFA3;
   margin-bottom: 16px;
 }
 .ravekit-product__price {
-  font-family: "CocogooseRegular", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.44rem;
   font-weight: 700;
   margin-bottom: 16px;
+  font-family: "PPMonumentExtended", sans-serif;
+  text-align: left;
 }
 .ravekit-product__description {
-  max-width: 640px;
-  margin: 0 auto 40px auto;
-  font-family: "CocogooseRegular", sans-serif;
-  line-height: 1.5;
   font-size: 1rem;
   color: #ffffff;
+  text-align: left;
+}
+.ravekit-product__description ul {
+  margin-top: 10px;
+}
+.ravekit-product__description ul li {
+  font-size: 1rem;
 }
 .ravekit-product__features {
   display: flex;
-  justify-content: center;
-  gap: 32px;
+  justify-content: space-between;
   margin-bottom: 40px;
 }
 .ravekit-product__features .feature-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .ravekit-product__features .feature-item img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 .ravekit-product__features .feature-item p {
   margin-top: 8px;
-  font-size: 0.875rem;
-  font-family: "CocogooseRegular", sans-serif;
+  font-size: 0.6944444444rem;
+  font-family: "Dela Gothic One", sans-serif;
+  max-width: 90px;
 }
 .ravekit-product__variants {
   display: flex;
@@ -712,8 +721,6 @@ h6 {
   background-color: transparent;
 }
 .ravekit-product__variants .variant-button img {
-  width: 80px;
-  height: 80px;
   object-fit: cover;
 }
 .ravekit-product__variants .variant-button.selected {
@@ -738,7 +745,6 @@ h6 {
   width: 60px;
   text-align: center;
   border: 1px solid #333333;
-  border-radius: 4px;
   font-size: 1.25rem;
   background: #ffffff;
   color: #000000;
@@ -820,5 +826,8 @@ h6 {
   font-family: "CocogooseRegular", sans-serif;
   margin-top: 0.5rem;
   text-align: center;
+}
+.highlighted {
+  color: #00FFA3;
 }
 /*# sourceMappingURL=main.css.map */

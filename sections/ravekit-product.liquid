@@ -6,7 +6,9 @@
 <section class="ravekit-product py-section-vertical-spacing">
   <div class="section-content text-center">
     {% if product %}
-      <h1 class="font-heading heading-standard mb-6">{{ product.title }}</h1>
+      <h2 class="ravekit-product__title mb-6">
+        {{ product.title }}
+      </h2>
 
       <div class="ravekit-product__price font-body text-xl mb-4">
         {% if product.variants.size > 0 %}
@@ -22,13 +24,13 @@
         </div>
       {% endif %}
 
-      <div class="ravekit-product__features flex justify-center gap-8 mb-10">
+      <div class="ravekit-product__features">
         {% for i in (1..3) %}
           {% assign feature_image_key = 'feature_image_' | append: i %}
           {% assign feature_text_key = 'feature_text_' | append: i %}
           {% assign icon = section.settings[feature_image_key] %}
           {% assign text = section.settings[feature_text_key] %}
-          <div class="feature-item text-center">
+          <div class="feature-item">
             {% if icon %}
               {% render 'render-image',
                 img: icon,
