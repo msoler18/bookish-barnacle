@@ -36,7 +36,7 @@
       bottom:-0.5rem;
       background-color: $color-secondary;
       width: 100%;
-      height: 2px;
+      height: 4px;
     }
   }
   &__titles {
@@ -95,7 +95,7 @@
   .small__text {
     display: block;
     font-style: italic;
-    font-size:font-size(-7);
+    font-size:font-size(-6);
     margin-top: 1rem;
     padding-left: px-to-rem(25px);
   }
@@ -106,6 +106,7 @@
     padding-left: 0!important;
     li {
       position: relative;
+      font-size:font-size(-2);
       padding-left: px-to-rem(25px);
       margin-bottom: px-to-rem(12px);
 

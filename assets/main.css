@@ -446,7 +446,7 @@ h6 {
   bottom: -0.5rem;
   background-color: #00FFA3;
   width: 100%;
-  height: 2px;
+  height: 4px;
 }
 .science-accordion__titles {
   display: flex;
@@ -495,7 +495,7 @@ h6 {
 .rte .small__text {
   display: block;
   font-style: italic;
-  font-size: 0.2790816472rem;
+  font-size: 0.3348979767rem;
   margin-top: 1rem;
   padding-left: 1.5625rem;
 }
@@ -507,6 +507,7 @@ h6 {
 }
 .rte ul li {
   position: relative;
+  font-size: 0.6944444444rem;
   padding-left: 1.5625rem;
   margin-bottom: 0.75rem;
 }
