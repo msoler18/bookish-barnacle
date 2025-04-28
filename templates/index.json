@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "header": {
       "type": "header",
@@ -81,7 +81,7 @@
           "settings": {
             "title": "😭 Reduce el bajón post sustancias",
             "content": "<ul><li>El complejo B y el magnesio contribuyen al equilibrio de neurotransmisores, favoreciendo un mejor estado de ánimo y reduciendo el estrés post-consumo.</li><li>El hidroxitriptófano, precursor de la serotonina, ayuda a restaurar los niveles de este neurotransmisor, disminuyendo la sensación de bajón.</li></ul>",
-            "short_content": "<p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Boyle, N., Lawton, C., & Dye, L. (2017). The effects of magnesium supplementation on subjective anxiety and stress—a systematic review.</p><p>Wang, X., Baumann, M. H., Dersch, C. M., & Rothman, R. B. (2007). Restoration of 3,4-methylenedioxymethamphetamine-induced 5-HT depletion by the administration of L-5-hydroxytryptophan.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
+            "short_content": "<p></p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
           }
         },
         "block_6GKAWc": {
@@ -115,6 +115,14 @@
             "content": "<ul><li>La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li><li> La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li></ul><p></p>",
             "short_content": "<p>Rochette, L., Ghibu, S., Richard, C., Zeller, M., Cottin, Y., & Vergely, C. (2013). Direct and indirect antioxidant properties of α‐lipoic acid and therapeutic potential.</p><p>Maughan, R. J., & Shirreffs, S. M. (1997). Recovery from prolonged exercise: Restoration of water and electrolyte balance.</p><p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
           }
+        },
+        "block_NkJYbT": {
+          "type": "block",
+          "settings": {
+            "title": "🤓 Respaldado por la ciencia",
+            "content": "<p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Boyle, N., Lawton, C., & Dye, L. (2017). The effects of magnesium supplementation on subjective anxiety and stress—a systematic review.</p><p>Wang, X., Baumann, M. H., Dersch, C. M., & Rothman, R. B. (2007). Restoration of 3,4-methylenedioxymethamphetamine-induced 5-HT depletion by the administration of L-5-hydroxytryptophan.</p>",
+            "short_content": ""
+          }
         }
       },
       "block_order": [
@@ -122,7 +130,8 @@
         "block_6GKAWc",
         "block_YzF47W",
         "block_aWVnYy",
-        "block_qYd6j8"
+        "block_qYd6j8",
+        "block_NkJYbT"
       ],
       "name": "Science Accordion",
       "settings": {
