@@ -27,19 +27,12 @@
   
 @include respond-to(xlarge) {
   
-  .shape-wave-top,
-  .shape-wave-bottom {
-    height: 200px;
-  }
-
-}
-
-
-@include respond-to(medium) {
-  
-  .shape-wave-top,
-  .shape-wave-bottom {
-    height: 180px;
+  #shape {
+    .section-wave {
+      .wave-bottom {
+        height: 200px;
+      }
+    }
   }
 
 }

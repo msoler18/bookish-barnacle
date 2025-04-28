@@ -591,11 +591,8 @@ h6 {
   .science-accordion {
     padding: 3.75rem 12.5rem;
   }
-  .science-accordion__wave img {
+  #science-accordion .section-wave {
     height: 300px;
-  }
-  .science-accordion--with-wave {
-    padding-bottom: 20rem;
   }
   .science-accordion__titles {
     gap: 2rem;
@@ -605,11 +602,6 @@ h6 {
   }
   .rte .small__text {
     font-size: 0.8125rem;
-  }
-}
-@media (min-width: 768px) {
-  .science-accordion__wave img {
-    height: 100px;
   }
 }
 .testimonials {
@@ -681,6 +673,9 @@ h6 {
   .testimonials .wave-bottom {
     height: 200px;
   }
+  .testimonials--wrapper .section-wave img {
+    height: 200px;
+  }
 }
 @media (min-width: 768px) {
   .testimonials .alien_ravekit {
@@ -688,9 +683,6 @@ h6 {
   }
   .testimonials .section-content.padding-bottom {
     padding-bottom: 2rem;
-  }
-  .testimonials .wave-bottom {
-    height: 100px;
   }
 }
 .gallery .general__subtitle {
@@ -714,15 +706,8 @@ h6 {
   padding-bottom: 0;
 }
 @media (min-width: 1200px) {
-  .shape-wave-top,
-  .shape-wave-bottom {
+  #shape .section-wave .wave-bottom {
     height: 200px;
-  }
-}
-@media (min-width: 768px) {
-  .shape-wave-top,
-  .shape-wave-bottom {
-    height: 180px;
   }
 }
 .ravekit-comparison {
@@ -821,11 +806,11 @@ h6 {
   padding-top: 0;
 }
 @media (min-width: 1200px) {
-  .faq .wave-top {
-    height: 200px;
-  }
   .faq .card__surface .rte p {
     font-size: 0.9375rem;
+  }
+  #faq .section-wave img {
+    height: 200px;
   }
 }
 @media (min-width: 768px) {

@@ -75,6 +75,14 @@
     }
   }
 
+  .testimonials--wrapper {
+    .section-wave {
+      img {
+        height: 200px;
+      }
+    }
+  }
+
 }
 
 
@@ -86,9 +94,6 @@
     }
     .section-content.padding-bottom {
       padding-bottom:2rem;
-    }
-    .wave-bottom {
-      height: 100px;
     }
   }
 

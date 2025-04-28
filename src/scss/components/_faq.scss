@@ -25,12 +25,17 @@
 
 @include respond-to(xlarge) {
   .faq {
-    .wave-top {
-      height:200px;
-    }
     .card__surface {
       .rte p {
         font-size:px-to-rem(15px);
+      }
+    }
+  }
+
+  #faq {
+    .section-wave {
+      img {
+        height: 200px;
       }
     }
   }
