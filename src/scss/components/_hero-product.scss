@@ -40,9 +40,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
     gap: px-to-rem(16px);
     margin-bottom: px-to-rem(32px);
+
+    .hero-product__sticker-wrapper {
+      position: absolute;
+      right: 0;
+      width: px-to-rem(120px);
+      height: px-to-rem(380px);
+      overflow: hidden;
+    }
 
     .hero-product__texture,
     .hero-product__product,
