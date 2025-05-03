@@ -36,7 +36,8 @@
         "sticker": "shopify://shop_images/sticker.webp",
         "button_text": "Comprar Ahora",
         "button_link": "#ravekit-product",
-        "safe_text": "Compra segura"
+        "safe_text": "Compra segura",
+        "safe_icon": "shopify://shop_images/Check_-_SECCION_2.svg"
       }
     },
     "marquee_banner_jAnxqT": {
@@ -70,7 +71,8 @@
       "settings": {
         "enable_marquee": true,
         "background_color": "#ff00ff",
-        "text_color": "#000000"
+        "text_color": "#000000",
+        "speed": 48
       }
     },
     "science_accordion_ixbjxR": {
@@ -246,7 +248,8 @@
       "settings": {
         "enable_marquee": true,
         "background_color": "#6a0dad",
-        "text_color": "#ffffff"
+        "text_color": "#ffffff",
+        "speed": 48
       }
     },
     "ravekit_product_U4a6cU": {
