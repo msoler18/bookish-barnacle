@@ -529,10 +529,11 @@ h6 {
   cursor: pointer;
   transition: color 0.3s, font-weight 0.3s;
   font-size: 0.8333333333rem;
+  opacity: 0.5;
 }
 .science-accordion__item-title.is-active {
   font-weight: 700;
-  opacity: 0.5;
+  opacity: 1;
 }
 .science-accordion__contents {
   margin-top: 1.5rem;
