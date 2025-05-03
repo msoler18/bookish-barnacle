@@ -1,8 +1,8 @@
+import { initPdfPopup } from './components/pdf-popup';
 import { initSmoothScrollToRavekit } from './utils/smoothScrollToRavekit';
 import { initScrollEffects } from './utils/scrollEffects';
 import { initScienceAccordion } from './components/scienceAccordion';
 import RavekitProduct from './components/RavekitProduct';
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,4 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   initSmoothScrollToRavekit();
+
+  initPdfPopup();
 });
