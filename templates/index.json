@@ -72,7 +72,8 @@
         "enable_marquee": true,
         "background_color": "#ff00ff",
         "text_color": "#000000",
-        "speed": 48
+        "speed": 48,
+        "direction": "left"
       }
     },
     "science_accordion_ixbjxR": {
@@ -212,7 +213,7 @@
         "subheading": "¿Te vas a quedar atrás? 😏",
         "enlarge_active_slide": true,
         "disable_media_style": false,
-        "mobile_slide_width": "full_width",
+        "mobile_slide_width": "three_fifths",
         "desktop_slide_width": 20,
         "color_scheme": "scheme3",
         "use_gradient_background": false
@@ -250,7 +251,8 @@
         "enable_marquee": true,
         "background_color": "#6a0dad",
         "text_color": "#ffffff",
-        "speed": 48
+        "speed": 48,
+        "direction": "left"
       }
     },
     "ravekit_product_U4a6cU": {
@@ -365,6 +367,8 @@
         "image_shape": "default",
         "desktop_slide_width": 20,
         "autoscroll_mode": "1",
+        "transition_speed": 2000,
+        "star_icon": "shopify://shop_images/star-svgrepo-com.svg",
         "wave_top_image": "shopify://shop_images/INICIO_SECCION_5_1.svg",
         "wave_bottom_image": "shopify://shop_images/FINAL_SECCION_5-1.svg",
         "alien_image": "shopify://shop_images/STICKER_ALIEN.webp",
@@ -427,6 +431,7 @@
         "image_shape": "default",
         "desktop_slide_width": 20,
         "autoscroll_mode": "1",
+        "transition_speed": 600,
         "color_scheme": "scheme-62501108-4b3c-4a36-a249-ed0f905e2bd1",
         "use_gradient_background": false
       }

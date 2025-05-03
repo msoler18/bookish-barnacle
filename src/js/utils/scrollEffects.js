@@ -1,5 +1,3 @@
-// src/js/utils/scroll-effects.js
-
 /**
  * Simple throttle using requestAnimationFrame.
  * Ensures the provided function is not called more than once per animation frame.
