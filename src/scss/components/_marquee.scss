@@ -3,7 +3,6 @@
 .marquee {
   overflow: hidden;
   width: 100%;
-  background-color: $color-secondary;
   padding: px-to-rem(12px) 0;
 
   &__inner {
@@ -25,7 +24,6 @@
       font-size: font-size(0);
       font-style: italic;
       text-transform: uppercase;
-      color: $color-black;
       display: inline-block;
     }
   }
@@ -33,6 +31,10 @@
   &--active .marquee__inner {
     animation: marquee var(--marquee-speed) linear infinite;
     min-width: 500%;
+  }
+
+  &--right.marquee--active .marquee__inner {
+    animation-direction: reverse;
   }
 }
 

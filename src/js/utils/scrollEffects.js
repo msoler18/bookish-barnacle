@@ -1,9 +1,8 @@
+// src/js/utils/scroll-effects.js
+
 /**
  * Simple throttle using requestAnimationFrame.
  * Ensures the provided function is not called more than once per animation frame.
- *
- * @param {Function} fn - The function to throttle.
- * @returns {Function} A throttled version of the function.
  */
 function throttle(fn) {
   let ticking = false;
@@ -20,51 +19,50 @@ function throttle(fn) {
 
 /**
  * Initializes scroll-based effects:
- *  - Parallax translation on the Y axis, based on `data-parallax-speed`
- *  - Continuous rotation based on `data-rotate-on-scroll`
- *
- * Each element with those data attributes will be updated on scroll.
- *
- * Usage in markup:
- *   <img
- *     src="…"
- *     data-parallax-speed="0.3"
- *     data-rotate-on-scroll="0.001"
- *     alt="…"
- *   />
+ *  • Parallax translation on Y for [data-parallax-speed] (excluyendo al alien)
+ *  • Continuous rotation for [data-rotate-on-scroll] (excluyendo al alien)
+ *  • Alien (.alien_ravekit): NO translate, gira 0→180° según el porcentaje
+ *    de visibilidad en pantalla (0 = fuera, 1 = totalmente dentro).
  */
 export function initScrollEffects() {
-  const parallaxElements = Array.from(
+  const parallaxEls = Array.from(
     document.querySelectorAll('[data-parallax-speed]')
-  ).map(el => ({
-    el,
-    speed: parseFloat(el.dataset.parallaxSpeed),
-  }));
+  )
+    .filter(el => !el.classList.contains('alien_ravekit'))
+    .map(el => ({ el, speed: parseFloat(el.dataset.parallaxSpeed) }));
 
-  const rotationElements = Array.from(
+  const rotationEls = Array.from(
     document.querySelectorAll('[data-rotate-on-scroll]')
-  ).map(el => ({
-    el,
-    factor: parseFloat(el.dataset.rotateOnScroll),
-  }));
+  )
+    .filter(el => !el.classList.contains('alien_ravekit'))
+    .map(el => ({ el, factor: parseFloat(el.dataset.rotateOnScroll) }));
 
-  /**
-   * Handler that applies transforms based on the current scroll position.
-   */
+  const alienEls = Array.from(document.querySelectorAll('.alien_ravekit'));
+
   const onScroll = () => {
     const scrollY = window.scrollY;
+    const vh = window.innerHeight;
 
-    parallaxElements.forEach(({ el, speed }) => {
+    parallaxEls.forEach(({ el, speed }) => {
       el.style.transform = `translateY(${scrollY * speed}px)`;
     });
 
-    rotationElements.forEach(({ el, factor }) => {
-      const current = el.style.transform || '';
-      el.style.transform = `${current} rotate(${scrollY * factor}deg)`;
+    rotationEls.forEach(({ el, factor }) => {
+      const base = el.style.transform.replace(/rotate\([^)]+\)/, '');
+      el.style.transform = `${base} rotate(${scrollY * factor}deg)`;
+    });
+
+    alienEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const progress = Math.min(
+        Math.max((vh - rect.top) / (vh + rect.height), 0),
+        1
+      );
+      const angle = progress * 180;
+      el.style.transform = `rotate(${angle}deg)`;
     });
   };
 
   window.addEventListener('scroll', throttle(onScroll));
-
   onScroll();
 }

@@ -1,185 +1,227 @@
 {%- liquid
-  assign testimonials = section.blocks | where: 'type', 'testimonial'
-  assign crop = section.settings.crop
-  assign image_count = 0
-  assign is_step = section.settings.is_step
+  assign testimonials  = section.blocks  | where: 'type', 'testimonial'
+  assign crop          = section.settings.crop
+  assign image_count   = 0
+  assign is_step       = section.settings.is_step
 -%}
 
 {%- render 'collection-shape-defs',
-  shape: section.settings.image_shape,
+  shape:      section.settings.image_shape,
   section_id: section.id,
   item_count: testimonials.size
 -%}
-
 
 <div class="wave--container testimonials--wrapper">
 
   {% if section.settings.wave_top_image %}
     <div class="section-wave">
       {% render 'render-image',
-        class: "wave-top",
-        img: section.settings.wave_top_image,
-        img_src: section.settings.wave_top_image | image_url: width: 1200,
-        alt: 'Wave top',
-        width: "1200",
-        height: "auto",
-        size: "400 800 1200"
+        class:    "wave-top",
+        img:      section.settings.wave_top_image,
+        img_src:  section.settings.wave_top_image | image_url: width: 1200,
+        alt:      'Wave top',
+        width:    "1200",
+        height:   "auto",
+        size:     "400 800 1200"
       %}
     </div>
   {% endif %}
 
-
   <section
-  class="testimonials relative overflow-hidden bg-scheme-background text-scheme-text {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.is_step %}step-carrusel{% endif %}"
-  data-color-scheme="{{ section.settings.color_scheme }}"
+    class="testimonials relative bg-scheme-background text-scheme-text
+           {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}
+           {% if section.settings.is_step             %}step-carrusel{% endif %}"
+    data-color-scheme="{{ section.settings.color_scheme }}"
   >
-  
+    <div class="section-content
+                {% if section.settings.wave_top_image   %}padding-top{%    endif %}
+                {% if section.settings.wave_bottom_image%}padding-bottom{% endif %}">
+      {% if section.settings.title != blank %}
+        <h2
+          style="color: {{ section.settings.text_color }}"
+          class="testimonials--title inline-heading-rte font-heading heading-standard
+                 heading-style break-words text-center {{ settings.heading_drop_shadow_style }}"
+        >
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
 
-  <div class="section-content {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}">
-    {% if section.settings.title != blank %}
-      <h2 
-      style="color: {{ section.settings.text_color }}"
-      class="testimonials--title inline-heading-rte font-heading heading-standard heading-style break-words text-center {{ settings.heading_drop_shadow_style }}">
-        {{ section.settings.title }}
-      </h2>
-    {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p
+          style="color: {{ section.settings.text_color }}"
+          class="testimonials--subtitle break-words text-center general__subtitle"
+        >
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
 
-    {% if section.settings.subtitle != blank %}
-      <p 
-      style="color: {{ section.settings.text_color }}"
-      class="testimonials--subtitle break-words text-center general__subtitle">
-        {{ section.settings.subtitle }}
-      </p>
-    {% endif %}
-
-    {% if section.settings.alien_image != blank %}
-      <img src="{{ section.settings.alien_image | image_url }}" alt="Alien" class="alien_ravekit">
-    {% endif %}
-
-    <div {% if testimonials.size > 1 %} id="slideshow-{{ section.id }}" class="splide {% if section.settings.title != '' %}section-content-top-margin{% endif %}" {% endif %}>
-      <div class="splide__track">
-        <ul class="splide__list w-full {% if section.settings.title != '' %}{% if section.settings.display_on_card %}mt-5{% else %}mt-10{% endif %}{% endif %}">
-          {%- for block in testimonials -%}
-            {%- liquid
-              assign shape_id = section.id
-              if section.settings.image_shape == 'blob'
-                assign shape_id = section.id | append: '-' | append: forloop.index0
-              endif
-            -%}
-            <li class="splide__slide w-4/5 {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}" {{ block.shopify_attributes }}>
-              <div class="{% if section.settings.display_on_card %}text-scheme-card-text card{% endif %}">
-                <div class="{% if section.settings.display_on_card %}bg-scheme-card card__surface p-5 h-full{% endif %} text-center relative">
-
-                  {%- if block.settings.image != blank -%}
-                    {%- liquid
-                      assign image_count = image_count | plus: 1
-                      assign loading = 'lazy'
-                      if forloop.first and section.index <= 3
-                        assign loading = 'eager'
-                      endif
-                      assign preload = false
-                      if section.index == 1 and image_count == 1
-                        assign preload = true
-                      endif
-                      assign max_width_px = section.settings.max_width | append: 'px'
-                    -%}
-                    <div class="mx-auto mb-5 {% unless section.settings.disable_media_style %}{% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}{% endunless %}" style="max-width: {{ max_width_px }}">
-                      {%- render 'media-image',
-                        media: block.settings.image,
-                        shape: section.settings.image_shape,
-                        shape_id: shape_id,
-                        is_card: section.settings.display_on_card,
-                        crop: crop,
-                        container_id: section.id,
-                        index: forloop.index0,
-                        disable_media_style: section.settings.disable_media_style,
-                        loading: loading,
-                        preload: preload,
-                        sizes: max_width_px,
-                        will_transform: true
-                      -%}
-                    </div>
-                  {%- endif -%}
-
-                  {%- if block.settings.step != blank -%}
-                    <h3 class="step--title font-heading text-xl font-bold uppercase mt-4">
-                      {{ block.settings.step }}
-                    </h3>
-                  {%- endif -%}
-
-                  {%- if block.settings.step_description != blank -%}
-                    <div class="step--subtitle">
-                      {{ block.settings.step_description }}
-                    </div>
-                  {%- endif -%}
-
-                  <blockquote class="text-center {% if block.settings.image != blank %}mt-5{% endif %}">
-                    {%- if block.settings.rating != 'none' -%}
-                      {%- assign stars = block.settings.rating | split: '_' | first | plus: 0 -%}
-                      <span class="mb-5 block text-center tracking-rating">
-                        {%- for i in (1..stars) -%}
-                          ★
-                        {%- endfor -%}
-                      </span>
-                    {%- endif -%}
-
-                    {% if block.settings.quote != blank %}
-                      <div class="inline-rte font-body text-base">
-                        {{ block.settings.quote | replace: '<p>', '<p>&#8220;' | replace: '</p>', '&#8221;</p>' }}
-                      </div>
-                    {% endif %}
-
-                    {% if block.settings.source != blank %}
-                      <footer class="font-heading mt-5 break-words">
-                        {{ block.settings.source }}
-                      </footer>
-                    {% endif %}
-                  </blockquote>
-                </div>
-              </div>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-
-      {% if section.blocks.size > 1 %}
-        <div class="splide__arrows mt-5 flex items-center justify-between px-section">
-          {%- render 'splide-navigation' %}
+      {% if section.settings.alien_image != blank %}
+        <div class="alien_container">
+          {% render 'render-image',
+            class:   "alien_ravekit",
+            img:     section.settings.alien_image,
+            img_src: section.settings.alien_image | image_url: width: 200,
+            alt:     section.settings.alien_image.alt | default: "Alien",
+            width:   "200",
+            height:  "auto",
+            size:    "200 400 800"
+          %}
         </div>
       {% endif %}
-    </div>
-  </div>
 
-  {%- liquid
-    for block in section.blocks
-      case block.type
-        when 'background_shape'
-          render 'block-background-shape', block: block
-        when 'background_pattern'
-          render 'block-background-pattern', block: block, scheme: section.settings.color_scheme
-      endcase
-    endfor
-  -%}
+      <div
+        {% if testimonials.size > 1 %}
+          id="slideshow-{{ section.id }}"
+            class="splide {% if section.settings.title != '' %}section-content-top-margin{% endif %}"
+            data-splide='{"speed": {{ section.settings.transition_speed }}}'
+        {% endif %}
+      >
+        <div class="splide__track">
+          <ul class="splide__list w-full
+                     {% if section.settings.title != '' %}
+                       {% if section.settings.display_on_card %}mt-5{% else %}mt-10{% endif %}
+                     {% endif %}">
+            {%- for block in testimonials -%}
+              {%- liquid
+                assign shape_id = section.id
+                if section.settings.image_shape == 'blob'
+                  assign shape_id = section.id | append: '-' | append: forloop.index0
+                endif
+              -%}
+              <li
+                class="splide__slide w-4/5
+                       {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <div class="{% if section.settings.display_on_card %}text-scheme-card-text card{% endif %}">
+                  <div class="{% if section.settings.display_on_card %}bg-scheme-card card__surface p-5 h-full{% endif %} text-center relative">
+
+                    {%- if block.settings.image != blank -%}
+                      {%- liquid
+                        assign image_count = image_count | plus: 1
+                        assign loading     = 'lazy'
+                        if forloop.first and section.index <= 3
+                          assign loading = 'eager'
+                        endif
+                        assign preload      = false
+                        if section.index == 1 and image_count == 1
+                          assign preload = true
+                        endif
+                        assign max_width_px = section.settings.max_width | append: 'px'
+                      -%}
+                      <div
+                        class="mx-auto mb-5
+                               {% unless section.settings.disable_media_style %}
+                                 {% if settings.media_shadow_direction contains 'top' %}pt-media-shadow{% else %}pb-media-shadow{% endif %}
+                               {% endunless %}"
+                        style="max-width: {{ max_width_px }}"
+                      >
+                        {%- render 'media-image',
+                          media:                block.settings.image,
+                          shape:                section.settings.image_shape,
+                          shape_id:             shape_id,
+                          is_card:              section.settings.display_on_card,
+                          crop:                 crop,
+                          container_id:         section.id,
+                          index:                forloop.index0,
+                          disable_media_style:  section.settings.disable_media_style,
+                          loading:              loading,
+                          preload:              preload,
+                          sizes:                max_width_px,
+                          will_transform:       true
+                        -%}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.step != blank -%}
+                      <h3 class="step--title font-heading text-xl font-bold uppercase mt-4">
+                        {{ block.settings.step }}
+                      </h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.step_description != blank -%}
+                      <div class="step--subtitle">
+                        {{ block.settings.step_description }}
+                      </div>
+                    {%- endif -%}
+
+                    <blockquote class="text-center {% if block.settings.image != blank %}mt-5{% endif %}">
+                      {%- if block.settings.rating != 'none' -%}
+                        {%- assign stars = block.settings.rating | split: '_' | first | plus: 0 -%}
+                        <div class="testimonial__stars">
+                          {%- for i in (1..stars) -%}
+                            {% if section.settings.star_icon %}
+                              {% render 'render-image',
+                                class:   "testimonial__star",
+                                img:     section.settings.star_icon,
+                                img_src: section.settings.star_icon | image_url: width: 16,
+                                alt:     "Star",
+                                width:   "16",
+                                height:  "16",
+                                size:    "16"
+                              %}
+                            {% else %}
+                              <span class="testimonial__star fallback-star">★</span>
+                            {% endif %}
+                          {%- endfor -%}
+                        </div>
+                      {%- endif -%}
+
+                      {% if block.settings.quote != blank %}
+                        <div class="inline-rte font-body text-base">
+                          {{ block.settings.quote | replace: '<p>', '<p>&#8220;' | replace: '</p>', '&#8221;</p>' }}
+                        </div>
+                      {% endif %}
+
+                      {% if block.settings.source != blank %}
+                        <footer class="font-heading mt-5 break-words">
+                          {{ block.settings.source }}
+                        </footer>
+                      {% endif %}
+                    </blockquote>
+
+                  </div>
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        {% if section.blocks.size > 1 %}
+          <div class="splide__arrows mt-5 flex items-center justify-between px-section">
+            {%- render 'splide-navigation' %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {%- liquid
+      for block in section.blocks
+        case block.type
+          when 'background_shape'
+            render 'block-background-shape', block: block
+          when 'background_pattern'
+            render 'block-background-pattern', block: block, scheme: section.settings.color_scheme
+        endcase
+      endfor
+    -%}
   </section>
 
   {% if section.settings.wave_bottom_image %}
     <div class="section-wave">
       {% render 'render-image',
-        class: "wave-bottom",
-        img: section.settings.wave_bottom_image,
-        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
-        alt: 'Wave bottom',
-        width: "1200",
-        height: "auto",
-        size: "400 800 1200"
+        class:    "wave-bottom",
+        img:      section.settings.wave_bottom_image,
+        img_src:  section.settings.wave_bottom_image | image_url: width: 1200,
+        alt:      'Wave bottom',
+        width:    "1200",
+        height:   "auto",
+        size:     "400 800 1200"
       %}
     </div>
   {% endif %}
 
 </div>
-
-
-
 
 
 {% schema %}
@@ -657,6 +699,21 @@
         }
       ],
       "default": "1"
+    },
+    {
+      "type":        "range",
+      "id":          "transition_speed",
+      "label":       "Slide transition speed (ms)",
+      "min":         100,
+      "max":         2000,
+      "step":        100,
+      "unit":        "ms",
+      "default":     600
+    },
+    {
+      "type":        "image_picker",
+      "id":          "star_icon",
+      "label":       "Custom star icon"
     },
     {
   "type": "header",

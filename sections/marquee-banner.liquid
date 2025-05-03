@@ -1,5 +1,21 @@
+{% comment %}
+  Marquee Banner Section
+
+  Settings:
+  - enable_marquee: Toggle animation on/off
+  - background_color: Section background
+  - text_color: Phrase color
+  - speed: Animation duration in seconds
+  - direction: Scroll direction, 'left' or 'right'
+
+  Blocks:
+  - text: Each phrase to scroll
+{% endcomment %}
+
 <section
-  class="marquee {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}"
+  class="marquee
+    {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}
+    marquee--{{ section.settings.direction }}"
   style="
     background-color: {{ section.settings.background_color }};
     --marquee-speed: {{ section.settings.speed }}s;
@@ -58,12 +74,22 @@
     {
       "type": "range",
       "id": "speed",
-      "label": "Velocidad scroll (seconds)",
+      "label": "Scroll speed (seconds)",
       "min": 5,
       "max": 60,
       "step": 1,
       "unit": "s",
       "default": 20
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Scroll direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
     }
   ],
   "blocks": [

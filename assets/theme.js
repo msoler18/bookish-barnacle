@@ -31,28 +31,36 @@
     };
   }
   function initScrollEffects() {
-    const parallaxElements = Array.from(document.querySelectorAll("[data-parallax-speed]")).map((el) => ({
+    const parallaxEls = Array.from(document.querySelectorAll("[data-parallax-speed]")).filter((el) => !el.classList.contains("alien_ravekit")).map((el) => ({
       el,
       speed: parseFloat(el.dataset.parallaxSpeed)
     }));
-    const rotationElements = Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).map((el) => ({
+    const rotationEls = Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).filter((el) => !el.classList.contains("alien_ravekit")).map((el) => ({
       el,
       factor: parseFloat(el.dataset.rotateOnScroll)
     }));
+    const alienEls = Array.from(document.querySelectorAll(".alien_ravekit"));
     const onScroll = () => {
       const scrollY = window.scrollY;
-      parallaxElements.forEach(({
+      const vh = window.innerHeight;
+      parallaxEls.forEach(({
         el,
         speed
       }) => {
         el.style.transform = `translateY(${scrollY * speed}px)`;
       });
-      rotationElements.forEach(({
+      rotationEls.forEach(({
         el,
         factor
       }) => {
-        const current = el.style.transform || "";
-        el.style.transform = `${current} rotate(${scrollY * factor}deg)`;
+        const base = el.style.transform.replace(/rotate\([^)]+\)/, "");
+        el.style.transform = `${base} rotate(${scrollY * factor}deg)`;
+      });
+      alienEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const progress = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
+        const angle = progress * 180;
+        el.style.transform = `rotate(${angle}deg)`;
       });
     };
     window.addEventListener("scroll", throttle(onScroll));
