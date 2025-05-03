@@ -24,6 +24,10 @@
 .gallery.padding-bottom {
   padding-bottom: 0;
 }
+
+.certifications {
+  gap:0.25rem;
+}
   
 @include respond-to(xlarge) {
   

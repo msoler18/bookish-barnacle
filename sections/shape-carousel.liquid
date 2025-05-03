@@ -62,14 +62,32 @@
       </div>
     {% endunless %}
 
-    {% if section.settings.certification_icon_1 != blank or section.settings.certification_icon_2 != blank %}
-      <div class="flex justify-center items-center gap-5 mt-5">
-        {% if section.settings.certification_icon_1 != blank %}
-          <img src="{{ section.settings.certification_icon_1 | image_url: width: 100 }}" alt="Certificado 1" class="w-16">
-        {% endif %}
-        {% if section.settings.certification_icon_2 != blank %}
-          <img src="{{ section.settings.certification_icon_2 | image_url: width: 100 }}" alt="Certificado 2" class="w-16">
-        {% endif %}
+    {%- assign cert_array = '1,2,3,4,5' | split: ',' -%}
+
+    {% assign has_cert = false %}
+    {% for idx in cert_array %}
+      {% assign key = 'certification_icon_' | append: idx %}
+      {% if section.settings[key] != blank %}
+        {% assign has_cert = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_cert %}
+      <div class="certifications flex justify-center items-center mt-5">
+        {% for idx in cert_array %}
+          {% assign key = 'certification_icon_' | append: idx %}
+          {% assign logo = section.settings[key] %}
+          {% if logo %}
+            {% render 'render-image',
+              class: "w-16 certifications__img",
+              img: logo,
+              alt: 'Certificado ' | append: idx,
+              size: "100",
+              width: "100",
+              height: "auto"
+            %}
+          {% endif %}
+        {% endfor %}
       </div>
     {% endif %}
 
@@ -311,6 +329,21 @@
       "type": "image_picker",
       "id": "certification_icon_2",
       "label": "Certificado 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_3",
+      "label": "Certificado 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_4",
+      "label": "Certificado 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_5",
+      "label": "Certificado 5"
     },
     {
       "type": "text",

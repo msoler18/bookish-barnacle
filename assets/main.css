@@ -747,6 +747,9 @@ h6 {
 .gallery.padding-bottom {
   padding-bottom: 0;
 }
+.certifications {
+  gap: 0.25rem;
+}
 @media (min-width: 1200px) {
   #shape .section-wave .wave-bottom {
     height: 200px;

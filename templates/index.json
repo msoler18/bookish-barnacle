@@ -446,6 +446,8 @@
         "video": "shopify://files/videos/VideoDocThomas.mp4",
         "mode": "autoplay",
         "playback": "inline",
+        "sound_enabled": true,
+        "show_controls": true,
         "button_label": "¡ Pedir mi ravekit !",
         "button_link": "#ravekit-product",
         "color_scheme": "scheme3",
