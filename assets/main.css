@@ -336,8 +336,10 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   gap: 1rem;
   margin-bottom: 2rem;
+  min-height: 25rem;
 }
 .hero-product__images .hero-product__texture,
 .hero-product__images .hero-product__product,
@@ -565,9 +567,17 @@ h6 {
 .rte .small__text {
   display: block;
   font-style: italic;
-  font-size: 0.3348979767rem;
+  font-size: 0.3348979767rem !important;
   margin-top: 1rem;
   padding-left: 1.5625rem;
+}
+.rte .small__text p {
+  font-size: 0.3348979767rem !important;
+}
+.rte p {
+  font-size: 0.5787037037rem;
+  padding-left: 1.5625rem;
+  margin-bottom: 0.75rem;
 }
 .rte ul {
   list-style: none;

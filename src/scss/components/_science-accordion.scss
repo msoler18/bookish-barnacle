@@ -83,9 +83,17 @@
   .small__text {
     display: block;
     font-style: italic;
-    font-size:font-size(-6);
+    font-size:font-size(-6)!important;
     margin-top: 1rem;
     padding-left: px-to-rem(25px);
+    p {
+      font-size:font-size(-6)!important;
+    }
+  }
+  p {
+    font-size:font-size(-3);
+    padding-left: px-to-rem(25px);
+    margin-bottom: px-to-rem(12px);
   }
   ul {
     list-style: none;
