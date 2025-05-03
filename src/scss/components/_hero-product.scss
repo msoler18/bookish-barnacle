@@ -48,6 +48,8 @@
     .hero-product__sticker {
       max-width: 100%;
       height: auto;
+      will-change: transform;
+      transition: transform 0.2s ease-out;
     }
 
     .hero-product__sticker {
@@ -77,6 +79,10 @@
       width: 100%;
       max-width: px-to-rem(300px);
     }
+  }
+
+  .safe-icon {
+    display: block;
   }
 
   &__safe-text {
