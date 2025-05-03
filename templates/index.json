@@ -131,7 +131,8 @@
         "heading": "NO ES MAGIA, ES CIENCIA",
         "subtitle": "Usamos ingredientes de origen natural, cuya efectividad está avalada por diversos estudios científicos. Todas las formulaciones tienen registro FDA y buenas prácticas de manufactura",
         "background_color": "#ffffff",
-        "wave_image": "shopify://shop_images/INICIO_SECCION_3.svg"
+        "wave_image": "shopify://shop_images/INICIO_SECCION_3.svg",
+        "check_icon": "shopify://shop_images/Check_-_SECCION_2.svg"
       }
     },
     "image_focus_carousel_mm9UR3": {
