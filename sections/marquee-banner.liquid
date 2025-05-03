@@ -1,4 +1,10 @@
-<section class="marquee {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}" style="background-color: {{ section.settings.background_color }}">
+<section
+  class="marquee {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}"
+  style="
+    background-color: {{ section.settings.background_color }};
+    --marquee-speed: {{ section.settings.speed }}s;
+  "
+>
   <div class="marquee__inner">
     {% if section.settings.enable_marquee %}
       <div class="marquee__group">
@@ -27,50 +33,58 @@
   </div>
 </section>
 
-
 {% schema %}
-  {
-    "name": "Marquee Banner",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_marquee",
-        "label": "Enable Marquee Animation",
-        "default": true
-      },
-      {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#ff00ff"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#000000"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "text",
-        "name": "Frase",
-        "settings": [
-          {
-            "type": "text",
-            "id": "text",
-            "label": "Texto de la frase"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 4,
-    "presets": [
-      {
-        "name": "Marquee Banner",
-        "category": "Banners"
-      }
-    ]
-  }
-  {% endschema %}
-  
+{
+  "name": "Marquee Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_marquee",
+      "label": "Enable Marquee Animation",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ff00ff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Velocidad scroll (seconds)",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Phrase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Phrase Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Marquee Banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}

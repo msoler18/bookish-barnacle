@@ -13,7 +13,7 @@
       "type": "header",
       "settings": {
         "logo": "shopify://shop_images/Logo_Footer_4x_42bee62c-9b37-41a9-8218-c40e4d548a64.webp",
-        "header_bg": "#000000",
+        "header_bg": "#131410",
         "header_sticky": true
       }
     },
@@ -28,7 +28,7 @@
       "type": "hero-product",
       "name": "Hero Product",
       "settings": {
-        "background_color": "#0a0a0a",
+        "background_color": "#131410",
         "title": "EL SUPLEMENTO <#1> PARA RAVERS",
         "subtitle": "Siente la música, no el bajón",
         "texture": "shopify://shop_images/HERO-FONDO.webp",
@@ -361,8 +361,8 @@
         "image_shape": "default",
         "desktop_slide_width": 20,
         "autoscroll_mode": "1",
-        "wave_top_image": "shopify://shop_images/INICIO_SECCION43.webp",
-        "wave_bottom_image": "shopify://shop_images/FINAL_SECCION_5_1.webp",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_5_1.svg",
+        "wave_bottom_image": "shopify://shop_images/FINAL_SECCION_5-1.svg",
         "alien_image": "shopify://shop_images/STICKER_ALIEN.webp",
         "color_scheme": "scheme1",
         "use_gradient_background": false
@@ -513,7 +513,7 @@
       "settings": {
         "title": "Los ingredientes más pro  😎",
         "slideshow_focus": "center",
-        "wave_top_image": "shopify://shop_images/SEPARADORESSECCION_7_PC_39834244-eb90-4718-b428-d31718997090.webp",
+        "wave_top_image": "shopify://shop_images/SEPARADOR_4-1.svg",
         "wave_bottom_image": "shopify://shop_images/SEPARADOR_SECCION_9.webp",
         "subtitle": "<p><strong>Ingredientes de origen natural,</strong></p><p>científicamente comprobados y registrados por la FDA con buenas prácticas de manufactura.</p><p></p>",
         "certification_icon_1": "shopify://shop_images/LOGO_FDA_2.svg",
@@ -582,7 +582,7 @@
         "title": "RAVEKIT VS EL RESTO",
         "title_color": "#ffffff",
         "main_image": "shopify://shop_images/Screenshot_2025-04-26_at_11.21.31_PM.png",
-        "background_color": "#000000",
+        "background_color": "#131410",
         "button_text": "LO QUIERO AHORA",
         "button_link": "#ravekit-product"
       }
@@ -681,7 +681,7 @@
         "heading_text_style": "body",
         "two_columns_desktop": true,
         "title": "FAQ",
-        "wave_top_image": "shopify://shop_images/INICIO_SECCION_FAQ.webp",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_FAQ-3.svg",
         "richtext": "¿Te quedan dudas? Aquí fijo encuentras la respuesta 👇",
         "color_scheme": "scheme1",
         "use_gradient_background": false

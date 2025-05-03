@@ -476,7 +476,7 @@ h6 {
   display: inline-block;
 }
 .marquee--active .marquee__inner {
-  animation: marquee 20s linear infinite;
+  animation: marquee var(--marquee-speed) linear infinite;
   min-width: 500%;
 }
 @keyframes marquee {

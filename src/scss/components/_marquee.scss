@@ -22,7 +22,7 @@
     span {
       font-family: $font-family-headings;
       font-weight: $font-weight-bold;
-      font-size: font-size(0); 
+      font-size: font-size(0);
       font-style: italic;
       text-transform: uppercase;
       color: $color-black;
@@ -31,18 +31,14 @@
   }
 
   &--active .marquee__inner {
-    animation: marquee 20s linear infinite;
+    animation: marquee var(--marquee-speed) linear infinite;
     min-width: 500%;
   }
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%); 
-  }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 @include respond-to(medium) {
