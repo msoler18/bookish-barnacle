@@ -929,6 +929,7 @@ h6 {
 }
 .faq .card .card__surface .rte p {
   font-size: 0.6944444444rem;
+  line-height: 1rem;
 }
 .faq.padding-top {
   padding-top: 0;
@@ -1250,6 +1251,7 @@ h6 {
 }
 .custom-footer .footer-menus {
   display: flex;
+  justify-content: space-between;
   padding: 0 5%;
 }
 .custom-footer .footer-menus ul {

@@ -14,16 +14,14 @@
       "disabled": true,
       "settings": {
         "logo": "shopify://shop_images/Logo_Footer_4x_42bee62c-9b37-41a9-8218-c40e4d548a64.webp",
-        "header_bg": "#131410",
-        "header_sticky": true
+        "header_bg": "#131410"
       }
     },
     "free-shipping-banner": {
       "type": "free-shipping-banner",
       "settings": {
         "banner_text": "<p>Envío gratis a partir de $65.000 en compras</p>",
-        "banner_image": "shopify://shop_images/social_proof_3x_1_7a9408b1-a34c-4ff7-b66f-8fbcfe9aa26c.webp",
-        "sticky": true
+        "banner_image": "shopify://shop_images/social_proof_3x_1_7a9408b1-a34c-4ff7-b66f-8fbcfe9aa26c.webp"
       }
     },
     "hero_product_aDJwei": {
