@@ -8,7 +8,12 @@
   <div class="container header__container">
     <a href="/" class="header__logo">
       {% if section.settings.logo != blank %}
-        <img src="{{ section.settings.logo | image_url }}" alt="{{ shop.name }}" width="120" height="auto" />
+        <img
+          src="{{ section.settings.logo | image_url }}"
+          alt="{{ shop.name }}"
+          width="120"
+          height="auto"
+        />
       {% else %}
         <span>{{ shop.name }}</span>
       {% endif %}
@@ -33,12 +38,6 @@
       "id": "header_bg",
       "label": "Header Background",
       "default": "#000000"
-    },
-    {
-      "type": "checkbox",
-      "id": "header_sticky",
-      "label": "Enable sticky header",
-      "default": true
     }
   ]
 }

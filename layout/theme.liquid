@@ -254,12 +254,18 @@
       {{- 'general.accessibility.skip_to_content' | t -}}
     </a>
 
-    <main id="MainContent" class="overflow-hidden">
+    {%- section 'header' -%}
+    {%- sections 'free-shipping-banner' -%}
+    
+    <main id="MainContent">
       {{ content_for_layout }}
     </main>
 
     {%- sections 'footer-group' -%}
     {%- sections 'overlay-group' -%}
+
+
+    {%- section 'footer' -%}
 
     <div
       id="screenreader-announce"

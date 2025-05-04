@@ -1,12 +1,14 @@
+{%- comment -%} sections/free-shipping-banner.liquid {%- endcomment -%}
 <div class="free-shipping-banner">
-  
-  <div class="free-shipping-banner__text-container">
+  <div class="free-shipping-banner__text-container" data-banner-text>
     <div class="container">
       <div class="free-shipping-banner__text">
         {{ section.settings.banner_text }}
       </div>
     </div>
   </div>
+
+  <div class="free-shipping-banner__spacer"></div>
 
   {% if section.settings.banner_image %}
     <div class="free-shipping-banner__image-container">
@@ -23,8 +25,8 @@
       </div>
     </div>
   {% endif %}
-
 </div>
+
 
 {% schema %}
 {
@@ -40,6 +42,12 @@
       "type": "image_picker",
       "id": "banner_image",
       "label": "Imagen del banner"
+    },
+    {
+      "type": "text",
+      "id": "banner_alt",
+      "label": "Alt de la imagen banner",
+      "default": "Banner envío gratis"
     }
   ],
   "presets": [

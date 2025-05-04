@@ -32,6 +32,9 @@
 .gallery__nutri-button-wrapper {
   display: flex;
   margin: 2rem 0 2rem 1rem;
+  svg {
+    width: 20px;
+  }
 }
 
 .gallery__nutri-button {

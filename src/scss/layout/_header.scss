@@ -23,6 +23,7 @@
   &__cart {
     width: px-to-rem(24px);
     color: $color-secondary;
+
     .cart-icon {
       svg {
         width: 30px;
@@ -30,6 +31,7 @@
     }
   }
 
+  /* Sólo si está activo el setting se añade position: sticky */
   &--sticky {
     position: sticky;
     top: 0;
@@ -37,7 +39,6 @@
     box-shadow: 0 px-to-rem(2px) px-to-rem(10px) rgba($color-black, 0.2);
   }
 }
-
 
 @include respond-to(medium) {
   .hero-product {
@@ -58,18 +59,14 @@
   }
 }
 
-
 @include respond-to(xxlarge) {
-  
   .header {
     display: flex;
     justify-content: space-around;
-    &__logo {
-      img {
-        max-width: 10rem;
-        width: 100%;
-      }
+
+    &__logo img {
+      max-width: 10rem;
+      width: 100%;
     }
   }
-
 }

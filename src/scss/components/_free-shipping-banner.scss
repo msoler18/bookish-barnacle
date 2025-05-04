@@ -2,9 +2,14 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
 
-@use '../abstracts' as *;
-
 .free-shipping-banner {
+  width: 100%;
+
+  &__spacer {
+    display: none;
+    width: 100%;
+    height: 0;
+  }
 
   &__text-container {
     background-color: $color-secondary;
@@ -17,7 +22,7 @@
       color: $color-black;
       font-weight: $font-weight-bold;
       margin: 0 auto;
-    
+
       p, span {
         font-family: inherit !important;
         font-size: inherit !important;
@@ -26,7 +31,18 @@
         margin: 0;
       }
     }
-    
+  }
+
+  &__text-container--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+
+  &__text-container--sticky + &__spacer {
+    display: block;
   }
 
   &__image-container {
@@ -38,37 +54,48 @@
       margin: 0 auto;
     }
   }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+
+  &--sticky + main,
+  &--sticky + .shopify-section,
+  &--sticky ~ main {
+    margin-top: px-to-rem(50px);
+  }
 }
 
 @include respond-to(xlarge) {
   .free-shipping-banner__text-container {
-    padding:1rem!important;
+    padding: 1rem !important;
     .free-shipping-banner__text p {
-      font-size:px-to-rem(20px)!important;
+      font-size: px-to-rem(20px) !important;
     }
   }
   .free-shipping-banner__image {
-    width: 60%!important;
+    width: 60% !important;
   }
 }
 
 @include respond-to(medium) {
-  .free-shipping-banner {
-    &__text-container {
-      display: flex;
-      justify-content: center;
-      padding: px-to-rem(24px);
+  .free-shipping-banner__text-container {
+    display: flex;
+    justify-content: center;
+    padding: px-to-rem(24px);
 
-      .free-shipping-banner__text {
-        font-size: font-size(3);
-      }
+    .free-shipping-banner__text {
+      font-size: font-size(3);
     }
+  }
 
-    &__image-container {
-      display: flex;
-      justify-content: center;
-      padding: px-to-rem(24px) 0;
-      
-    }
+  .free-shipping-banner__image-container {
+    display: flex;
+    justify-content: center;
+    padding: px-to-rem(24px) 0;
   }
 }

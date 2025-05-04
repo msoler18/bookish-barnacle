@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* src/scss/main.scss */
 *,
 *::before,
@@ -248,6 +250,14 @@ h6 {
     max-width: 100%;
   }
 }
+.free-shipping-banner {
+  width: 100%;
+}
+.free-shipping-banner__spacer {
+  display: none;
+  width: 100%;
+  height: 0;
+}
 .free-shipping-banner__text-container {
   background-color: #00FF79;
   padding: 0.625rem 0.3125rem;
@@ -268,12 +278,34 @@ h6 {
   text-transform: uppercase;
   margin: 0;
 }
+.free-shipping-banner__text-container--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+.free-shipping-banner__text-container--sticky + .free-shipping-banner__spacer {
+  display: block;
+}
 .free-shipping-banner__image-container .free-shipping-banner__image {
   width: 100%;
   max-width: 86.25rem;
   height: auto;
   display: block;
   margin: 0 auto;
+}
+.free-shipping-banner--sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+.free-shipping-banner--sticky + main,
+.free-shipping-banner--sticky + .shopify-section,
+.free-shipping-banner--sticky ~ main {
+  margin-top: 3.125rem;
 }
 @media (min-width: 1200px) {
   .free-shipping-banner__text-container {
@@ -754,6 +786,9 @@ h6 {
   display: flex;
   margin: 2rem 0 2rem 1rem;
 }
+.gallery__nutri-button-wrapper svg {
+  width: 20px;
+}
 .gallery__nutri-button {
   font-size: 0.9375rem;
   font-weight: bold;
@@ -1201,6 +1236,52 @@ h6 {
     max-width: 10rem;
     width: 100%;
   }
+}
+.footer-separator {
+  overflow: hidden;
+}
+.footer-separator img {
+  display: block;
+  width: 100%;
+}
+.custom-footer .footer-logo img {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.custom-footer .footer-menus {
+  display: flex;
+  padding: 0 5%;
+}
+.custom-footer .footer-menus ul {
+  display: flex;
+  flex-direction: column;
+}
+.custom-footer .footer-menus li {
+  font-size: 0.75rem;
+}
+.custom-footer .contact {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: left;
+}
+.custom-footer .contact__label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.custom-footer .policies-menu {
+  margin-top: 1.5rem;
+}
+.custom-footer .copyright {
+  font-family: "PPMonumentExtended", sans-serif;
+  font-style: italic;
+  font-size: 0.5625rem;
+  margin: 1.5rem 0;
+}
+.footer-menus--left ul {
+  text-align: left;
+}
+.footer-menus--right ul {
+  text-align: right;
 }
 .general__subtitle,
 .general__subtitle p {
