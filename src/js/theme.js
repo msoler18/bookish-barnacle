@@ -6,7 +6,21 @@ import { initFreeShippingSticky }   from './utils/freeShippingSticky';
 import RavekitProduct from './components/RavekitProduct';
 
 
+/**
+ * Initializes various front-end features once the DOM is fully loaded.
+ *
+ * This includes:
+ * - Scroll effects on elements
+ * - Science accordion functionality
+ * - Instantiating the Ravekit product component
+ * - Enabling smooth scrolling to the Ravekit section
+ * - Setting up the PDF popup modal
+ * - Making the free shipping banner sticky on scroll
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  initFreeShippingSticky();
 
   initScrollEffects();
 
@@ -16,10 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new RavekitProduct(container);
   });
 
-
   initSmoothScrollToRavekit();
 
   initPdfPopup();
-
-  initFreeShippingSticky();
+  
 });

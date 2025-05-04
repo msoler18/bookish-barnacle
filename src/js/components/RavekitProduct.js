@@ -1,3 +1,15 @@
+/**
+ * RavekitProduct
+ * 
+ * Handles product interactions on a product detail page, including:
+ * - Variant selection
+ * - Quantity updates
+ * - Subscription/single purchase options
+ * - Dynamic price updates
+ * - Add to cart behavior
+ * - Free shipping countdown timer
+ */
+
 export default class RavekitProduct {
 
   constructor(container) {
@@ -122,9 +134,9 @@ export default class RavekitProduct {
     const qty = Number(this.qtyInput.value) || 1;
     const total = unit * qty;                     
   
-    console.log('[DEBUG] rawCents, unit, qty, total →', {
-      rawCents, unit, qty, total
-    });
+    // console.log('[DEBUG] rawCents, unit, qty, total →', {
+    //   rawCents, unit, qty, total
+    // });
   
     const formatted = total.toLocaleString('es-CO', {
       style:    'currency',
@@ -148,7 +160,7 @@ export default class RavekitProduct {
     } else {
       this.timerBlock.style.display = 'none';
     }
-    console.log('[RavekitProduct] timer?', { total, threshold, visible: total < threshold });
+    // console.log('[RavekitProduct] timer?', { total, threshold, visible: total < threshold });
   }
 
   runCountdown(end) {
@@ -178,7 +190,7 @@ export default class RavekitProduct {
     if (this.purchaseType==='subscription') {
       payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
     }
-    console.log('[RavekitProduct] Payload to cart:', payload);
+    // console.log('[RavekitProduct] Payload to cart:', payload);
     fetch('/cart/add.js',{
       method:'POST',
       headers:{'Content-Type':'application/json'},

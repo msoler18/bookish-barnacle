@@ -1,15 +1,13 @@
 {%- liquid
   assign product_handle = section.settings.product_handle
-  assign product        = all_products[product_handle]
+  assign product = all_products[product_handle]
 -%}
 
 <section class="ravekit-product" id="ravekit-product">
   <div class="section-content">
     {% if product %}
-      <!-- Título -->
       <h2 class="ravekit-product__title">{{ product.title }}</h2>
 
-      <!-- Precio OTP inicial -->
       <div class="ravekit-product__price">
         {% if product.variants.size > 0 %}
           {{ product.variants.first.price | money }}
@@ -30,8 +28,8 @@
         {% for i in (1..3) %}
           {% assign img_key = 'feature_image_' | append: i %}
           {% assign txt_key = 'feature_text_'  | append: i %}
-          {% assign icon    = section.settings[img_key] %}
-          {% assign text    = section.settings[txt_key] %}
+          {% assign icon = section.settings[img_key] %}
+          {% assign text = section.settings[txt_key] %}
           <div class="feature-item">
             {% if icon %}
               {% render 'render-image',
@@ -109,8 +107,12 @@
             </ul>
 
             <ul class="subscription-badges mb-4">
-              <li class="badge badge--save">{{ section.settings.badge_save_text }}</li>
-              <li class="badge badge--shipping">{{ section.settings.badge_shipping_text }}</li>
+              <li class="badge badge--save">
+                {{ section.settings.badge_save_text }}
+              </li>
+              <li class="badge badge--shipping">
+                {{ section.settings.badge_shipping_text }}
+              </li>
             </ul>
 
           </div>
@@ -159,17 +161,17 @@
       <script type="application/json" id="RavekitProductData">
       {
         "settings": {
-          "timerDuration": {{ section.settings.timer_duration_minutes }},
-          "timerText":     "{{ section.settings.timer_text }}",
-          "timerSuffix":   "{{ section.settings.timer_suffix_text }}",
-          "buttonText":    "{{ section.settings.text_button_label }}",
+          "timerDuration":{{ section.settings.timer_duration_minutes }},
+          "timerText": "{{ section.settings.timer_text }}",
+          "timerSuffix":"{{ section.settings.timer_suffix_text }}",
+          "buttonText":"{{ section.settings.text_button_label }}",
           "freeShippingThreshold": {{ section.settings.free_shipping_threshold }}
         },
         "variants": [
           {% for variant in product.variants %}
             {
               "id": {{ variant.id }},
-              "price": {{ variant.price }},
+              "price":{{ variant.price }},
               "priceFormatted": "{{ variant.price | money }}",
               "selling_plans": [
                 {% for alloc in variant.selling_plan_allocations %}
@@ -188,7 +190,7 @@
       </script>
 
     {% else %}
-      <p>Producto no encontrado.</p>
+      <p>Product doesn't exist</p>
     {% endif %}
   </div>
 </section>

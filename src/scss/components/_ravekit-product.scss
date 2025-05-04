@@ -162,7 +162,7 @@
   }
 
   .otp {
-    font-family: 'PPMonumentExtended';
+    font-family: $font-family-headings;
     font-style: italic;
     font-size:px-to-rem(9px);
     text-transform: uppercase;
@@ -180,7 +180,7 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      font-family: 'PPMonumentExtended';
+      font-family: $font-family-headings;
       font-style: italic;
       font-size:px-to-rem(10px);
       text-transform: uppercase;
@@ -240,7 +240,7 @@
 
   .add-to-cart {
     .btn-price {
-      font-family: 'FS Koopman';
+      font-family: $font-family-buttons;
       font-style: italic;
     }
   }
@@ -253,7 +253,7 @@
     padding: 0;
 
     .badge {
-      font-family: 'PPMonumentExtended';
+      font-family: $font-family-headings;
       font-style: italic;
       font-size:px-to-rem(8px);
       text-transform: uppercase;
@@ -273,7 +273,7 @@
   }
 
   select.subscription-plan-select {
-    font-family: 'PPMonumentExtended';
+    font-family: $font-family-headings;
     font-size: px-to-rem(10px);
     border: 2px solid $color-white;
     border-radius: $spacing-unit;
@@ -295,7 +295,7 @@
   }
 
   .free-shipping-timer {
-    font-family: 'Dela Gothic One';
+    font-family: $font-family-alternative;
     font-weight: 700;
     color: #fff;
     display: flex !important;
@@ -313,7 +313,7 @@
 
 @include respond-to(xlarge) {
   .ravekit-product {
-    padding:8% 20%;
+    padding:8% 38%;
     &__price {
       text-align: center;
     }
@@ -333,6 +333,9 @@
     }
     &__cart {
       align-items: center;
+    }
+    .free-shipping-timer {
+      font-size:px-to-rem(12px);
     }
   }
 

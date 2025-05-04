@@ -1,3 +1,16 @@
+/**
+ * Initializes the PDF popup functionality.
+ * 
+ * This function sets up event listeners for opening and closing
+ * a modal popup, typically used to display a PDF or similar content.
+ * 
+ * Elements must include the following data attributes:
+ * - [data-nutri-open]: Triggers to open the popup
+ * - [data-nutri-overlay]: The background overlay element
+ * - [data-nutri-popup]: The modal content element
+ * - [data-nutri-close]: Button or element to close the popup
+ */
+
 export function initPdfPopup() {
   const openers = document.querySelectorAll('[data-nutri-open]');
   const overlay = document.querySelector('[data-nutri-overlay]');

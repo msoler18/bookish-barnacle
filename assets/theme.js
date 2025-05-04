@@ -227,12 +227,6 @@
       const unit = rawCents / 100;
       const qty = Number(this.qtyInput.value) || 1;
       const total = unit * qty;
-      console.log("[DEBUG] rawCents, unit, qty, total \u2192", {
-        rawCents,
-        unit,
-        qty,
-        total
-      });
       const formatted = total.toLocaleString("es-CO", {
         style: "currency",
         currency: "COP"
@@ -252,11 +246,6 @@
       } else {
         this.timerBlock.style.display = "none";
       }
-      console.log("[RavekitProduct] timer?", {
-        total,
-        threshold,
-        visible: total < threshold
-      });
     }
     runCountdown(end) {
       const update = () => {
@@ -284,7 +273,6 @@
       if (this.purchaseType === "subscription") {
         payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
       }
-      console.log("[RavekitProduct] Payload to cart:", payload);
       fetch("/cart/add.js", {
         method: "POST",
         headers: {
@@ -297,6 +285,7 @@
 
   // src/js/theme.js
   document.addEventListener("DOMContentLoaded", () => {
+    initFreeShippingSticky();
     initScrollEffects();
     initScienceAccordion();
     document.querySelectorAll(".ravekit-product").forEach((container) => {
@@ -304,7 +293,6 @@
     });
     initSmoothScrollToRavekit();
     initPdfPopup();
-    initFreeShippingSticky();
   });
 })();
 //# sourceMappingURL=theme.js.map
