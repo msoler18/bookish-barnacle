@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "header": {
       "type": "header",
@@ -260,7 +260,6 @@
       "name": "Ravekit Product Section",
       "settings": {
         "product_handle": "3-ravekit",
-        "intro_text": "El mejor suplemento para Ravers.",
         "feature_image_1": "shopify://shop_images/VEGAN.svg",
         "feature_text_1": "100% vegano",
         "feature_image_2": "shopify://shop_images/KETO_2.svg",
