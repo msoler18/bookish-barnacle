@@ -260,12 +260,26 @@
       "name": "Ravekit Product Section",
       "settings": {
         "product_handle": "3-ravekit",
+        "intro_text": "El mejor suplemento para Ravers.",
         "feature_image_1": "shopify://shop_images/VEGAN.svg",
         "feature_text_1": "100% vegano",
         "feature_image_2": "shopify://shop_images/KETO_2.svg",
         "feature_text_2": "Keto friendly",
         "feature_image_3": "shopify://shop_images/FDA_1.svg",
-        "feature_text_3": "Registrado en FDA"
+        "feature_text_3": "Registrado en FDA",
+        "text_single_label": "Compra una sola vez",
+        "text_subs_label": "Suscríbete y ahorra",
+        "sub_bullet_1": "Modifica, pausa o cancela en cualquier momento",
+        "sub_bullet_2": "Acceso a la comunidad RAVEKIT VIP",
+        "sub_bullet_3": "¡Descuentos y beneficios únicos!",
+        "badge_save_text": "Ahorra un 15%",
+        "badge_shipping_text": "Envió gratis",
+        "text_qty_label": "Cantidad",
+        "text_button_label": "Añadir al carrito",
+        "timer_text": "Tienes",
+        "timer_suffix_text": "para tener envío gratis",
+        "timer_duration_minutes": 10,
+        "free_shipping_threshold": 65000
       }
     },
     "scrolling_logos_bayt9y": {

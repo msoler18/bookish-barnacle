@@ -1,82 +1,195 @@
 export default class RavekitProduct {
+
   constructor(container) {
-    this.container = container;
+    this.container    = container;
+    const dataEl      = document.getElementById('RavekitProductData');
+    this.data         = dataEl ? JSON.parse(dataEl.textContent) : {};
+    this.settings     = this.data.settings || {};
+    this.variants     = this.data.variants || [];
 
-    this.variantButtons = container.querySelectorAll('.variant-button');
-    this.variantInput = container.querySelector('.variant-id-input'); // (opcional si luego lo necesitas)
-    this.minusBtn = container.querySelector('.quantity-decrease');
-    this.plusBtn = container.querySelector('.quantity-increase');
-    this.quantityInput = container.querySelector('.quantity-input');
-    this.addToCartBtn = container.querySelector('.add-to-cart');
+    this.variantBtns  = container.querySelectorAll('.variant-button');
+    this.qtyDec       = container.querySelector('.quantity-decrease');
+    this.qtyInc       = container.querySelector('.quantity-increase');
+    this.qtyInput     = container.querySelector('.quantity-input');
+    this.addBtn       = container.querySelector('.add-to-cart');
+    this.btnSurface   = this.addBtn.querySelector('.push-btn__surface .btn-price');
 
-    this.selectedVariantId = null; 
+    this.radioSingle  = container.querySelector('input[value="single"]');
+    this.radioSub     = container.querySelector('input[value="subscription"]');
+    this.singlePrice  = container.querySelector('.single-price');
+    this.subsPrice    = container.querySelector('.subs-price');
+    this.planSelect   = container.querySelector('#selling_plan_select');
 
-    this.bindEvents();
+    this.timerBlock   = container.querySelector('.free-shipping-timer');
+    this.timerTextEl  = container.querySelector('.timer-text');
+    this.timerCountEl = container.querySelector('.timer-countdown');
+    this.timerSuffix  = container.querySelector('.timer-suffix');
+
+    this.selectedVariant = null;
+    this.purchaseType    = 'single';
+    this.timerId         = null;
+
+    this.init();
   }
 
-  bindEvents() {
+  init() {
+    if (this.variantBtns.length) {
+      this.variantBtns[0].classList.add('selected');
+      this.onVariantChange(this.variantBtns[0].dataset.variantId);
+    }
+    this.bind();
+    this.updateButtonPrice();
+  }
 
-    this.variantButtons.forEach(button => {
-      button.addEventListener('click', () => this.selectVariant(button));
+  bind() {
+    this.variantBtns.forEach(btn =>
+      btn.addEventListener('click', () => {
+        this.variantBtns.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        this.onVariantChange(btn.dataset.variantId);
+      })
+    );
+
+    this.qtyDec.addEventListener('click', () => this.changeQty(-1));
+    this.qtyInc.addEventListener('click', () => this.changeQty(1));
+    this.qtyInput.addEventListener('input', () => this.updateButtonPrice());
+
+    [this.radioSingle, this.radioSub].forEach(r =>
+      r.addEventListener('change', () => {
+        this.purchaseType = r.value;
+        this.togglePlanSelect();
+        this.updateButtonPrice();
+      })
+    );
+
+    this.planSelect.addEventListener('change', () => {
+      const txt = this.planSelect.selectedOptions[0].text.split('—').pop().trim();
+      this.subsPrice.textContent = txt;
+      this.updateButtonPrice();
     });
 
-    this.minusBtn?.addEventListener('click', () => this.changeQuantity(-1));
-    this.plusBtn?.addEventListener('click', () => this.changeQuantity(1));
-
-    this.addToCartBtn?.addEventListener('click', (e) => {
+    this.addBtn.addEventListener('click', e => {
       e.preventDefault();
       this.addToCart();
     });
   }
 
-  selectVariant(button) {
-    const variantId = button.getAttribute('data-variant-id');
-    console.log('[RavekitProduct] Selecting variant ID:', variantId);
+  onVariantChange(variantId) {
+    this.selectedVariant = this.variants.find(v => v.id.toString()===variantId);
+    if (!this.selectedVariant) return;
 
-    if (variantId) {
-      this.selectedVariantId = variantId;
-    }
+    this.singlePrice.textContent = this.selectedVariant.priceFormatted;
 
-    this.variantButtons.forEach(b => b.classList.remove('selected'));
-    button.classList.add('selected');
+    this.renderPlans();
+
+    this.updateButtonPrice();
   }
 
-  changeQuantity(delta) {
-    let qty = parseInt(this.quantityInput.value, 10) || 1;
-    qty = Math.max(qty + delta, 1);
-    console.log('[RavekitProduct] Changing quantity to:', qty);
-    this.quantityInput.value = qty;
+  renderPlans() {
+    this.planSelect.innerHTML = '';
+    this.selectedVariant.selling_plans.forEach(plan => {
+      const opt = document.createElement('option');
+      opt.value        = plan.price;  
+      opt.dataset.planId = plan.plan_id;
+      opt.textContent  = `${plan.name} — ${plan.priceFormatted}`;
+      this.planSelect.appendChild(opt);
+    });
+  
+    this.subsPrice.textContent = this.selectedVariant.selling_plans[0].priceFormatted;
+    this.radioSingle.checked = true;
+    this.purchaseType = 'single';
+    this.togglePlanSelect();
+  }
+
+  togglePlanSelect() {
+    this.planSelect.disabled = this.purchaseType !== 'subscription';
+  }
+
+  changeQty(delta) {
+    let v = parseInt(this.qtyInput.value, 10) || 1;
+    v = Math.max(1, v + delta);
+    this.qtyInput.value = v;
+    this.updateButtonPrice();
+  }
+
+  updateButtonPrice() {
+    const rawCents = this.purchaseType === 'single'
+      ? Number(this.selectedVariant.price) 
+      : Number(this.planSelect.value);         
+  
+    const unit = rawCents / 100;               
+  
+    const qty = Number(this.qtyInput.value) || 1;
+    const total = unit * qty;                     
+  
+    console.log('[DEBUG] rawCents, unit, qty, total →', {
+      rawCents, unit, qty, total
+    });
+  
+    const formatted = total.toLocaleString('es-CO', {
+      style:    'currency',
+      currency: 'COP'
+    });
+  
+    this.btnSurface.textContent = ` ${formatted}`;
+  
+    this.setupTimer(total);
+  }
+
+  setupTimer(total) {
+    clearInterval(this.timerId);
+    const threshold = Number(this.settings.freeShippingThreshold);
+    if (total < threshold) {
+      this.timerBlock.style.display = 'flex';
+      this.timerTextEl.textContent   = this.settings.timer_text;
+      this.timerSuffix.textContent   = this.settings.timer_suffix_text;
+      const end = Date.now() + this.settings.timerDuration * 60000;
+      this.runCountdown(end);
+    } else {
+      this.timerBlock.style.display = 'none';
+    }
+    console.log('[RavekitProduct] timer?', {
+      total,
+      threshold,
+      visible: total < threshold
+    });
+  }
+
+  runCountdown(end) {
+    const update = () => {
+      const diff = end - Date.now();
+      if (diff <= 0) {
+        clearInterval(this.timerId);
+        this.timerCountEl.textContent = '00:00';
+        return;
+      }
+      const mm = String(Math.floor(diff/60000)).padStart(2,'0');
+      const ss = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+      this.timerCountEl.textContent = `${mm}:${ss}`;
+    };
+    update();
+    this.timerId = setInterval(update,1000);
   }
 
   addToCart() {
-    const variantId = this.selectedVariantId;
-    const quantity = parseInt(this.quantityInput.value, 10) || 1;
-
-    if (!variantId) {
-      console.error('[RavekitProduct] No variant selected.');
-      alert('Por favor selecciona una variante primero.');
-      return;
+    if (!this.selectedVariant) {
+      return alert('Selecciona una variante.');
     }
-
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: variantId,
-        quantity: quantity
-      })
+    const payload = {
+      id:       this.selectedVariant.id,
+      quantity: Number(this.qtyInput.value)
+    };
+    if (this.purchaseType==='subscription') {
+      payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
+    }
+    console.log('[RavekitProduct] Payload to cart:', payload);
+    fetch('/cart/add.js',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network error');
-        }
-        return response.json();
-      })
-      .then(data => {
-        alert('Producto agregado al carrito exitosamente');
-      })
-      .catch(error => {
-        console.error('[RavekitProduct] Failed to add to cart:', error);
-      });
+      .then(r=>r.ok?r.json():Promise.reject(r))
+      .then(data=> console.log('[RavekitProduct] Cart response:', data))
+      .catch(err=> console.error('[RavekitProduct] Cart error:', err));
   }
 }

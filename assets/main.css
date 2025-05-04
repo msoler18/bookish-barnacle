@@ -1111,6 +1111,78 @@ h6 {
   font-weight: inherit;
   font-size: inherit;
 }
+.ravekit-product .subscription-option input[type=radio] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+.ravekit-product .subscription-option input[type=radio]:checked {
+  background-color: #00FF79;
+  border-color: #00FF79;
+}
+.ravekit-product .subscription-option input[type=radio]:checked::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 4px;
+  height: 4px;
+  background: #131410;
+  border-radius: 50%;
+}
+.ravekit-product .subscription-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  list-style: none;
+  padding: 0;
+}
+.ravekit-product .subscription-badges .badge {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  padding: 8px 8px;
+  border-radius: 8px;
+}
+.ravekit-product .subscription-badges .badge--save {
+  background: #ff31ed;
+  color: #131410;
+  border: 2px solid #ffffff;
+}
+.ravekit-product .subscription-badges .badge--shipping {
+  background: #6A0DAD;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.ravekit-product select.subscription-plan-select {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+  background: #131410;
+  color: #ffffff;
+  appearance: none;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+.ravekit-product .free-shipping-timer {
+  font-weight: 700;
+  color: #ffffff;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.ravekit-product .free-shipping-timer .timer-countdown {
+  margin: 0 8px;
+  color: #00FF79;
+}
 @media (min-width: 1200px) {
   .ravekit-product {
     padding: 8% 20%;

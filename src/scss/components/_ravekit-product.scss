@@ -186,6 +186,89 @@
       }
     }
   }
+
+  .subscription-option {
+    input[type="radio"] {
+      appearance: none;
+      width: $spacing-unit * 2;
+      height: $spacing-unit * 2;
+      border: 2px solid $color-white;
+      border-radius: 50%;
+      margin-right: $spacing-unit;
+      position: relative;
+      cursor: pointer;
+      &:checked {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 4px;
+          height: 4px;
+          background: $color-black;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  // Badges dentro de suscripción
+  .subscription-badges {
+    display: flex;
+    gap: $spacing-unit;
+    margin-bottom: $spacing-unit;
+    list-style: none;
+    padding: 0;
+
+    .badge {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-bold;
+      padding: 8px $spacing-unit;
+      border-radius: 8px;
+      &--save {
+        background: $color-tertiary;
+        color: $color-black;
+        border: 2px solid $color-white;
+      }
+      &--shipping {
+        background: $color-primary;
+        color: $color-white;
+        border: 2px solid $color-white;
+      }
+    }
+  }
+
+  // Estilos para el select
+  select.subscription-plan-select {
+    font-family: $font-family-primary;
+    font-size: font-size(0);
+    border: 2px solid $color-white;
+    border-radius: $spacing-unit;
+    padding: $spacing-unit;
+    background: $color-black;
+    color: $color-white;
+    appearance: none;
+    position: relative;
+    // background-image: url("data:image/svg+xml;...");
+    background-repeat: no-repeat;
+    background-position: right $spacing-unit center;
+  }
+
+  .free-shipping-timer {
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $spacing-unit * 2;
+    .timer-countdown {
+      margin: 0 8px;
+      color: $color-secondary;
+    }
+  }
+
 }
 
 @include respond-to(xlarge) {
