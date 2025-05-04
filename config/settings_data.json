@@ -128,12 +128,14 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "menu_left": "",
-          "menu_right": "",
+          "separator_image": "shopify://shop_images/FOOTER_-TRANSICION_DE_SECCION.svg",
+          "logo_image": "shopify://shop_images/logo_ravekit.svg",
+          "menu_left": "footer-left",
+          "menu_right": "footer-right",
           "show_menus": true,
           "contact_label": "Hablemos:",
           "contact_email": "contacto@ravekit.co",
-          "policies_menu": "",
+          "policies_menu": "footer-politicas",
           "copyright_text": "© Ravekit 2024. Todos los derechos reservados",
           "background_color": "#7f0eec",
           "text_color": "#ffffff"
