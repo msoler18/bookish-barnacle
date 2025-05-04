@@ -18,12 +18,14 @@
         {% endif %}
       </div>
 
-      <!-- Texto introductorio -->
-      {% if section.settings.intro_text != blank %}
-        <p class="ravekit-product__intro">{{ section.settings.intro_text }}</p>
+     
+      {% if product.description != blank %}
+        <div class="ravekit-product__description max-w-2xl mx-auto mb-8 font-body leading-relaxed">
+          {{ product.description }}
+        </div>
       {% endif %}
+      
 
-      <!-- Features -->
       <div class="ravekit-product__features">
         {% for i in (1..3) %}
           {% assign img_key = 'feature_image_' | append: i %}
@@ -45,7 +47,7 @@
         {% endfor %}
       </div>
 
-      <!-- Selector de variantes -->
+      
       {% if product.variants.size > 0 %}
         <div class="ravekit-product__variants">
           {% for variant in product.variants %}
@@ -71,44 +73,49 @@
         </div>
       {% endif %}
 
-      <!-- Compra única vs Suscripción -->
       <div class="ravekit-product__subscription">
-        <label class="subscription-option">
+        <label class="subscription-option otp">
           <input
             type="radio"
             name="purchase_option"
             value="single"
             checked
           />
-          <span>{{ section.settings.text_single_label }}</span>
-          <strong class="single-price"></strong>
+          <span>
+            {{ section.settings.text_single_label }}
+          </span>
+          <span class="single-price"></span>
         </label>
 
-        <label class="subscription-option">
-          <input
-            type="radio"
-            name="purchase_option"
-            value="subscription"
-          />
-          <span>{{ section.settings.text_subs_label }}</span>
-          <strong class="subs-price"></strong>
-        </label>
+        <label class="subscription-option selling-plans-container">
+          
+          <div class="subscription__info-input">
+            <input
+              type="radio"
+              name="purchase_option"
+              value="subscription"
+            />
+            <span>{{ section.settings.text_subs_label }}</span>
+            <strong class="subs-price"></strong>
 
-        <!-- Bullets de suscripción -->
-        <div class="subscription__info-container">
+          </div>
 
-          <ul class="subscription-bullets">
-            <li>{{ section.settings.sub_bullet_1 }}</li>
-            <li>{{ section.settings.sub_bullet_2 }}</li>
-            <li>{{ section.settings.sub_bullet_3 }}</li>
-          </ul>
+          <div class="subscription__info-container">
 
-          <ul class="subscription-badges mb-4">
-            <li class="badge badge--save">{{ section.settings.badge_save_text }}</li>
-            <li class="badge badge--shipping">{{ section.settings.badge_shipping_text }}</li>
-          </ul>
+            <ul class="subscription-bullets">
+              <li>{{ section.settings.sub_bullet_1 }}</li>
+              <li>{{ section.settings.sub_bullet_2 }}</li>
+              <li>{{ section.settings.sub_bullet_3 }}</li>
+            </ul>
 
-        </div>
+            <ul class="subscription-badges mb-4">
+              <li class="badge badge--save">{{ section.settings.badge_save_text }}</li>
+              <li class="badge badge--shipping">{{ section.settings.badge_shipping_text }}</li>
+            </ul>
+
+          </div>
+
+        </label>        
 
         <select
           name="selling_plan"
@@ -119,7 +126,6 @@
         
       </div>
 
-      <!-- Cantidad + Botón -->
       <div class="ravekit-product__cart">
         <span class="qty-title">{{ section.settings.text_qty_label }}</span>
         <div class="quantity-selector">
@@ -150,12 +156,13 @@
         </button>
       </div>
 
-      <!-- JSON data para JS -->
       <script type="application/json" id="RavekitProductData">
       {
         "settings": {
           "timerDuration": {{ section.settings.timer_duration_minutes }},
-          "buttonText": "{{ section.settings.text_button_label }}",
+          "timerText":     "{{ section.settings.timer_text }}",
+          "timerSuffix":   "{{ section.settings.timer_suffix_text }}",
+          "buttonText":    "{{ section.settings.text_button_label }}",
           "freeShippingThreshold": {{ section.settings.free_shipping_threshold }}
         },
         "variants": [
@@ -196,12 +203,6 @@
       "id": "product_handle",
       "label": "Handle producto",
       "default": "ravekit"
-    },
-    {
-      "type": "text",
-      "id": "intro_text",
-      "label": "Texto introductorio",
-      "default": "El mejor suplemento para Ravers."
     },
     {
       "type": "image_picker",

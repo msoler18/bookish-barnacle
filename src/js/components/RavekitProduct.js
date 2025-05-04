@@ -141,18 +141,14 @@ export default class RavekitProduct {
     const threshold = Number(this.settings.freeShippingThreshold);
     if (total < threshold) {
       this.timerBlock.style.display = 'flex';
-      this.timerTextEl.textContent   = this.settings.timer_text;
-      this.timerSuffix.textContent   = this.settings.timer_suffix_text;
+      this.timerTextEl.textContent  = this.settings.timerText;
+      this.timerSuffix.textContent  = this.settings.timerSuffix;
       const end = Date.now() + this.settings.timerDuration * 60000;
       this.runCountdown(end);
     } else {
       this.timerBlock.style.display = 'none';
     }
-    console.log('[RavekitProduct] timer?', {
-      total,
-      threshold,
-      visible: total < threshold
-    });
+    console.log('[RavekitProduct] timer?', { total, threshold, visible: total < threshold });
   }
 
   runCountdown(end) {

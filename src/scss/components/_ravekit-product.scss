@@ -159,47 +159,62 @@
       }
     }
 
-    .add-to-cart-btn {
-      margin-top: $spacing-unit * 2;
-      background-color: $color-secondary;
-      color: $color-black;
-      font-family: $font-family-buttons;
-      font-size: 1.25rem;
-      font-weight: $font-weight-bold;
-      padding: $spacing-unit * 1.5 $spacing-unit * 4;
-      border: none;
-      border-radius: $spacing-unit;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+  }
 
-      &:hover {
-        background-color: $color-accent;
-      }
-
-      .push-btn__surface {
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: inherit;
-      }
+  .otp {
+    font-family: 'PPMonumentExtended';
+    font-style: italic;
+    font-size:px-to-rem(9px);
+    text-transform: uppercase;
+    .single-price {
+      margin-left: 10px;
     }
   }
 
+  .selling-plans-container {
+    display: flex;
+    flex-direction: column;
+    margin-top:1rem;
+    .subscription__info-input {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-family: 'PPMonumentExtended';
+      font-style: italic;
+      font-size:px-to-rem(10px);
+      text-transform: uppercase;
+    }
+  }
+
+
   .subscription-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 10px;
+
+    &:has(input[type="radio"]:checked) {
+      color:$color-black;
+      background-color: $color-secondary;
+    }
+
     input[type="radio"] {
       appearance: none;
-      width: $spacing-unit * 2;
-      height: $spacing-unit * 2;
+      width: 20px;
+      height: 20px;
       border: 2px solid $color-white;
       border-radius: 50%;
       margin-right: $spacing-unit;
       position: relative;
       cursor: pointer;
       &:checked {
-        background-color: $color-secondary;
-        border-color: $color-secondary;
+        background-color: white;
+        border-color: $color-black;
+        border:4px solid $color-black;
         &::after {
           content: '';
           position: absolute;
@@ -207,24 +222,41 @@
           left: 4px;
           width: 4px;
           height: 4px;
-          background: $color-black;
           border-radius: 50%;
         }
       }
     }
   }
 
-  // Badges dentro de suscripción
+  .subscription__info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:0.5rem;
+    .subscription-bullets {
+      text-align: left;
+    }
+  }
+
+  .add-to-cart {
+    .btn-price {
+      font-family: 'FS Koopman';
+      font-style: italic;
+    }
+  }
+
   .subscription-badges {
     display: flex;
-    gap: $spacing-unit;
+    flex-direction: column;
     margin-bottom: $spacing-unit;
     list-style: none;
     padding: 0;
 
     .badge {
-      font-family: $font-family-primary;
-      font-weight: $font-weight-bold;
+      font-family: 'PPMonumentExtended';
+      font-style: italic;
+      font-size:px-to-rem(8px);
+      text-transform: uppercase;
       padding: 8px $spacing-unit;
       border-radius: 8px;
       &--save {
@@ -240,10 +272,9 @@
     }
   }
 
-  // Estilos para el select
   select.subscription-plan-select {
-    font-family: $font-family-primary;
-    font-size: font-size(0);
+    font-family: 'PPMonumentExtended';
+    font-size: px-to-rem(10px);
     border: 2px solid $color-white;
     border-radius: $spacing-unit;
     padding: $spacing-unit;
@@ -251,18 +282,27 @@
     color: $color-white;
     appearance: none;
     position: relative;
-    // background-image: url("data:image/svg+xml;...");
+    background-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'>\
+    <path fill='%23FFFFFF' d='M0 0l5 6 5-6z'/>\
+    </svg>");
     background-repeat: no-repeat;
-    background-position: right $spacing-unit center;
+    background-position: right 8px center;
+    background-size: 10px 6px;
+    padding-right: calc(8px + 10px + 8px);
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .free-shipping-timer {
-    font-weight: $font-weight-bold;
-    color: $color-white;
+    font-family: 'Dela Gothic One';
+    font-weight: 700;
+    color: #fff;
     display: flex !important;
     justify-content: center;
     align-items: center;
-    margin-bottom: $spacing-unit * 2;
+    margin-top: 1rem;
+    width: 100%;
     .timer-countdown {
       margin: 0 8px;
       color: $color-secondary;

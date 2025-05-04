@@ -245,8 +245,8 @@
       const threshold = Number(this.settings.freeShippingThreshold);
       if (total < threshold) {
         this.timerBlock.style.display = "flex";
-        this.timerTextEl.textContent = this.settings.timer_text;
-        this.timerSuffix.textContent = this.settings.timer_suffix_text;
+        this.timerTextEl.textContent = this.settings.timerText;
+        this.timerSuffix.textContent = this.settings.timerSuffix;
         const end = Date.now() + this.settings.timerDuration * 6e4;
         this.runCountdown(end);
       } else {
