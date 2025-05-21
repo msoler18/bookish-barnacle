@@ -22,11 +22,7 @@ function throttle(fn) {
  *  • Alien (.alien_ravekit): NO translate, gira 0→180° según el porcentaje
  *    de visibilidad en pantalla (0 = fuera, 1 = totalmente dentro).
  */
-
 export function initScrollEffects() {
-
-  console.log('[ScrollEffects] initScrollEffects fired');
-
   const parallaxEls = Array.from(
     document.querySelectorAll('[data-parallax-speed]')
   )
@@ -40,8 +36,6 @@ export function initScrollEffects() {
     .map(el => ({ el, factor: parseFloat(el.dataset.rotateOnScroll) }));
 
   const alienEls = Array.from(document.querySelectorAll('.alien_ravekit'));
-
-  console.log('[ScrollEffects] onScroll', window.scrollY);
 
   const onScroll = () => {
     const scrollY = window.scrollY;

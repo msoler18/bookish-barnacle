@@ -53,7 +53,6 @@
     };
   }
   function initScrollEffects() {
-    console.log("[ScrollEffects] initScrollEffects fired");
     const parallaxEls = Array.from(document.querySelectorAll("[data-parallax-speed]")).filter((el) => !el.classList.contains("alien_ravekit")).map((el) => ({
       el,
       speed: parseFloat(el.dataset.parallaxSpeed)
@@ -63,7 +62,6 @@
       factor: parseFloat(el.dataset.rotateOnScroll)
     }));
     const alienEls = Array.from(document.querySelectorAll(".alien_ravekit"));
-    console.log("[ScrollEffects] onScroll", window.scrollY);
     const onScroll = () => {
       const scrollY = window.scrollY;
       const vh = window.innerHeight;
