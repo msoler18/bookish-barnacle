@@ -1,1 +1,300 @@
-(()=>{function d(){let n=document.querySelectorAll("[data-nutri-open]"),t=document.querySelector("[data-nutri-overlay]"),e=document.querySelector("[data-nutri-popup]"),s=document.querySelector("[data-nutri-close]");if(!n.length||!t||!e||!s)return;function i(){t.classList.remove("hidden"),e.classList.remove("hidden"),document.body.style.overflow="hidden"}function a(){t.classList.add("hidden"),e.classList.add("hidden"),document.body.style.overflow=""}n.forEach(r=>r.addEventListener("click",i)),t.addEventListener("click",a),s.addEventListener("click",a)}function u(){let n=document.querySelectorAll('a[href="#ravekit-product"]');n.length&&n.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();let s=document.getElementById("ravekit-product");s&&s.scrollIntoView({behavior:"smooth",block:"start"})})})}function y(n){let t=!1;return function(...e){t||(window.requestAnimationFrame(()=>{n(...e),t=!1}),t=!0)}}function h(){let n=Array.from(document.querySelectorAll("[data-parallax-speed]")).filter(i=>!i.classList.contains("alien_ravekit")).map(i=>({el:i,speed:parseFloat(i.dataset.parallaxSpeed)})),t=Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).filter(i=>!i.classList.contains("alien_ravekit")).map(i=>({el:i,factor:parseFloat(i.dataset.rotateOnScroll)})),e=Array.from(document.querySelectorAll(".alien_ravekit")),s=()=>{let i=window.scrollY,a=window.innerHeight;n.forEach(({el:r,speed:o})=>{r.style.transform=`translateY(${i*o}px)`}),t.forEach(({el:r,factor:o})=>{let l=r.style.transform.replace(/rotate\([^)]+\)/,"");r.style.transform=`${l} rotate(${i*o}deg)`}),e.forEach(r=>{let o=r.getBoundingClientRect(),m=Math.min(Math.max((a-o.top)/(a+o.height),0),1)*180;r.style.transform=`rotate(${m}deg)`})};window.addEventListener("scroll",y(s)),s()}function p(){let n=document.querySelectorAll("[data-accordion-trigger]"),t=document.querySelectorAll("[data-accordion-content]");if(!n.length||!t.length){console.warn("No titles or contents found for science accordion.");return}n.forEach(e=>{e.addEventListener("click",s=>{let i=e.dataset.index;n.forEach(r=>r.classList.remove("is-active")),t.forEach(r=>r.classList.remove("is-active")),e.classList.add("is-active");let a=document.querySelector(`.science-accordion__item-content[data-content-index="${i}"]`);a?a.classList.add("is-active"):console.warn("No content found for index:",i)})})}function f(){let n=document.querySelector("[data-banner-text]"),t=document.querySelector(".free-shipping-banner__spacer");if(!n||!t)return;let e=n.offsetHeight;t.style.height=`${e}px`;let s=n.getBoundingClientRect().top+window.scrollY;function i(){window.scrollY>=s?n.classList.add("free-shipping-banner__text-container--sticky"):n.classList.remove("free-shipping-banner__text-container--sticky")}window.addEventListener("scroll",i),i()}var c=class{constructor(t){this.container=t;let e=document.getElementById("RavekitProductData");this.data=e?JSON.parse(e.textContent):{},this.settings=this.data.settings||{},this.variants=this.data.variants||[],this.variantBtns=t.querySelectorAll(".variant-button"),this.qtyDec=t.querySelector(".quantity-decrease"),this.qtyInc=t.querySelector(".quantity-increase"),this.qtyInput=t.querySelector(".quantity-input"),this.addBtn=t.querySelector(".add-to-cart"),this.btnSurface=this.addBtn.querySelector(".push-btn__surface .btn-price"),this.radioSingle=t.querySelector('input[value="single"]'),this.radioSub=t.querySelector('input[value="subscription"]'),this.singlePrice=t.querySelector(".single-price"),this.subsPrice=t.querySelector(".subs-price"),this.planSelect=t.querySelector("#selling_plan_select"),this.timerBlock=t.querySelector(".free-shipping-timer"),this.timerTextEl=t.querySelector(".timer-text"),this.timerCountEl=t.querySelector(".timer-countdown"),this.timerSuffix=t.querySelector(".timer-suffix"),this.selectedVariant=null,this.purchaseType="single",this.timerId=null,this.init()}init(){this.variantBtns.length&&(this.variantBtns[0].classList.add("selected"),this.onVariantChange(this.variantBtns[0].dataset.variantId)),this.bind(),this.updateButtonPrice()}bind(){this.variantBtns.forEach(t=>t.addEventListener("click",()=>{this.variantBtns.forEach(e=>e.classList.remove("selected")),t.classList.add("selected"),this.onVariantChange(t.dataset.variantId)})),this.qtyDec.addEventListener("click",()=>this.changeQty(-1)),this.qtyInc.addEventListener("click",()=>this.changeQty(1)),this.qtyInput.addEventListener("input",()=>this.updateButtonPrice()),[this.radioSingle,this.radioSub].forEach(t=>t.addEventListener("change",()=>{this.purchaseType=t.value,this.togglePlanSelect(),this.updateButtonPrice()})),this.planSelect.addEventListener("change",()=>{let t=this.planSelect.selectedOptions[0].text.split("\u2014").pop().trim();this.subsPrice.textContent=t,this.updateButtonPrice()}),this.addBtn.addEventListener("click",t=>{t.preventDefault(),this.addToCart()})}onVariantChange(t){this.selectedVariant=this.variants.find(e=>e.id.toString()===t),this.selectedVariant&&(this.singlePrice.textContent=this.selectedVariant.priceFormatted,this.renderPlans(),this.updateButtonPrice())}renderPlans(){this.planSelect.innerHTML="",this.selectedVariant.selling_plans.forEach(t=>{let e=document.createElement("option");e.value=t.price,e.dataset.planId=t.plan_id,e.textContent=`${t.name} \u2014 ${t.priceFormatted}`,this.planSelect.appendChild(e)}),this.subsPrice.textContent=this.selectedVariant.selling_plans[0].priceFormatted,this.radioSingle.checked=!0,this.purchaseType="single",this.togglePlanSelect()}togglePlanSelect(){this.planSelect.disabled=this.purchaseType!=="subscription"}changeQty(t){let e=parseInt(this.qtyInput.value,10)||1;e=Math.max(1,e+t),this.qtyInput.value=e,this.updateButtonPrice()}updateButtonPrice(){let e=(this.purchaseType==="single"?Number(this.selectedVariant.price):Number(this.planSelect.value))/100,s=Number(this.qtyInput.value)||1,i=e*s,a=i.toLocaleString("es-CO",{style:"currency",currency:"COP"});this.btnSurface.textContent=` ${a}`,this.setupTimer(i)}setupTimer(t){clearInterval(this.timerId);let e=Number(this.settings.freeShippingThreshold);if(t<e){this.timerBlock.style.display="flex",this.timerTextEl.textContent=this.settings.timerText,this.timerSuffix.textContent=this.settings.timerSuffix;let s=Date.now()+this.settings.timerDuration*6e4;this.runCountdown(s)}else this.timerBlock.style.display="none"}runCountdown(t){let e=()=>{let s=t-Date.now();if(s<=0){clearInterval(this.timerId),this.timerCountEl.textContent="00:00";return}let i=String(Math.floor(s/6e4)).padStart(2,"0"),a=String(Math.floor(s%6e4/1e3)).padStart(2,"0");this.timerCountEl.textContent=`${i}:${a}`};e(),this.timerId=setInterval(e,1e3)}addToCart(){if(!this.selectedVariant)return alert("Selecciona una variante.");let t={id:this.selectedVariant.id,quantity:Number(this.qtyInput.value)};this.purchaseType==="subscription"&&(t.selling_plan=this.planSelect.selectedOptions[0].dataset.planId),fetch("/cart/add.js",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)}).then(e=>e.ok?e.json():Promise.reject(e)).then(e=>console.log("[RavekitProduct] Cart response:",e)).catch(e=>console.error("[RavekitProduct] Cart error:",e))}};document.addEventListener("DOMContentLoaded",()=>{f(),h(),p(),document.querySelectorAll(".ravekit-product").forEach(n=>{new c(n)}),u(),d()});})();
+(() => {
+  // src/js/components/pdf-popup.js
+  function initPdfPopup() {
+    const openers = document.querySelectorAll("[data-nutri-open]");
+    const overlay = document.querySelector("[data-nutri-overlay]");
+    const popup = document.querySelector("[data-nutri-popup]");
+    const closer = document.querySelector("[data-nutri-close]");
+    if (!openers.length || !overlay || !popup || !closer) return;
+    function open() {
+      overlay.classList.remove("hidden");
+      popup.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      overlay.classList.add("hidden");
+      popup.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+    openers.forEach((btn) => btn.addEventListener("click", open));
+    overlay.addEventListener("click", close);
+    closer.addEventListener("click", close);
+  }
+
+  // src/js/utils/smoothScrollToRavekit.js
+  function initSmoothScrollToRavekit() {
+    const links = document.querySelectorAll('a[href="#ravekit-product"]');
+    if (!links.length) return;
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.getElementById("ravekit-product");
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  }
+
+  // src/js/utils/scrollEffects.js
+  function throttle(fn) {
+    let ticking = false;
+    return function(...args) {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          fn(...args);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+  }
+  function initScrollEffects() {
+    console.log("[ScrollEffects] initScrollEffects fired");
+    const parallaxEls = Array.from(document.querySelectorAll("[data-parallax-speed]")).filter((el) => !el.classList.contains("alien_ravekit")).map((el) => ({
+      el,
+      speed: parseFloat(el.dataset.parallaxSpeed)
+    }));
+    const rotationEls = Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).filter((el) => !el.classList.contains("alien_ravekit")).map((el) => ({
+      el,
+      factor: parseFloat(el.dataset.rotateOnScroll)
+    }));
+    const alienEls = Array.from(document.querySelectorAll(".alien_ravekit"));
+    console.log("[ScrollEffects] onScroll", window.scrollY);
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      parallaxEls.forEach(({
+        el,
+        speed
+      }) => {
+        el.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+      rotationEls.forEach(({
+        el,
+        factor
+      }) => {
+        const base = el.style.transform.replace(/rotate\([^)]+\)/, "");
+        el.style.transform = `${base} rotate(${scrollY * factor}deg)`;
+      });
+      alienEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const progress = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
+        const angle = progress * 180;
+        el.style.transform = `rotate(${angle}deg)`;
+      });
+    };
+    window.addEventListener("scroll", throttle(onScroll));
+    onScroll();
+  }
+
+  // src/js/components/scienceAccordion.js
+  function initScienceAccordion() {
+    const titles = document.querySelectorAll("[data-accordion-trigger]");
+    const contents = document.querySelectorAll("[data-accordion-content]");
+    if (!titles.length || !contents.length) {
+      console.warn("No titles or contents found for science accordion.");
+      return;
+    }
+    titles.forEach((title) => {
+      title.addEventListener("click", (e) => {
+        const index = title.dataset.index;
+        titles.forEach((t) => t.classList.remove("is-active"));
+        contents.forEach((c) => c.classList.remove("is-active"));
+        title.classList.add("is-active");
+        const activeContent = document.querySelector(`.science-accordion__item-content[data-content-index="${index}"]`);
+        if (activeContent) {
+          activeContent.classList.add("is-active");
+        } else {
+          console.warn("No content found for index:", index);
+        }
+      });
+    });
+  }
+
+  // src/js/utils/freeShippingSticky.js
+  function initFreeShippingSticky() {
+    const textContainer = document.querySelector("[data-banner-text]");
+    const spacer = document.querySelector(".free-shipping-banner__spacer");
+    if (!textContainer || !spacer) return;
+    const height = textContainer.offsetHeight;
+    spacer.style.height = `${height}px`;
+    const triggerAt = textContainer.getBoundingClientRect().top + window.scrollY;
+    function onScroll() {
+      if (window.scrollY >= triggerAt) {
+        textContainer.classList.add("free-shipping-banner__text-container--sticky");
+      } else {
+        textContainer.classList.remove("free-shipping-banner__text-container--sticky");
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  }
+
+  // src/js/components/RavekitProduct.js
+  var RavekitProduct = class {
+    constructor(container) {
+      this.container = container;
+      const dataEl = document.getElementById("RavekitProductData");
+      this.data = dataEl ? JSON.parse(dataEl.textContent) : {};
+      this.settings = this.data.settings || {};
+      this.variants = this.data.variants || [];
+      this.variantBtns = container.querySelectorAll(".variant-button");
+      this.qtyDec = container.querySelector(".quantity-decrease");
+      this.qtyInc = container.querySelector(".quantity-increase");
+      this.qtyInput = container.querySelector(".quantity-input");
+      this.addBtn = container.querySelector(".add-to-cart");
+      this.btnSurface = this.addBtn.querySelector(".push-btn__surface .btn-price");
+      this.radioSingle = container.querySelector('input[value="single"]');
+      this.radioSub = container.querySelector('input[value="subscription"]');
+      this.singlePrice = container.querySelector(".single-price");
+      this.subsPrice = container.querySelector(".subs-price");
+      this.planSelect = container.querySelector("#selling_plan_select");
+      this.timerBlock = container.querySelector(".free-shipping-timer");
+      this.timerTextEl = container.querySelector(".timer-text");
+      this.timerCountEl = container.querySelector(".timer-countdown");
+      this.timerSuffix = container.querySelector(".timer-suffix");
+      this.selectedVariant = null;
+      this.purchaseType = "single";
+      this.timerId = null;
+      this.init();
+    }
+    init() {
+      if (this.variantBtns.length) {
+        this.variantBtns[0].classList.add("selected");
+        this.onVariantChange(this.variantBtns[0].dataset.variantId);
+      }
+      this.bind();
+      this.updateButtonPrice();
+    }
+    bind() {
+      this.variantBtns.forEach((btn) => btn.addEventListener("click", () => {
+        this.variantBtns.forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        this.onVariantChange(btn.dataset.variantId);
+      }));
+      this.qtyDec.addEventListener("click", () => this.changeQty(-1));
+      this.qtyInc.addEventListener("click", () => this.changeQty(1));
+      this.qtyInput.addEventListener("input", () => this.updateButtonPrice());
+      [this.radioSingle, this.radioSub].forEach((r) => r.addEventListener("change", () => {
+        this.purchaseType = r.value;
+        this.togglePlanSelect();
+        this.updateButtonPrice();
+      }));
+      this.planSelect.addEventListener("change", () => {
+        const txt = this.planSelect.selectedOptions[0].text.split("\u2014").pop().trim();
+        this.subsPrice.textContent = txt;
+        this.updateButtonPrice();
+      });
+      this.addBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.addToCart();
+      });
+    }
+    onVariantChange(variantId) {
+      this.selectedVariant = this.variants.find((v) => v.id.toString() === variantId);
+      if (!this.selectedVariant) return;
+      this.singlePrice.textContent = this.selectedVariant.priceFormatted;
+      this.renderPlans();
+      this.updateButtonPrice();
+    }
+    renderPlans() {
+      this.planSelect.innerHTML = "";
+      this.selectedVariant.selling_plans.forEach((plan) => {
+        const opt = document.createElement("option");
+        opt.value = plan.price;
+        opt.dataset.planId = plan.plan_id;
+        opt.textContent = `${plan.name} \u2014 ${plan.priceFormatted}`;
+        this.planSelect.appendChild(opt);
+      });
+      this.subsPrice.textContent = this.selectedVariant.selling_plans[0].priceFormatted;
+      this.radioSingle.checked = true;
+      this.purchaseType = "single";
+      this.togglePlanSelect();
+    }
+    togglePlanSelect() {
+      this.planSelect.disabled = this.purchaseType !== "subscription";
+    }
+    changeQty(delta) {
+      let v = parseInt(this.qtyInput.value, 10) || 1;
+      v = Math.max(1, v + delta);
+      this.qtyInput.value = v;
+      this.updateButtonPrice();
+    }
+    updateButtonPrice() {
+      const rawCents = this.purchaseType === "single" ? Number(this.selectedVariant.price) : Number(this.planSelect.value);
+      const unit = rawCents / 100;
+      const qty = Number(this.qtyInput.value) || 1;
+      const total = unit * qty;
+      const formatted = total.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+      });
+      this.btnSurface.textContent = ` ${formatted}`;
+      this.setupTimer(total);
+    }
+    setupTimer(total) {
+      clearInterval(this.timerId);
+      const threshold = Number(this.settings.freeShippingThreshold);
+      if (total < threshold) {
+        this.timerBlock.style.display = "flex";
+        this.timerTextEl.textContent = this.settings.timerText;
+        this.timerSuffix.textContent = this.settings.timerSuffix;
+        const end = Date.now() + this.settings.timerDuration * 6e4;
+        this.runCountdown(end);
+      } else {
+        this.timerBlock.style.display = "none";
+      }
+    }
+    runCountdown(end) {
+      const update = () => {
+        const diff = end - Date.now();
+        if (diff <= 0) {
+          clearInterval(this.timerId);
+          this.timerCountEl.textContent = "00:00";
+          return;
+        }
+        const mm = String(Math.floor(diff / 6e4)).padStart(2, "0");
+        const ss = String(Math.floor(diff % 6e4 / 1e3)).padStart(2, "0");
+        this.timerCountEl.textContent = `${mm}:${ss}`;
+      };
+      update();
+      this.timerId = setInterval(update, 1e3);
+    }
+    addToCart() {
+      if (!this.selectedVariant) {
+        return alert("Selecciona una variante.");
+      }
+      const payload = {
+        id: this.selectedVariant.id,
+        quantity: Number(this.qtyInput.value)
+      };
+      if (this.purchaseType === "subscription") {
+        payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
+      }
+      fetch("/cart/add.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }).then((r) => r.ok ? r.json() : Promise.reject(r)).then((data) => console.log("[RavekitProduct] Cart response:", data)).catch((err) => console.error("[RavekitProduct] Cart error:", err));
+    }
+  };
+
+  // src/js/theme.js
+  document.addEventListener("DOMContentLoaded", () => {
+    initFreeShippingSticky();
+    initScrollEffects();
+    initScienceAccordion();
+    document.querySelectorAll(".ravekit-product").forEach((container) => {
+      new RavekitProduct(container);
+    });
+    initSmoothScrollToRavekit();
+    initPdfPopup();
+  });
+})();
+//# sourceMappingURL=theme.js.map
