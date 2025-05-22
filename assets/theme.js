@@ -202,13 +202,13 @@
     renderPlans() {
       this.planSelect.innerHTML = "";
       this.selectedVariant.selling_plans.forEach((plan) => {
+        const displayName = plan.name.split(",")[0];
         const opt = document.createElement("option");
         opt.value = plan.price;
         opt.dataset.planId = plan.plan_id;
-        opt.textContent = `${plan.name} \u2014 ${plan.priceFormatted}`;
+        opt.textContent = displayName;
         this.planSelect.appendChild(opt);
       });
-      this.subsPrice.textContent = this.selectedVariant.selling_plans[0].priceFormatted;
       this.radioSingle.checked = true;
       this.purchaseType = "single";
       this.togglePlanSelect();
