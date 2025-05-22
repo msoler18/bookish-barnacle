@@ -94,6 +94,7 @@
     "currency_code_enabled": false,
     "social_style": "text",
     "cart_icon": "bag",
+    "favicon": "shopify://shop_images/Mesa_de_trabajo_1_0359b418-0771-47f5-a79d-9fde65892eb8.png",
     "navigation_font": "font-main",
     "navigation_uppercase": false,
     "product_tiles_quick_buy": true,
