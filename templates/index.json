@@ -375,7 +375,7 @@
       "settings": {
         "display_on_card": true,
         "is_step": false,
-        "title": "Más de 500 ravers felices",
+        "title": "Más de 5000 ravers felices",
         "subtitle": "",
         "text_color": "#000000",
         "max_width": 240,
@@ -543,7 +543,7 @@
         "slideshow_focus": "center",
         "wave_top_image": "shopify://shop_images/SEPARADOR_4-1.svg",
         "wave_bottom_image": "shopify://shop_images/SEPARADOR_SECCION_9.webp",
-        "subtitle": "<p><strong>Ingredientes de origen natural,</strong></p><p>científicamente comprobados y registrados por la FDA con buenas prácticas de manufactura.</p><p></p>",
+        "subtitle": "<p></p><p><strong>Ingredientes de origen natural</strong></p><p>científicamente comprobados y registrados por la FDA con buenas prácticas de manufactura.</p><p></p>",
         "certification_icon_1": "shopify://shop_images/LOGO_FDA_2.svg",
         "certification_icon_2": "shopify://shop_images/LOGO_GMP.svg",
         "link_text": "Ver tabla nutricional",
