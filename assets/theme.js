@@ -99,7 +99,6 @@
     window.addEventListener("scroll", throttle(onScroll), {
       passive: true
     });
-    console.log("[Ravekit Effects] Performing initial onScroll call.");
     onScroll();
   }
 

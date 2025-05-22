@@ -3,6 +3,22 @@
   assign crop          = section.settings.crop
   assign image_count   = 0
   assign is_step       = section.settings.is_step
+
+  assign splide_options = '{'
+  assign splide_options = splide_options | append: '"speed": ' | append: section.settings.transition_speed
+  
+  if section.settings.autoplay_enabled
+    assign splide_options = splide_options | append: ', "type": "loop"'
+    assign splide_options = splide_options | append: ', "autoplay": true'
+    assign splide_options = splide_options | append: ', "interval": ' | append: section.settings.autoplay_interval
+    assign splide_options = splide_options | append: ', "pauseOnHover": true'
+    assign splide_options = splide_options | append: ', "pauseOnFocus": true'
+    assign splide_options = splide_options | append: ', "resetProgress": true'
+  else
+    assign splide_options = splide_options | append: ', "autoplay": false'
+  endif
+
+  assign splide_options = splide_options | append: '}'
 -%}
 
 {%- render 'collection-shape-defs',
@@ -73,14 +89,17 @@
         {% if testimonials.size > 1 %}
           id="slideshow-{{ section.id }}"
             class="splide {% if section.settings.title != '' %}section-content-top-margin{% endif %}"
-            data-splide='{"speed": {{ section.settings.transition_speed }}}'
+            data-splide='{{ splide_options }}'
+        {% else %}
+          class="single-testimonial-wrapper {% if section.settings.title != '' %}section-content-top-margin{% endif %}"
         {% endif %}
       >
-        <div class="splide__track">
-          <ul class="splide__list w-full
-                     {% if section.settings.title != '' %}
-                       {% if section.settings.display_on_card %}mt-5{% else %}mt-10{% endif %}
-                     {% endif %}">
+        <div {% if testimonials.size > 1 %}class="splide__track"{% endif %}>
+          <ul {% if testimonials.size > 1 %}class="splide__list"{% else %}class="single-testimonial-list"{% endif %}
+             w-full
+             {% if section.settings.title != '' %}
+               {% if section.settings.display_on_card %} mt-5{% else %}mt-10{% endif %}
+             {% endif %}">
             {%- for block in testimonials -%}
               {%- liquid
                 assign shape_id = section.id
@@ -89,7 +108,7 @@
                 endif
               -%}
               <li
-                class="splide__slide w-4/5
+                class="{% if testimonials.size > 1 %}splide__slide{% endif %} w-4/5
                        {% if settings.card_shadow_direction contains 'top' %}pt-card-shadow{% else %}pb-card-shadow{% endif %}"
                 {{ block.shopify_attributes }}
               >
@@ -169,7 +188,7 @@
 
                       {% if block.settings.quote != blank %}
                         <div class="inline-rte font-body text-base">
-                          {{ block.settings.quote | replace: '<p>', '<p>&#8220;' | replace: '</p>', '&#8221;</p>' }}
+                          {{ block.settings.quote | replace: '<p>', '<p>“' | replace: '</p>', '”</p>' }}
                         </div>
                       {% endif %}
 
@@ -681,43 +700,44 @@
       "default": 20
     },
     {
-      "type": "select",
-      "id": "autoscroll_mode",
-      "label": "t:common.settings.autoscroll_mode.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:common.options.right_to_left.label"
-        },
-        {
-          "value": "-1",
-          "label": "t:common.options.left_to_right.label"
-        },
-        {
-          "value": "0",
-          "label": "t:common.options.disabled.label"
-        }
-      ],
-      "default": "1"
+      "type": "header",
+      "content": "Configuración del Carrusel"
     },
     {
-      "type":        "range",
-      "id":          "transition_speed",
-      "label":       "Slide transition speed (ms)",
-      "min":         100,
-      "max":         2000,
-      "step":        100,
-      "unit":        "ms",
-      "default":     600
+      "type":"range",
+      "id":"transition_speed",
+      "label":"Velocidad de transición del slide (ms)",
+      "min":100,
+      "max":2000,
+      "step":100,
+      "unit":"ms",
+      "default":600
     },
     {
-      "type":        "image_picker",
-      "id":          "star_icon",
-      "label":       "Custom star icon"
+      "type": "checkbox",
+      "id": "autoplay_enabled",
+      "label": "Activar autoplay del carrusel",
+      "default": false
     },
     {
-  "type": "header",
-  "content": "Wave & Alien Settings"
+      "type": "range",
+      "id": "autoplay_interval",
+      "label": "Intervalo del autoplay (ms)",
+      "min": 100,
+      "max": 5000,
+      "step": 100,
+      "unit": "ms",
+      "default": 200,
+      "info": "Tiempo que cada testimonio se muestra antes de cambiar automáticamente. Solo aplica si el autoplay está activado."
+    },
+    {
+      "type":"image_picker",
+      "id":"star_icon",
+      "label":"Icono de estrella personalizado"
+    },
+    {
+      "type": "header",
+      "content": "Wave & Alien Settings"
     },
     {
       "type": "image_picker",

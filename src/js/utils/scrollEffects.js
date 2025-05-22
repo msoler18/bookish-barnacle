@@ -25,7 +25,7 @@ export function initScrollEffects() {
 
   const rotationEls = Array.from(
     document.querySelectorAll('[data-rotate-on-scroll]')
-  ).filter(el => !el.classList.contains('alien_ravekit')); // Excluye alien si existe
+  ).filter(el => !el.classList.contains('alien_ravekit'));
 
   const alienEls = Array.from(document.querySelectorAll('.alien_ravekit'));
 
@@ -85,6 +85,5 @@ export function initScrollEffects() {
 
   window.addEventListener('scroll', throttle(onScroll), { passive: true });
 
-  console.log('[Ravekit Effects] Performing initial onScroll call.');
   onScroll();
 }
