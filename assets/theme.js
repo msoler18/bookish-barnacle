@@ -1,1 +1,312 @@
-(()=>{function d(){let s=document.querySelectorAll("[data-nutri-open]"),t=document.querySelector("[data-nutri-overlay]"),e=document.querySelector("[data-nutri-popup]"),n=document.querySelector("[data-nutri-close]");if(!s.length||!t||!e||!n)return;function i(){t.classList.remove("hidden"),e.classList.remove("hidden"),document.body.style.overflow="hidden"}function a(){t.classList.add("hidden"),e.classList.add("hidden"),document.body.style.overflow=""}s.forEach(r=>r.addEventListener("click",i)),t.addEventListener("click",a),n.addEventListener("click",a)}function u(){let s=document.querySelectorAll('a[href="#ravekit-product"]');s.length&&s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();let n=document.getElementById("ravekit-product");n&&n.scrollIntoView({behavior:"smooth",block:"start"})})})}function y(s){let t=!1;return function(...e){t||(window.requestAnimationFrame(()=>{s(...e),t=!1}),t=!0)}}function h(){let s=Array.from(document.querySelectorAll("[data-parallax-speed]")).filter(i=>!i.classList.contains("alien_ravekit")).map(i=>({el:i,speed:parseFloat(i.dataset.parallaxSpeed)})),t=Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).filter(i=>!i.classList.contains("alien_ravekit")).map(i=>({el:i,factor:parseFloat(i.dataset.rotateOnScroll)})),e=Array.from(document.querySelectorAll(".alien_ravekit")),n=()=>{let i=window.scrollY,a=window.innerHeight;s.forEach(({el:r,speed:o})=>{r.style.transform=`translateY(${i*o}px)`}),t.forEach(({el:r,factor:o})=>{let l=r.style.transform.replace(/rotate\([^)]+\)/,"");r.style.transform=`${l} rotate(${i*o}deg)`}),e.forEach(r=>{let o=r.getBoundingClientRect(),m=Math.min(Math.max((a-o.top)/(a+o.height),0),1)*180;r.style.transform=`rotate(${m}deg)`})};window.addEventListener("scroll",y(n)),n()}function p(){let s=document.querySelectorAll("[data-accordion-trigger]"),t=document.querySelectorAll("[data-accordion-content]");if(!s.length||!t.length){console.warn("No titles or contents found for science accordion.");return}s.forEach(e=>{e.addEventListener("click",n=>{let i=e.dataset.index;s.forEach(r=>r.classList.remove("is-active")),t.forEach(r=>r.classList.remove("is-active")),e.classList.add("is-active");let a=document.querySelector(`.science-accordion__item-content[data-content-index="${i}"]`);a?a.classList.add("is-active"):console.warn("No content found for index:",i)})})}function f(){let s=document.querySelector("[data-banner-text]"),t=document.querySelector(".free-shipping-banner__spacer");if(!s||!t)return;let e=s.offsetHeight;t.style.height=`${e}px`;let n=s.getBoundingClientRect().top+window.scrollY;function i(){window.scrollY>=n?s.classList.add("free-shipping-banner__text-container--sticky"):s.classList.remove("free-shipping-banner__text-container--sticky")}window.addEventListener("scroll",i),i()}var c=class{constructor(t){this.container=t;let e=document.getElementById("RavekitProductData");this.data=e?JSON.parse(e.textContent):{},this.settings=this.data.settings||{},this.variants=this.data.variants||[],this.variantBtns=t.querySelectorAll(".variant-button"),this.qtyDec=t.querySelector(".quantity-decrease"),this.qtyInc=t.querySelector(".quantity-increase"),this.qtyInput=t.querySelector(".quantity-input"),this.addBtn=t.querySelector(".add-to-cart"),this.btnSurface=this.addBtn.querySelector(".push-btn__surface .btn-price"),this.radioSingle=t.querySelector('input[value="single"]'),this.radioSub=t.querySelector('input[value="subscription"]'),this.singlePrice=t.querySelector(".single-price"),this.subsPrice=t.querySelector(".subs-price"),this.planSelect=t.querySelector("#selling_plan_select"),this.timerBlock=t.querySelector(".free-shipping-timer"),this.timerTextEl=t.querySelector(".timer-text"),this.timerCountEl=t.querySelector(".timer-countdown"),this.timerSuffix=t.querySelector(".timer-suffix"),this.selectedVariant=null,this.purchaseType="single",this.timerId=null,this.init()}init(){this.variantBtns.length&&(this.variantBtns[0].classList.add("selected"),this.onVariantChange(this.variantBtns[0].dataset.variantId)),this.bind(),this.updateButtonPrice()}bind(){this.variantBtns.forEach(t=>t.addEventListener("click",()=>{this.variantBtns.forEach(e=>e.classList.remove("selected")),t.classList.add("selected"),this.onVariantChange(t.dataset.variantId)})),this.qtyDec.addEventListener("click",()=>this.changeQty(-1)),this.qtyInc.addEventListener("click",()=>this.changeQty(1)),this.qtyInput.addEventListener("input",()=>this.updateButtonPrice()),[this.radioSingle,this.radioSub].forEach(t=>t.addEventListener("change",()=>{this.purchaseType=t.value,this.togglePlanSelect(),this.updateButtonPrice()})),this.planSelect.addEventListener("change",()=>{let t=this.planSelect.selectedOptions[0].text.split("\u2014").pop().trim();this.subsPrice.textContent=t,this.updateButtonPrice()}),this.addBtn.addEventListener("click",t=>{t.preventDefault(),this.addToCart()})}onVariantChange(t){this.selectedVariant=this.variants.find(e=>e.id.toString()===t),this.selectedVariant&&(this.singlePrice.textContent=this.selectedVariant.priceFormatted,this.renderPlans(),this.updateButtonPrice())}renderPlans(){this.planSelect.innerHTML="",this.selectedVariant.selling_plans.forEach(t=>{let e=t.name.split(",")[0],n=document.createElement("option");n.value=t.price,n.dataset.planId=t.plan_id,n.textContent=e,this.planSelect.appendChild(n)}),this.radioSingle.checked=!0,this.purchaseType="single",this.togglePlanSelect()}togglePlanSelect(){this.planSelect.disabled=this.purchaseType!=="subscription"}changeQty(t){let e=parseInt(this.qtyInput.value,10)||1;e=Math.max(1,e+t),this.qtyInput.value=e,this.updateButtonPrice()}updateButtonPrice(){let e=(this.purchaseType==="single"?Number(this.selectedVariant.price):Number(this.planSelect.value))/100,n=Number(this.qtyInput.value)||1,i=e*n,a=i.toLocaleString("es-CO",{style:"currency",currency:"COP"});this.btnSurface.textContent=` ${a}`,this.setupTimer(i)}setupTimer(t){clearInterval(this.timerId);let e=Number(this.settings.freeShippingThreshold);if(t<e){this.timerBlock.style.display="flex",this.timerTextEl.textContent=this.settings.timerText,this.timerSuffix.textContent=this.settings.timerSuffix;let n=Date.now()+this.settings.timerDuration*6e4;this.runCountdown(n)}else this.timerBlock.style.display="none"}runCountdown(t){let e=()=>{let n=t-Date.now();if(n<=0){clearInterval(this.timerId),this.timerCountEl.textContent="00:00";return}let i=String(Math.floor(n/6e4)).padStart(2,"0"),a=String(Math.floor(n%6e4/1e3)).padStart(2,"0");this.timerCountEl.textContent=`${i}:${a}`};e(),this.timerId=setInterval(e,1e3)}addToCart(){if(!this.selectedVariant)return alert("Selecciona una variante.");let t={id:this.selectedVariant.id,quantity:Number(this.qtyInput.value)};this.purchaseType==="subscription"&&(t.selling_plan=this.planSelect.selectedOptions[0].dataset.planId),fetch("/cart/add.js",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(t)}).then(e=>e.ok?e.json():Promise.reject(e)).then(e=>console.log("[RavekitProduct] Cart response:",e)).catch(e=>console.error("[RavekitProduct] Cart error:",e))}};document.addEventListener("DOMContentLoaded",()=>{f(),h(),p(),document.querySelectorAll(".ravekit-product").forEach(s=>{new c(s)}),u(),d()});})();
+(() => {
+  // src/js/components/pdf-popup.js
+  function initPdfPopup() {
+    const openers = document.querySelectorAll("[data-nutri-open]");
+    const overlay = document.querySelector("[data-nutri-overlay]");
+    const popup = document.querySelector("[data-nutri-popup]");
+    const closer = document.querySelector("[data-nutri-close]");
+    if (!openers.length || !overlay || !popup || !closer) return;
+    function open() {
+      overlay.classList.remove("hidden");
+      popup.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      overlay.classList.add("hidden");
+      popup.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+    openers.forEach((btn) => btn.addEventListener("click", open));
+    overlay.addEventListener("click", close);
+    closer.addEventListener("click", close);
+  }
+
+  // src/js/utils/smoothScrollToRavekit.js
+  function initSmoothScrollToRavekit() {
+    const links = document.querySelectorAll('a[href="#ravekit-product"]');
+    if (!links.length) return;
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.getElementById("ravekit-product");
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  }
+
+  // src/js/utils/scrollEffects.js
+  function throttle(fn) {
+    let ticking = false;
+    return function(...args) {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          fn(...args);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+  }
+  function initScrollEffects() {
+    const parallaxEls = Array.from(document.querySelectorAll("[data-parallax-speed]")).filter((el) => !el.hasAttribute("data-rotate-on-scroll"));
+    const rotationEls = Array.from(document.querySelectorAll("[data-rotate-on-scroll]")).filter((el) => !el.classList.contains("alien_ravekit"));
+    const alienEls = Array.from(document.querySelectorAll(".alien_ravekit"));
+    let lastScrollY = window.scrollY;
+    const SCROLL_DELTA_THRESHOLD = 0.5;
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      const delta = scrollY - lastScrollY;
+      parallaxEls.forEach((el) => {
+        const speedString = el.dataset.parallaxSpeed;
+        const speed = parseFloat(speedString);
+        if (isNaN(speed) || speed === 0) {
+          return;
+        }
+        const transformValue = `translateY(${scrollY * -speed}px)`;
+        el.style.transform = transformValue;
+      });
+      rotationEls.forEach((el) => {
+        const factorString = el.dataset.rotateOnScroll;
+        const factor = parseFloat(factorString);
+        if (isNaN(factor) || factor === 0) {
+          return;
+        }
+        if (Math.abs(delta) > SCROLL_DELTA_THRESHOLD) {
+          el._angle = (el._angle || 0) + delta * factor;
+          el.style.transform = `rotate(${el._angle}deg)`;
+        }
+      });
+      const vh = window.innerHeight;
+      alienEls.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const pixelsVisibleFromBottom = vh - r.top;
+        const totalScrollDistanceForVisibility = vh + r.height;
+        let prog = 0;
+        if (totalScrollDistanceForVisibility > 0) {
+          prog = pixelsVisibleFromBottom / totalScrollDistanceForVisibility;
+        }
+        prog = Math.min(Math.max(prog, 0), 1);
+        const ang = prog * 180;
+        el.style.transform = `rotate(${ang}deg)`;
+      });
+      lastScrollY = scrollY;
+    };
+    window.addEventListener("scroll", throttle(onScroll), {
+      passive: true
+    });
+    console.log("[Ravekit Effects] Performing initial onScroll call.");
+    onScroll();
+  }
+
+  // src/js/components/scienceAccordion.js
+  function initScienceAccordion() {
+    const titles = document.querySelectorAll("[data-accordion-trigger]");
+    const contents = document.querySelectorAll("[data-accordion-content]");
+    if (!titles.length || !contents.length) {
+      console.warn("No titles or contents found for science accordion.");
+      return;
+    }
+    titles.forEach((title) => {
+      title.addEventListener("click", (e) => {
+        const index = title.dataset.index;
+        titles.forEach((t) => t.classList.remove("is-active"));
+        contents.forEach((c) => c.classList.remove("is-active"));
+        title.classList.add("is-active");
+        const activeContent = document.querySelector(`.science-accordion__item-content[data-content-index="${index}"]`);
+        if (activeContent) {
+          activeContent.classList.add("is-active");
+        } else {
+          console.warn("No content found for index:", index);
+        }
+      });
+    });
+  }
+
+  // src/js/utils/freeShippingSticky.js
+  function initFreeShippingSticky() {
+    const textContainer = document.querySelector("[data-banner-text]");
+    const spacer = document.querySelector(".free-shipping-banner__spacer");
+    if (!textContainer || !spacer) return;
+    const height = textContainer.offsetHeight;
+    spacer.style.height = `${height}px`;
+    const triggerAt = textContainer.getBoundingClientRect().top + window.scrollY;
+    function onScroll() {
+      if (window.scrollY >= triggerAt) {
+        textContainer.classList.add("free-shipping-banner__text-container--sticky");
+      } else {
+        textContainer.classList.remove("free-shipping-banner__text-container--sticky");
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  }
+
+  // src/js/components/RavekitProduct.js
+  var RavekitProduct = class {
+    constructor(container) {
+      this.container = container;
+      const dataEl = document.getElementById("RavekitProductData");
+      this.data = dataEl ? JSON.parse(dataEl.textContent) : {};
+      this.settings = this.data.settings || {};
+      this.variants = this.data.variants || [];
+      this.variantBtns = container.querySelectorAll(".variant-button");
+      this.qtyDec = container.querySelector(".quantity-decrease");
+      this.qtyInc = container.querySelector(".quantity-increase");
+      this.qtyInput = container.querySelector(".quantity-input");
+      this.addBtn = container.querySelector(".add-to-cart");
+      this.btnSurface = this.addBtn.querySelector(".push-btn__surface .btn-price");
+      this.radioSingle = container.querySelector('input[value="single"]');
+      this.radioSub = container.querySelector('input[value="subscription"]');
+      this.singlePrice = container.querySelector(".single-price");
+      this.subsPrice = container.querySelector(".subs-price");
+      this.planSelect = container.querySelector("#selling_plan_select");
+      this.timerBlock = container.querySelector(".free-shipping-timer");
+      this.timerTextEl = container.querySelector(".timer-text");
+      this.timerCountEl = container.querySelector(".timer-countdown");
+      this.timerSuffix = container.querySelector(".timer-suffix");
+      this.selectedVariant = null;
+      this.purchaseType = "single";
+      this.timerId = null;
+      this.init();
+    }
+    init() {
+      if (this.variantBtns.length) {
+        this.variantBtns[0].classList.add("selected");
+        this.onVariantChange(this.variantBtns[0].dataset.variantId);
+      }
+      this.bind();
+      this.updateButtonPrice();
+    }
+    bind() {
+      this.variantBtns.forEach((btn) => btn.addEventListener("click", () => {
+        this.variantBtns.forEach((b) => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        this.onVariantChange(btn.dataset.variantId);
+      }));
+      this.qtyDec.addEventListener("click", () => this.changeQty(-1));
+      this.qtyInc.addEventListener("click", () => this.changeQty(1));
+      this.qtyInput.addEventListener("input", () => this.updateButtonPrice());
+      [this.radioSingle, this.radioSub].forEach((r) => r.addEventListener("change", () => {
+        this.purchaseType = r.value;
+        this.togglePlanSelect();
+        this.updateButtonPrice();
+      }));
+      this.planSelect.addEventListener("change", () => {
+        const txt = this.planSelect.selectedOptions[0].text.split("\u2014").pop().trim();
+        this.subsPrice.textContent = txt;
+        this.updateButtonPrice();
+      });
+      this.addBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.addToCart();
+      });
+    }
+    onVariantChange(variantId) {
+      this.selectedVariant = this.variants.find((v) => v.id.toString() === variantId);
+      if (!this.selectedVariant) return;
+      this.singlePrice.textContent = this.selectedVariant.priceFormatted;
+      this.renderPlans();
+      this.updateButtonPrice();
+    }
+    renderPlans() {
+      this.planSelect.innerHTML = "";
+      this.selectedVariant.selling_plans.forEach((plan) => {
+        const displayName = plan.name.split(",")[0];
+        const opt = document.createElement("option");
+        opt.value = plan.price;
+        opt.dataset.planId = plan.plan_id;
+        opt.textContent = displayName;
+        this.planSelect.appendChild(opt);
+      });
+      this.radioSingle.checked = true;
+      this.purchaseType = "single";
+      this.togglePlanSelect();
+    }
+    togglePlanSelect() {
+      this.planSelect.disabled = this.purchaseType !== "subscription";
+    }
+    changeQty(delta) {
+      let v = parseInt(this.qtyInput.value, 10) || 1;
+      v = Math.max(1, v + delta);
+      this.qtyInput.value = v;
+      this.updateButtonPrice();
+    }
+    updateButtonPrice() {
+      const rawCents = this.purchaseType === "single" ? Number(this.selectedVariant.price) : Number(this.planSelect.value);
+      const unit = rawCents / 100;
+      const qty = Number(this.qtyInput.value) || 1;
+      const total = unit * qty;
+      const formatted = total.toLocaleString("es-CO", {
+        style: "currency",
+        currency: "COP"
+      });
+      this.btnSurface.textContent = ` ${formatted}`;
+      this.setupTimer(total);
+    }
+    setupTimer(total) {
+      clearInterval(this.timerId);
+      const threshold = Number(this.settings.freeShippingThreshold);
+      if (total < threshold) {
+        this.timerBlock.style.display = "flex";
+        this.timerTextEl.textContent = this.settings.timerText;
+        this.timerSuffix.textContent = this.settings.timerSuffix;
+        const end = Date.now() + this.settings.timerDuration * 6e4;
+        this.runCountdown(end);
+      } else {
+        this.timerBlock.style.display = "none";
+      }
+    }
+    runCountdown(end) {
+      const update = () => {
+        const diff = end - Date.now();
+        if (diff <= 0) {
+          clearInterval(this.timerId);
+          this.timerCountEl.textContent = "00:00";
+          return;
+        }
+        const mm = String(Math.floor(diff / 6e4)).padStart(2, "0");
+        const ss = String(Math.floor(diff % 6e4 / 1e3)).padStart(2, "0");
+        this.timerCountEl.textContent = `${mm}:${ss}`;
+      };
+      update();
+      this.timerId = setInterval(update, 1e3);
+    }
+    addToCart() {
+      if (!this.selectedVariant) {
+        return alert("Selecciona una variante.");
+      }
+      const payload = {
+        id: this.selectedVariant.id,
+        quantity: Number(this.qtyInput.value)
+      };
+      if (this.purchaseType === "subscription") {
+        payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
+      }
+      fetch("/cart/add.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }).then((r) => r.ok ? r.json() : Promise.reject(r)).then((data) => console.log("[RavekitProduct] Cart response:", data)).catch((err) => console.error("[RavekitProduct] Cart error:", err));
+    }
+  };
+
+  // src/js/theme.js
+  document.addEventListener("DOMContentLoaded", () => {
+    initFreeShippingSticky();
+    initScrollEffects();
+    initScienceAccordion();
+    document.querySelectorAll(".ravekit-product").forEach((container) => {
+      new RavekitProduct(container);
+    });
+    initSmoothScrollToRavekit();
+    initPdfPopup();
+  });
+})();
+//# sourceMappingURL=theme.js.map

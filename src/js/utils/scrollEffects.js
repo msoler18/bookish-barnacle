@@ -1,6 +1,5 @@
 /**
  * Simple throttle using requestAnimationFrame.
- * Ensures the provided function is not called more than once per animation frame.
  */
 function throttle(fn) {
   let ticking = false;
@@ -16,51 +15,76 @@ function throttle(fn) {
 }
 
 /**
- * Initializes scroll-based effects:
- *  • Parallax translation on Y for [data-parallax-speed] (excluyendo al alien)
- *  • Continuous rotation for [data-rotate-on-scroll] (excluyendo al alien)
- *  • Alien (.alien_ravekit): NO translate, gira 0→180° según el porcentaje
- *    de visibilidad en pantalla (0 = fuera, 1 = totalmente dentro).
+ * Initializes scroll-based effects.
  */
 export function initScrollEffects() {
+
   const parallaxEls = Array.from(
     document.querySelectorAll('[data-parallax-speed]')
-  )
-    .filter(el => !el.classList.contains('alien_ravekit'))
-    .map(el => ({ el, speed: parseFloat(el.dataset.parallaxSpeed) }));
+  ).filter(el => !el.hasAttribute('data-rotate-on-scroll'));
 
   const rotationEls = Array.from(
     document.querySelectorAll('[data-rotate-on-scroll]')
-  )
-    .filter(el => !el.classList.contains('alien_ravekit'))
-    .map(el => ({ el, factor: parseFloat(el.dataset.rotateOnScroll) }));
+  ).filter(el => !el.classList.contains('alien_ravekit')); // Excluye alien si existe
 
   const alienEls = Array.from(document.querySelectorAll('.alien_ravekit'));
 
+  let lastScrollY = window.scrollY;
+  const SCROLL_DELTA_THRESHOLD = 0.5;
+
   const onScroll = () => {
     const scrollY = window.scrollY;
+    const delta = scrollY - lastScrollY;
+    
+    parallaxEls.forEach(el => {
+      const speedString = el.dataset.parallaxSpeed;
+      const speed = parseFloat(speedString);
+
+      if (isNaN(speed) || speed === 0) {
+        return;
+      }
+
+      const transformValue = `translateY(${scrollY * -speed}px)`;
+      el.style.transform = transformValue;
+    });
+
+    rotationEls.forEach(el => {
+      const factorString = el.dataset.rotateOnScroll;
+      const factor = parseFloat(factorString);
+
+      if (isNaN(factor) || factor === 0) {
+        return;
+      }
+
+      if (Math.abs(delta) > SCROLL_DELTA_THRESHOLD) {
+        el._angle = (el._angle || 0) + delta * factor;
+        el.style.transform = `rotate(${el._angle}deg)`;
+      }
+    });
+
     const vh = window.innerHeight;
-
-    parallaxEls.forEach(({ el, speed }) => {
-      el.style.transform = `translateY(${scrollY * speed}px)`;
-    });
-
-    rotationEls.forEach(({ el, factor }) => {
-      const base = el.style.transform.replace(/rotate\([^)]+\)/, '');
-      el.style.transform = `${base} rotate(${scrollY * factor}deg)`;
-    });
-
     alienEls.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const progress = Math.min(
-        Math.max((vh - rect.top) / (vh + rect.height), 0),
-        1
-      );
-      const angle = progress * 180;
-      el.style.transform = `rotate(${angle}deg)`;
+      const r = el.getBoundingClientRect();
+      const pixelsVisibleFromBottom = vh - r.top;
+      const totalScrollDistanceForVisibility = vh + r.height;
+      
+      let prog = 0;
+      if (totalScrollDistanceForVisibility > 0) {
+          prog = pixelsVisibleFromBottom / totalScrollDistanceForVisibility;
+      }
+      
+      prog = Math.min(Math.max(prog, 0), 1);
+
+      const ang = prog * 180; 
+      el.style.transform = `rotate(${ang}deg)`;
     });
+    
+
+    lastScrollY = scrollY;
   };
 
-  window.addEventListener('scroll', throttle(onScroll));
+  window.addEventListener('scroll', throttle(onScroll), { passive: true });
+
+  console.log('[Ravekit Effects] Performing initial onScroll call.');
   onScroll();
 }

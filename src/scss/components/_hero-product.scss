@@ -46,9 +46,9 @@
     .hero-product__sticker-wrapper {
       position: absolute;
       right: 0;
-      width: px-to-rem(120px);
-      height: px-to-rem(380px);
-      overflow: hidden;
+      width: px-to-rem(200px);
+      height: px-to-rem(200px);
+      overflow: hidden; 
     }
 
     .hero-product__texture,
@@ -57,26 +57,22 @@
       max-width: 100%;
       height: auto;
       will-change: transform;
-      transition: transform 0.2s ease-out;
-    }
-
-    .hero-product__sticker {
-      @include wiggle(16s, 10px);
     }
 
     .hero-product__texture {
-      @include wiggle(14s, 20px);
+      @include wiggle(14s, 20px); 
     }
 
     .hero-product__product {
-      position:absolute;
-      @include floating(5s, 15px); 
+      position: absolute; 
+      top:px-to-rem(50px);
+      width: px-to-rem(270px);
     }
 
     .hero-product__sticker {
       position: absolute;
       right: 0;
-      width: px-to-rem(60px);
+      width: px-to-rem(100px);
     }
   }
 
@@ -109,39 +105,38 @@
       align-items: center;
       justify-content: center;
       svg {
-        width: px-to-rem(18px);  
+        width: px-to-rem(18px);
         height: auto;
-        max-height: px-to-rem(18px); 
+        max-height: px-to-rem(18px);
         display: inline-block;
       }
     }
-
   }
 }
 
 @include respond-to(xlarge) {
   .hero-product {
-    padding:7.5rem 20rem;
-    &__sticker  {
-      width: px-to-rem(100px);
+    padding:7.5rem 20rem; 
+
+    &__sticker { 
+      width: px-to-rem(100px); 
       right: 30%;
     }
-    &__texture {
+    &__texture { 
       width: 50%;
     }
-    &__product {
+    &__product { 
       width: 30%;
     }
   }
-
 }
 
 @include respond-to(medium) {
   .hero-product {
     padding: px-to-rem(60px) 0;
-    
+
     &__images {
-      flex-direction: row;
+      flex-direction: row; 
       justify-content: center;
     }
 

@@ -1,61 +1,66 @@
+
 {% assign title_formatted = section.settings.title | replace: '<', '<span class="highlight">' | replace: '>', '</span>' %}
+
 <section class="hero-product" style="background-color: {{ section.settings.background_color }}">
   <div class="container hero-product__container">
+
     <div class="hero-product__text-wrapper">
-      <h1 class="hero-product__title">{{ title_formatted }}</h1>
-      <p class="hero-product__subtitle">{{ section.settings.subtitle }}</p>
+      <h1 class="hero-product__title">
+        {{ title_formatted }}
+      </h1>
+      <p class="hero-product__subtitle">
+        {{ section.settings.subtitle }}
+      </p>
     </div>
+
     <div class="hero-product__images">
       {% if section.settings.texture %}
-        {% assign speed_tex = section.settings.parallax_texture_speed | default: 0.2 %}
-        {% assign attr_tex = 'data-parallax-speed="' | append: speed_tex | append: '"' %}
         {% render 'render-image',
           class: "hero-product__texture lazyloadimage lazyload blur-up",
-          img: section.settings.texture,
           img_src: section.settings.texture | image_url: width: 1380,
+          img: section.settings.texture,
           alt: section.settings.texture.alt,
           width: "1380",
           height: "800",
           size: "400 800 1200 1380",
-          attributes: attr_tex
         %}
       {% endif %}
+
       {% if section.settings.product %}
-        {% assign speed_prod = section.settings.parallax_product_speed | default: 0.1 %}
-        {% assign attr_prod = 'data-parallax-speed="' | append: speed_prod | append: '"' %}
         {% render 'render-image',
           class: "hero-product__product lazyloadimage lazyload blur-up",
-          img: section.settings.product,
           img_src: section.settings.product | image_url: width: 600,
+          img: section.settings.product,
           alt: section.settings.product.alt,
           width: "600",
           height: "800",
           size: "300 600 900 1200",
-          attributes: attr_prod
+          attributes: 'data-parallax-speed="0.7"'
         %}
       {% endif %}
+
       {% if section.settings.sticker %}
-        {% assign speed_st = section.settings.parallax_sticker_speed | default: 1 %}
-        {% assign factor = section.settings.sticker_rotation_factor | default: 10 %}
-        {% assign attr_st = 'data-parallax-speed="' | append: speed_st | append: '"' %}
-        {% assign attr_st = attr_st | append: ' data-rotate-on-scroll="' | append: factor | append: '"' %}
         <div class="hero-product__sticker-wrapper">
           {% render 'render-image',
             class: "hero-product__sticker lazyloadimage lazyload blur-up",
-            img: section.settings.sticker,
             img_src: section.settings.sticker | image_url: width: 120,
+            img: section.settings.sticker,
             alt: section.settings.sticker.alt,
             width: "120",
             height: "120",
             size: "60 90 120",
-            attributes: attr_st
+            attributes: 'data-rotate-on-scroll="1"'
           %}
         </div>
       {% endif %}
     </div>
+
     <div class="hero-product__cta">
-      <a href="{{ section.settings.button_link }}" class="btn btn-primary">{{ section.settings.button_text }}</a>
+      <a href="{{ section.settings.button_link }}" class="btn btn-primary">
+        {{ section.settings.button_text }}
+      </a>
     </div>
+
     <div class="hero-product__safe-text">
       <div class="icon-wrapper">
         {% if section.settings.safe_icon %}
@@ -68,12 +73,13 @@
             height: "18",
             size: "18"
           %}
-        {% else %}
-          {% render 'icon-shield' %}
-        {% endif %}
+          {% else %}
+            {% render 'icon-shield' %}
+          {% endif %}
       </div>
       <span>{{ section.settings.safe_text }}</span>
     </div>
+
   </div>
 </section>
 
@@ -103,50 +109,14 @@
       "label": "Imagen textura de fondo"
     },
     {
-      "type": "range",
-      "id": "parallax_texture_speed",
-      "label": "Velocidad parallax textura",
-      "min": 0,
-      "max": 1,
-      "step": 0.1,
-      "default": 0.2
-    },
-    {
       "type": "image_picker",
       "id": "product",
       "label": "Imagen producto Ravekit"
     },
     {
-      "type": "range",
-      "id": "parallax_product_speed",
-      "label": "Velocidad parallax producto",
-      "min": 0,
-      "max": 1,
-      "step": 0.1,
-      "default": 0.1
-    },
-    {
       "type": "image_picker",
       "id": "sticker",
       "label": "Sticker pequeño (bandera)"
-    },
-    {
-      "type": "range",
-      "id": "parallax_sticker_speed",
-      "label": "Velocidad parallax sticker",
-      "min": 0,
-      "max": 2,
-      "step": 0.1,
-      "default": 1.0
-    },
-    {
-      "type": "range",
-      "id": "sticker_rotation_factor",
-      "label": "Factor rotación sticker",
-      "min": 0,
-      "max": 30,
-      "step": 1,
-      "default": 10
     },
     {
       "type": "text",
