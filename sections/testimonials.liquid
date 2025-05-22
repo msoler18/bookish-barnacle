@@ -98,7 +98,7 @@
           <ul {% if testimonials.size > 1 %}class="splide__list"{% else %}class="single-testimonial-list"{% endif %}
              w-full
              {% if section.settings.title != '' %}
-               {% if section.settings.display_on_card %} mt-5{% else %}mt-10{% endif %}
+               {% if section.settings.display_on_card %} mt-5 {% else %} mt-10 {% endif %}
              {% endif %}">
             {%- for block in testimonials -%}
               {%- liquid
