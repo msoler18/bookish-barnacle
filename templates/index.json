@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "header": {
       "type": "header",
@@ -32,8 +32,12 @@
         "title": "EL SUPLEMENTO <#1> PARA RAVERS",
         "subtitle": "Siente la música, no el bajón",
         "texture": "shopify://shop_images/HERO-FONDO.webp",
+        "parallax_texture_speed": 0.6,
         "product": "shopify://shop_images/FOTO_PRODUCTO.png",
+        "parallax_product_speed": 0.5,
         "sticker": "shopify://shop_images/sticker.webp",
+        "parallax_sticker_speed": 0.2,
+        "sticker_rotation_factor": 23,
         "button_text": "Comprar Ahora",
         "button_link": "#ravekit-product",
         "safe_text": "Compra segura",
@@ -260,7 +264,6 @@
       "name": "Ravekit Product Section",
       "settings": {
         "product_handle": "3-ravekit",
-        "intro_text": "El mejor suplemento para Ravers.",
         "feature_image_1": "shopify://shop_images/VEGAN.svg",
         "feature_text_1": "100% vegano",
         "feature_image_2": "shopify://shop_images/KETO_2.svg",
