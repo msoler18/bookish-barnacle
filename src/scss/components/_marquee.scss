@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: px-to-rem(12px) 0;
+
+  &__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__group {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    gap: px-to-rem(32px);
+    justify-content: center;
+
+    span {
+      font-family: $font-family-headings;
+      font-weight: $font-weight-bold;
+      font-size: font-size(0);
+      font-style: italic;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+  }
+
+  &--active .marquee__inner {
+    animation: marquee var(--marquee-speed) linear infinite;
+    min-width: 500%;
+  }
+
+  &--right.marquee--active .marquee__inner {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@include respond-to(medium) {
+  .marquee__group span {
+    font-size: font-size(2);
+  }
+}

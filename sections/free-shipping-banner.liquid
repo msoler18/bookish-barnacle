@@ -1,0 +1,53 @@
+{%- comment -%} sections/free-shipping-banner.liquid {%- endcomment -%}
+<div class="free-shipping-banner">
+  <div class="free-shipping-banner__text-container" data-banner-text>
+    <div class="container">
+      <div class="free-shipping-banner__text">
+        {{ section.settings.banner_text }}
+      </div>
+    </div>
+  </div>
+
+  <div class="free-shipping-banner__spacer"></div>
+
+  {% if section.settings.banner_image %}
+    <div class="free-shipping-banner__image-container">
+      <div class="container">
+        {% render 'render-image',
+          class: "free-shipping-banner__image",
+          img_src: section.settings.banner_image | image_url: width: 1380,
+          img: section.settings.banner_image,
+          alt: section.settings.banner_image.alt,
+          width: "1380",
+          height: "256",
+          size: "400 800 1200 1380"
+        %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Free Shipping Banner",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "banner_text",
+      "label": "Texto del banner",
+      "default": "<p>Envío gratis a partir de $65.000 en compras</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Imagen del banner"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Free Shipping Banner"
+    }
+  ]
+}
+{% endschema %}

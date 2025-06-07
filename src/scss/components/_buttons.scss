@@ -1,0 +1,73 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+@use 'sass:color';
+
+.btn {
+  font-family: $font-family-buttons;
+  display: inline-block;
+  padding: px-to-rem(12px) px-to-rem(24px);
+  font-size: font-size(0);
+  text-align: center;
+  border-radius: px-to-rem(8px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+
+  &:after {
+    border-color: $color-white!important;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 px-to-rem(8px) px-to-rem(16px) rgba($color-black, 0.1);
+  }
+  
+}
+
+.btn-primary {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    background-color: color.adjust($color-primary, $lightness: 10%);
+  }
+}
+
+.btn-secondary {
+  background-color: $color-secondary;
+  color: $color-black;
+
+  &:hover {
+    background-color: color.adjust($color-secondary, $lightness: 10%);
+  }
+}
+
+.btn-accent {
+  background-color: $color-accent;
+  color: $color-white;
+
+  &:hover {
+    background-color: color.adjust($color-accent, $lightness: 10%);
+  }
+}
+
+.btn-float-basket {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-black;
+  z-index: 99999;
+  cursor:pointer;
+  svg {
+    width: 30px;
+  }
+}

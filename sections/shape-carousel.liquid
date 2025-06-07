@@ -24,10 +24,28 @@
   -%}
 {%- endfor -%}
 
-<section
-  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %}"
+
+<div class="wave--container" id="shape">
+
+  {% if section.settings.wave_top_image != blank %}
+    <div class="section-wave">
+      {% render 'render-image',
+        class: "wave-top",
+        img: section.settings.wave_top_image,
+        img_src: section.settings.wave_top_image | image_url: width: 1200,
+        alt: 'Wave top',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
+  {% endif %}
+
+  <section
+  class="gallery relative overflow-hidden bg-scheme-background text-scheme-text  {% if section.settings.use_gradient_background %}bg-scheme-gradient{% endif %} {% if section.settings.wave_top_image %}padding-top{% endif %} {% if section.settings.wave_bottom_image %}padding-bottom{% endif %}"
   data-color-scheme="{{ section.settings.color_scheme }}"
->
+  >
+
   <div class="section-content relative py-section-vertical-spacing">
     {% unless section.settings.title == blank %}
       <div class="mx-auto max-w-site px-section">
@@ -36,6 +54,43 @@
         </h2>
       </div>
     {% endunless %}
+
+
+    {% unless section.settings.subtitle == blank %}
+      <div class="general__subtitle">
+        {{ section.settings.subtitle }}
+      </div>
+    {% endunless %}
+
+    {%- assign cert_array = '1,2,3,4,5' | split: ',' -%}
+
+    {% assign has_cert = false %}
+    {% for idx in cert_array %}
+      {% assign key = 'certification_icon_' | append: idx %}
+      {% if section.settings[key] != blank %}
+        {% assign has_cert = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if has_cert %}
+      <div class="certifications flex justify-center items-center mt-5">
+        {% for idx in cert_array %}
+          {% assign key = 'certification_icon_' | append: idx %}
+          {% assign logo = section.settings[key] %}
+          {% if logo %}
+            {% render 'render-image',
+              class: "w-16 certifications__img",
+              img: logo,
+              alt: 'Certificado ' | append: idx,
+              size: "100",
+              width: "100",
+              height: "auto"
+            %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
 
     <div
       {% if section.blocks.size > 0 %}
@@ -151,9 +206,25 @@
         </ul>
       </div>
       {% if section.blocks.size > 0 %}
-        <div class="splide__arrows mt-5 flex items-center justify-between px-section">
-          {%- render 'splide-navigation' -%}
+        <div class="splide__footer">
+          {% if section.settings.link_url != blank %}
+            <div class="gallery__nutri-button-wrapper">
+              {%render 'icon-facts'%}
+              <button
+                type="button"
+                class="gallery__nutri-button"
+                data-nutri-open
+                >
+                {{ section.settings.link_text | default: 'Ver tabla nutricional' }}
+              </button>
+            </div>
+          {% endif %}
+          
+          <div class="splide__arrows mt-5 flex items-center justify-between px-section">
+            {%- render 'splide-navigation' -%}
+          </div>
         </div>
+
       {% endif %}
       <script class="slideshow-options" type="application/json">
         {
@@ -195,7 +266,38 @@
       endcase
     endfor
   -%}
-</section>
+
+
+  </section>
+
+  {% if section.settings.wave_bottom_image != blank %}
+    <div class="section-wave">
+      {% render 'render-image',
+        class: "wave-bottom",
+        img: section.settings.wave_bottom_image,
+        img_src: section.settings.wave_bottom_image | image_url: width: 1200,
+        alt: 'Wave bottom',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
+  {% endif %}
+
+
+  <div class="gallery__nutri-overlay hidden" data-nutri-overlay></div>
+  <div class="gallery__nutri-popup hidden" data-nutri-popup>
+    <button type="button" class="gallery__nutri-close" data-nutri-close>×</button>
+    <iframe
+      src="{{ section.settings.link_url }}"
+      class="gallery__nutri-iframe"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+</div>
+
 
 {%- liquid
   assign stickers = section.blocks | where: 'type', 'sticker'
@@ -232,6 +334,56 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_top_image",
+      "label": "Wave superior"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_bottom_image",
+      "label": "Wave inferior"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtítulo debajo del título"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_1",
+      "label": "Certificado 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_2",
+      "label": "Certificado 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_3",
+      "label": "Certificado 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_4",
+      "label": "Certificado 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "certification_icon_5",
+      "label": "Certificado 5"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Texto del botón/link"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "URL tabla nutricional / pdf"
     },
     {
       "type": "select",
@@ -3393,8 +3545,7 @@
             }
           ],
           "default": ""
-        }
-      ]
+        }      ]
     }
   ],
   "presets": [

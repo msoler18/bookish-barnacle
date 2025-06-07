@@ -1,2 +1,41 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.general__subtitle,
+.general__subtitle p {
+  font-family: $font-family-body;
+  margin-top:.5rem;
+  text-align: center;
+}
+
+.highlighted {
+  color:$color-secondary;
+}
+
+.section-wave {
+  img {
+    width: 100%;
+  }
+}
+
+@include respond-to(xlarge) {
+  
+  .video-main {
+    .section-content-top-margin {
+      padding:0 40%;
+    }
+  }
+
+}
+
+@include respond-to(medium) {
+  
+  .video-main {
+    .section-content-top-margin {
+      padding:0 30%;
+    }
+  }
+
+}
+

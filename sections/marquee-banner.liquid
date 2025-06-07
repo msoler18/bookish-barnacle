@@ -1,0 +1,116 @@
+{% comment %}
+  Marquee Banner Section
+
+  Settings:
+  - enable_marquee: Toggle animation on/off
+  - background_color: Section background
+  - text_color: Phrase color
+  - speed: Animation duration in seconds
+  - direction: Scroll direction, 'left' or 'right'
+
+  Blocks:
+  - text: Each phrase to scroll
+{% endcomment %}
+
+<section
+  class="marquee
+    {% if section.settings.enable_marquee %}marquee--active{% else %}marquee--static{% endif %}
+    marquee--{{ section.settings.direction }}"
+  style="
+    background-color: {{ section.settings.background_color }};
+    --marquee-speed: {{ section.settings.speed }}s;
+  "
+>
+  <div class="marquee__inner">
+    {% if section.settings.enable_marquee %}
+      <div class="marquee__group">
+        {% for block in section.blocks %}
+          <span style="color: {{ section.settings.text_color }}">
+            {{ block.settings.text }}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="marquee__group" aria-hidden="true">
+        {% for block in section.blocks %}
+          <span style="color: {{ section.settings.text_color }}">
+            {{ block.settings.text }}
+          </span>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="marquee__group">
+        {% if section.blocks.size > 0 %}
+          <span style="color: {{ section.settings.text_color }}">
+            {{ section.blocks.first.settings.text }}
+          </span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marquee Banner",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_marquee",
+      "label": "Enable Marquee Animation",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ff00ff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Scroll speed (seconds)",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Scroll direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Phrase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Phrase Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Marquee Banner",
+      "category": "Banners"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,128 @@
+<section
+  class="ravekit-comparison py-section-vertical-spacing"
+  style="background-color: {{ section.settings.background_color }};"
+>
+  <div class="section-content text-center">
+    {% if section.settings.title != blank %}
+      <h2 class="font-heading heading-standard mb-10" style="color: {{ section.settings.title_color }}">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.main_image %}
+      <div class="mx-auto max-w-xl mb-10">
+        {% render 'render-image',
+          class: "ravekit-comparison__image",
+          img_src: section.settings.main_image | image_url: width: 1200,
+          img: section.settings.main_image,
+          alt: section.settings.main_image.alt,
+          width: "1200",
+          height: "auto",
+          size: "400 800 1200"
+        %}
+      </div>
+    {% endif %}
+
+    <div class="comparison-items mx-auto">
+      {% for block in section.blocks %}
+        {% if block.type == 'comparison_item' %}
+          <div class="comparison-items__item text-center">
+            <div class="comparison-items__left bg-secondary">
+              <div class="text-black font-bold">
+                {{ block.settings.left_text }}
+              </div>
+            </div>
+            <div class="comparison-items__right bg-tertiary">
+              <div class="text-black font-bold">
+                {{ block.settings.right_text }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+      <div class="ravekit-comparison__cta">
+        <a href="{{ section.settings.button_link }}" class="push-btn inline-block">
+          <span class="push-btn__surface">{{ section.settings.button_text }}</span>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+
+{
+  "name": "Ravekit vs El Resto",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Título principal"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color del título"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Imagen principal"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo de la sección"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link del botón"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_item",
+      "name": "Ítem comparativo",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "left_text",
+          "label": "Texto izquierdo (verde)"
+        },
+        {
+          "type": "richtext",
+          "id": "right_text",
+          "label": "Texto derecho (rosa)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ravekit vs El Resto",
+      "blocks": [
+        {
+          "type": "comparison_item"
+        },
+        {
+          "type": "comparison_item"
+        },
+        {
+          "type": "comparison_item"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
+

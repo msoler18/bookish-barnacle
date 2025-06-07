@@ -1,2 +1,60 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.footer-separator {
+  overflow: hidden;
+  img { 
+    display: block; 
+    width: 100%; 
+  }
+}
+
+.custom-footer {
+  & .footer-logo img {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  & .footer-menus {
+    display: flex;
+    justify-content: space-between;
+    padding:0 5%;
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+    li {
+      font-size:px-to-rem(12px);
+    }
+  }
+  & .contact {
+    margin-top: 1.5rem;
+    font-size:px-to-rem(12px);
+    text-align: left;
+    &__label { 
+      font-weight: 600; 
+      margin-right: .5rem; 
+    }
+  }
+  & .policies-menu {
+    margin-top: 1.5rem;
+  }
+  & .copyright {
+    font-family:$font-family-headings;
+    font-style:italic;
+    font-size: px-to-rem(9px);
+    margin: 1.5rem 0;
+  }
+}
+
+.footer-menus--left {
+  ul {
+    text-align: left;
+  }
+}
+
+.footer-menus--right {
+  ul {
+    text-align: right;
+  }
+}

@@ -17,7 +17,7 @@
 -%}
 
 <section
-  class="relative grid bg-scheme-background text-scheme-text{% if section.settings.use_gradient_background %} bg-scheme-gradient{% endif %} overflow-hidden"
+  class="video-main relative grid bg-scheme-background text-scheme-text{% if section.settings.use_gradient_background %} bg-scheme-gradient{% endif %} overflow-hidden"
   data-color-scheme="{{ section.settings.color_scheme }}"
 >
   <div class="section-content{% if section.settings.style == 'inset' %} py-section-vertical-spacing{% endif %}">
@@ -186,8 +186,9 @@
                     | video_tag:
                       class: video_tag_class,
                       image_size: '2000x',
-                      controls: false,
+                      controls:section.settings.show_controls,
                       autoplay: true,
+                      muted: section.settings.sound_enabled,
                       playsline: true,
                       x-ref: 'video'
                   }}
@@ -195,7 +196,9 @@
                   <video
                     x-ref="video"
                     autoplay
+                    {% if section.settings.show_controls %}controls{% endif %}
                     playsinline
+                    {% unless section.settings.sound_enabled %}muted{% endunless %}
                     class="{{ video_tag_class }}"
                   >
                     <source
@@ -210,8 +213,18 @@
           </data-island>
         {% endif %}
       </div>
+      {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+        <div class="mt-8 text-center">
+          <a href="{{ section.settings.button_link }}" class="push-btn inline-block">
+            <span class="push-btn__surface">{{ section.settings.button_label }}</span>
+          </a>
+        </div>
+      {%- endif -%}
     </div>
   </div>
+  {%- if section.settings.wave_bottom_image != blank -%}
+    <img src="{{ section.settings.wave_bottom_image | image_url }}" alt="Wave bottom" class="absolute bottom-0 w-full z-10 pointer-events-none">
+  {%- endif -%}
 </section>
 
 {%- liquid
@@ -331,6 +344,43 @@
       ],
       "default": "inline",
       "info": "t:sections.video.settings.playback.info"
+    },
+    {
+        "type": "checkbox",
+        "id": "sound_enabled",
+        "label": "Enable sound",
+        "default": false,
+        "info": "Si lo activas, el vídeo no irá muteado al cargar."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_controls",
+        "label": "Show video controls",
+        "default": false,
+        "info": "Muestra u oculta la barra de controles del reproductor."
+      },
+    { 
+      "type": "header", 
+      "content": "Button Settings" 
+    },
+    { 
+      "id": "button_label", 
+      "type": "text", 
+      "label": "Button Text" 
+    },
+    { 
+      "id": "button_link", 
+      "type": "url", 
+      "label": "Button Link" 
+    },
+    { 
+      "type": "header", 
+      "content": "Wave Settings" 
+    },
+    { 
+      "id": "wave_bottom_image", 
+      "type": "image_picker", 
+      "label": "Wave Bottom Image" 
     },
     {
       "type": "header",

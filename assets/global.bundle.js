@@ -2704,28 +2704,14 @@ setTimeout(() => {
   Alpine2.start();
   document.dispatchEvent(new CustomEvent("switch:alpine:started"));
 });
-console.log('Shapes theme (3.0.0) by SWITCH | Make the switch: https://switchthemes.co');
 
- // Detectar el desplazamiento de la página
-  window.addEventListener('scroll', function() {
-    const section = document.querySelector('#shopify-section-template--16358403276890__rich_text_ApmpnL section');
-    const scrollPosition = window.scrollY;
-console.log("SCROLLLL");
-    // Agregar o quitar la clase según la posición de scroll
-    if (scrollPosition > 100) { // Cambia "100" a la posición en la que quieres que se active
-      section.classList.add('fixed-on-scroll');
-    } else {
-      section.classList.remove('fixed-on-scroll');
-    }
-  });
+// document.getElementById('openPopup').addEventListener('click', function() {
+//   document.getElementById('popup').style.display = 'block';
+// });
 
-document.getElementById('openPopup').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'block';
-});
-
-document.getElementById('closePopup').addEventListener('click', function() {
-  document.getElementById('popup').style.display = 'none';
-});
+// document.getElementById('closePopup').addEventListener('click', function() {
+//   document.getElementById('popup').style.display = 'none';
+// });
 
 
 document.addEventListener("DOMContentLoaded", function() {
