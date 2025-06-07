@@ -181,24 +181,44 @@ export default class RavekitProduct {
   }
 
   addToCart() {
-    if (!this.selectedVariant) {
-      return alert('Selecciona una variante.');
-    }
-    const payload = {
-      id:       this.selectedVariant.id,
-      quantity: Number(this.qtyInput.value)
-    };
-    if (this.purchaseType==='subscription') {
-      payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
-    }
-    // console.log('[RavekitProduct] Payload to cart:', payload);
-    fetch('/cart/add.js',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
-    })
-      .then(r=>r.ok?r.json():Promise.reject(r))
-      .then(data=> console.log('[RavekitProduct] Cart response:', data))
-      .catch(err=> console.error('[RavekitProduct] Cart error:', err));
+  if (!this.selectedVariant) {
+    return alert('Selecciona una variante.');
   }
+  const payload = {
+    id:       this.selectedVariant.id,
+    quantity: Number(this.qtyInput.value)
+  };
+  if (this.purchaseType==='subscription') {
+    payload.selling_plan = this.planSelect.selectedOptions[0].dataset.planId;
+  }
+  // console.log('[RavekitProduct] Payload to cart:', payload);
+  fetch('/cart/add.js',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  })
+    .then(r=>r.ok?r.json():Promise.reject(r))
+    .then(data=> {
+      //console.log('[RavekitProduct] Cart response:', data);
+      this.openMiniCart();
+    })
+    .catch(err=> console.error('[RavekitProduct] Cart error:', err));
+  }
+
+  openMiniCart() {
+    const cartButton = document.querySelector('.header__cart');
+    if (cartButton) {
+      // Simular un click real con evento nativo
+      const clickEvent = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      });
+      cartButton.dispatchEvent(clickEvent);
+      //console.log('[RavekitProduct] Mini cart opened');
+    } else {
+      console.warn('[RavekitProduct] Cart button not found');
+    }
+  }
+
 }
