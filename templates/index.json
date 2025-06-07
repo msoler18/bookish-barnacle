@@ -1,1 +1,737 @@
-{"sections":{"image_with_text_overlay_1":{"type":"image-with-text-overlay","disabled":true,"settings":{"display_on_card":false,"display_content_below_image_on_mobile":true,"style":"full","height":"natural","place_content":"place-content-center-center","text_align":"text-center","title":"Image with text overlay","heading_size":"heading-standard","richtext":"","cta_url":"","cta_text":"Shop Now","color_scheme":"","use_gradient_background":false}},"image_with_text":{"type":"image-with-text","disabled":true,"settings":{"display_on_card":false,"crop":"","image_shape":"default","blob_type":1,"rotate_image":0,"image_position":"right","image_size":"half","disable_media_style":true,"title":"Image with text","heading_size":"heading-feature","richtext":"","text_alignment":"text-left","button_link":"","button_label":"Shop Now","color_scheme":"","use_gradient_background":false}},"feature_logo_with_image":{"type":"feature-logo-with-image","settings":{"logo":"shopify:\/\/shop_images\/logo_ravekit_fbcdb7ed-4de7-4b7e-95e2-c5ce31fc3106.svg","alignment":"center","logo_max_width":80,"button_link":"","button_label":"Shop Now","image":"shopify:\/\/shop_images\/SLIDER_3.webp","crop":"","image_shape":"default","blob_type":1,"rotate_image":0,"disable_media_style":false,"max_width_image_mobile":100,"image_offset_mobile":2.5,"max_width_image_desktop":80,"image_offset_desktop":6,"color_scheme":"","use_gradient_background":false}},"feature_text":{"type":"feature-text","disabled":true,"settings":{"rich_text":"Use this text to share information about your brand with your customers.","mobile_text_scale":2,"desktop_text_scale":4,"display_on_card":false,"apply_effects":false,"content_width_desktop":"lg:w-full","button_link":"shopify:\/\/products\/ravekit","button_label":"VER LANDING","color_scheme":"","use_gradient_background":false}},"icon_list":{"type":"icon-list","blocks":{"icon_AW7QrP":{"type":"icon","settings":{"icon":"star","text":""}},"icon_NtKTwP":{"type":"icon","settings":{"icon":"star","text":""}},"icon_7BMa4y":{"type":"icon","settings":{"icon":"star","text":""}}},"block_order":["icon_AW7QrP","icon_NtKTwP","icon_7BMa4y"],"disabled":true,"settings":{"title":"","max_width":100,"text_style":"body","uppercase_text":false,"layout_on_mobile":"scroll","icon_alignment_on_desktop":"md:justify-center","icon_thickness":1.5,"background_color":"bg-transparent text-scheme-text","show_border":true,"color_scheme":"","use_gradient_background":false}},"collection_focus_carousel":{"type":"collection-focus-carousel","disabled":true,"settings":{"title":"Featured collection","subheading":"Use this text to share information about your collection.","collection":"","no_products":4,"focused_slide_source":"description","focused_slide_metafield":"","display_on_card":false,"enlarge_active_slide":true,"mobile_slide_width":"three_fifths","desktop_slide_width":40,"product_tiles_aspect_ratio":"","image_shape":"","color_scheme":"","use_gradient_background":false}},"featured_collection":{"type":"featured-collection","disabled":true,"settings":{"title":"Featured collection","subheading":"Use this text to share information about your collection.","collection":"","no_products":4,"show_view_all":false,"enable_quick_buy":false,"display_on_card":true,"layout":"grid","products_per_row_mobile":"1","products_per_row_desktop":4,"slideshow_focus":"center","mobile_slide_width":"three_fifths","desktop_slide_width":40,"autoscroll_mode":"1","product_tiles_aspect_ratio":"","image_shape":"","color_scheme":"","use_gradient_background":false}},"text_columns_with_images":{"type":"text-columns-with-images","blocks":{"column_AGRAWm":{"type":"column","settings":{"show_image":true,"title":"","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"column_TFwmbb":{"type":"column","settings":{"show_image":true,"title":"","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"column_Ppgnwg":{"type":"column","settings":{"show_image":true,"title":"","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}}},"block_order":["column_AGRAWm","column_TFwmbb","column_Ppgnwg"],"disabled":true,"settings":{"display_on_card":true,"slideshow_on_mobile":false,"title":"","crop":"","image_shape":"default","show_index_on_blocks":false,"index_shape":"star_1","color_scheme":"","use_gradient_background":false}},"image_with_text_overlay_2":{"type":"image-with-text-overlay","disabled":true,"settings":{"display_on_card":false,"display_content_below_image_on_mobile":true,"style":"full","height":"natural","place_content":"place-content-center-center","text_align":"text-center","title":"Image with text overlay","heading_size":"heading-standard","richtext":"","cta_url":"","cta_text":"Shop Now","color_scheme":"","use_gradient_background":false}},"comparison_table":{"type":"comparison-table","blocks":{"row_eUWmL7":{"type":"row","settings":{"title":"Label","column_1_icon":"check_mark","column_1_text":"","column_2_icon":"check_close","column_2_text":"","column_3_icon":"check_close","column_3_text":"","column_4_icon":"check_close","column_4_text":""}},"row_kAmyjY":{"type":"row","settings":{"title":"Label","column_1_icon":"check_mark","column_1_text":"","column_2_icon":"check_close","column_2_text":"","column_3_icon":"check_close","column_3_text":"","column_4_icon":"check_close","column_4_text":""}},"row_xGwHAL":{"type":"row","settings":{"title":"Label","column_1_icon":"check_mark","column_1_text":"","column_2_icon":"check_close","column_2_text":"","column_3_icon":"check_close","column_3_text":"","column_4_icon":"check_close","column_4_text":""}}},"block_order":["row_eUWmL7","row_kAmyjY","row_xGwHAL"],"disabled":true,"settings":{"title":"","display_on_card":false,"max_width":"","highlighted_column":"1","highlighted_column_color":"accent-1","show_scroll_left_to_right_on_mobile":true,"column_1_title":"Column 1","column_2_title":"Column 2","enable_column_3":true,"column_3_title":"Column 3","enable_column_4":true,"column_4_title":"Column 4","icon_thickness":1.5,"background_color":"bg-transparent text-scheme-text","show_border":true,"color_scheme":"","use_gradient_background":false}},"featured_testimonials":{"type":"featured-testimonials","blocks":{"testimonial_r3n9k7":{"type":"testimonial","settings":{"rating":"5_stars","quote":"A quote from a customer or staff member can help show off your products' unique selling points.","source":"Source"}},"testimonial_GBEyN8":{"type":"testimonial","settings":{"rating":"5_stars","quote":"A quote from a customer or staff member can help show off your products' unique selling points.","source":"Source"}},"testimonial_jnATwG":{"type":"testimonial","settings":{"rating":"5_stars","quote":"A quote from a customer or staff member can help show off your products' unique selling points.","source":"Source"}}},"block_order":["testimonial_r3n9k7","testimonial_GBEyN8","testimonial_jnATwG"],"disabled":true,"settings":{"display_on_card":true,"title":"","font":"font-heading","mobile_text_scale":2,"desktop_text_scale":4,"source_font":"font-heading heading-secondary","max_width":100,"disable_media_style":false,"crop":"","image_shape":"default","color_scheme":"","use_gradient_background":false}},"featured_product":{"type":"featured-product","blocks":{"title":{"type":"title","settings":{"display_on_card":false,"text_align":"text-left"}},"price":{"type":"price","settings":{"display_on_card":false,"show_on_sale_sticker":false,"text_align":"text-left"}},"variant_picker":{"type":"variant_picker","settings":{"display_on_card":false,"option_style":"drop_down","full_width_buttons":false,"hide_option_labels":true,"enable_color_swatches":false}},"buy_buttons":{"type":"buy_buttons","settings":{"display_on_card":false,"show_price":false,"enable_payment_button":true,"show_pickup_availability":true,"show_gift_card_recipient":false}}},"block_order":["title","price","variant_picker","buy_buttons"],"disabled":true,"settings":{"title":"","product":"","crop":"","image_shape":"default","media_mobile_width":"w-full","desktop_media_width":"lg:col-span-6_lg:col-span-6","enable_video_looping":true,"thumbnails_position":"left","thumbnail_crop":"aspect-w-1 aspect-h-1","thumbnail_shape":"default","hide_media_shadow":false,"thumbnail_size":"standard","show_thumbnails_on_mobile":false,"color_scheme":"","use_gradient_background":false}},"video_with_text_overlay":{"type":"video-with-text-overlay","disabled":true,"settings":{"crop":"vertical","crop_desktop":"widescreen","display_on_card":false,"display_content_below_image_on_mobile":true,"style":"full","place_content":"place-content-center-center","text_align":"text-center","title":"Video with text overlay","heading_size":"heading-standard","richtext":"","cta_url":"","cta_text":"Shop Now","color_scheme":"","use_gradient_background":false}},"image_with_highlights":{"type":"image-with-highlights","blocks":{"highlight_AypNFh":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"highlight_7GEFce":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"highlight_HrMPHb":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"highlight_YcthG9":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"highlight_EAYJTm":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}},"highlight_VTjGz9":{"type":"highlight","settings":{"title":"","text":"Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.","cta_link":"","cta_text":"","override_section_color_scheme":false,"color_scheme":""}}},"block_order":["highlight_AypNFh","highlight_7GEFce","highlight_HrMPHb","highlight_YcthG9","highlight_EAYJTm","highlight_VTjGz9"],"disabled":true,"settings":{"title":"","block_alignment_on_desktop":"justify-center","display_on_card":true,"slideshow_on_mobile":true,"slideshow_focus":"center","max_width":500,"crop":"","image_shape":"default","blob_type":1,"rotate_image":0,"disable_media_style":false,"color_scheme":"","use_gradient_background":false}},"scrolling_text_with_icons":{"type":"scrolling-text-with-icons","blocks":{"text_xa488F":{"type":"text","settings":{"text":"Free shipping worldwide","icon":"globe"}},"text_EMWNJx":{"type":"text","settings":{"text":"Environmentally friendly","icon":"leaf"}},"text_c6tHKP":{"type":"text","settings":{"text":"24\/7 support","icon":"chat_bubble"}},"text_43EPnp":{"type":"text","settings":{"text":"Food org certified","icon":"check_mark"}},"text_bqDVT6":{"type":"text","settings":{"text":"Good for you","icon":"heart"}}},"block_order":["text_xa488F","text_EMWNJx","text_c6tHKP","text_43EPnp","text_bqDVT6"],"disabled":true,"settings":{"repeat_text":true,"link":"","font":"body","gap":"gap-36","icon_size":"size-8","speed":120,"direction":"","icon_thickness":1.5,"background_color":"bg-transparent text-scheme-text","show_border":true,"color_scheme":"","use_gradient_background":false}},"blog_posts":{"type":"blog-posts","disabled":true,"settings":{"display_on_card":true,"posts_per_row_desktop":3,"title":"Blog posts","blog":"news","post_limit":3,"crop":"","image_shape":"default","blog_show_author":false,"blog_show_date":true,"show_post_excerpt":true,"show_view_all":true,"color_scheme":"","use_gradient_background":false}},"newsletter":{"type":"newsletter","disabled":true,"settings":{"title":"Sign up to our newsletter","richtext":"<p>Receive special offers and first look at new products.<\/p>","display_on_card":true,"color_scheme":"","use_gradient_background":false}}},"order":["image_with_text_overlay_1","image_with_text","feature_logo_with_image","feature_text","icon_list","collection_focus_carousel","featured_collection","text_columns_with_images","image_with_text_overlay_2","comparison_table","featured_testimonials","featured_product","video_with_text_overlay","image_with_highlights","scrolling_text_with_icons","blog_posts","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header": {
+      "type": "header",
+      "disabled": true,
+      "settings": {
+        "logo": "shopify://shop_images/Logo_Footer_4x_42bee62c-9b37-41a9-8218-c40e4d548a64.webp",
+        "header_bg": "#131410"
+      }
+    },
+    "free-shipping-banner": {
+      "type": "free-shipping-banner",
+      "settings": {
+        "banner_text": "<p>Envío gratis a partir de $65.000 en compras</p>",
+        "banner_image": "shopify://shop_images/social_proof_3x_1_7a9408b1-a34c-4ff7-b66f-8fbcfe9aa26c.webp"
+      }
+    },
+    "hero_product_aDJwei": {
+      "type": "hero-product",
+      "name": "Hero Product",
+      "settings": {
+        "background_color": "#131410",
+        "title": "EL SUPLEMENTO <#1> PARA RAVERS",
+        "subtitle": "Siente la música, no el bajón",
+        "texture": "shopify://shop_images/HERO-FONDO.webp",
+        "product": "shopify://shop_images/FOTO_PRODUCTO.png",
+        "sticker": "shopify://shop_images/sticker.webp",
+        "button_text": "Comprar Ahora",
+        "button_link": "#ravekit-product",
+        "safe_text": "Compra segura",
+        "safe_icon": "shopify://shop_images/Check_-_SECCION_2.svg"
+      }
+    },
+    "marquee_banner_jAnxqT": {
+      "type": "marquee-banner",
+      "blocks": {
+        "text_hHMWzg": {
+          "type": "text",
+          "settings": {
+            "text": "Paga en linea con nuestro checkout seguro"
+          }
+        },
+        "text_6qwEmi": {
+          "type": "text",
+          "settings": {
+            "text": "Envíos seguros"
+          }
+        },
+        "text_bLQEcF": {
+          "type": "text",
+          "settings": {
+            "text": "📦 Recibe tu pedido hoy mismo 📦 En Bogotá, Medellín y Cali 🚀"
+          }
+        }
+      },
+      "block_order": [
+        "text_hHMWzg",
+        "text_6qwEmi",
+        "text_bLQEcF"
+      ],
+      "name": "Marquee Banner",
+      "settings": {
+        "enable_marquee": true,
+        "background_color": "#ff00ff",
+        "text_color": "#000000",
+        "speed": 48,
+        "direction": "left"
+      }
+    },
+    "science_accordion_ixbjxR": {
+      "type": "science-accordion",
+      "blocks": {
+        "block_P9B7Rh": {
+          "type": "block",
+          "settings": {
+            "title": "😭 Reduce el bajón post sustancias",
+            "content": "<ul><li>El complejo B y el magnesio contribuyen al equilibrio de neurotransmisores, favoreciendo un mejor estado de ánimo y reduciendo el estrés post-consumo.</li><li>El hidroxitriptófano, precursor de la serotonina, ayuda a restaurar los niveles de este neurotransmisor, disminuyendo la sensación de bajón.</li></ul>",
+            "short_content": "<p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Boyle, N., Lawton, C., & Dye, L. (2017). The effects of magnesium supplementation on subjective anxiety and stress—a systematic review.</p><p>Wang, X., Baumann, M. H., Dersch, C. M., & Rothman, R. B. (2007). Restoration of 3,4-methylenedioxymethamphetamine-induced 5-HT depletion by the administration of L-5-hydroxytryptophan.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
+          }
+        },
+        "block_6GKAWc": {
+          "type": "block",
+          "settings": {
+            "title": "🧠 Protege tu cerebro de la neurotoxicidad",
+            "content": "<ul><li>Los antioxidantes como la vitamina C, el ácido alfa lipoico y la vitamina E protegen las células cerebrales del daño oxidativo causado por el consumo de sustancias.</li><li>El zinc fortalece el sistema inmunológico y contribuye a la regeneración celular, protegiendo el cerebro.</li></ul>",
+            "short_content": "<p>Rochette, L., Ghibu, S., Richard, C., Zeller, M., Cottin, Y., & Vergely, C. (2013). Direct and indirect antioxidant properties of α‐lipoic acid and therapeutic potential.</p><p>Mocchegiani, E., & Muzzioli, M. (2000). Therapeutic application of zinc in human immunodeficiency virus against opportunistic infections.</p>"
+          }
+        },
+        "block_YzF47W": {
+          "type": "block",
+          "settings": {
+            "title": "💧Rehidrata tu cuerpo",
+            "content": "<ul><li>Electrolitos esenciales como sodio, potasio y zinc reponen los minerales perdidos y restauran el equilibrio hídrico.</li><li>La rehidratación adecuada reduce la fatiga y mejora la recuperación física tras el consumo de sustancias.</li></ul>",
+            "short_content": "<p>Maughan, R. J., & Shirreffs, S. M. (1997). Recovery from prolonged exercise: Restoration of water and electrolyte balance.</p>"
+          }
+        },
+        "block_aWVnYy": {
+          "type": "block",
+          "settings": {
+            "title": "😴 Duerme y descansa profundamente",
+            "content": "<ul><li>La melatonina y el GABA facilitan el inicio del sueño y mejoran su calidad, combatiendo el insomnio post-consumo.</li><li>La L-teanina reduce la ansiedad y promueve un estado de relajación sin sedación excesiva.</li></ul><p></p>",
+            "short_content": "<p>Zisapel, N. (2018). New perspectives on the role of melatonin in human sleep, circadian rhythms and their regulation.</p><p>Hidese, S., Ota, M., Wakabayashi, C., Noda, T., Ozawa, H., Okubo, T., & Kunugi, H. (2017). Effects of chronic l-theanine administration in patients with major depressive disorder: an open-label study.</p>"
+          }
+        },
+        "block_qYd6j8": {
+          "type": "block",
+          "settings": {
+            "title": "🤩 Levántate fresh",
+            "content": "<ul><li>La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li><li> La combinación de antioxidantes y electrolitos ayuda a reducir la sensación de fatiga y optimiza la recuperación energética.</li></ul><p></p>",
+            "short_content": "<p>Rochette, L., Ghibu, S., Richard, C., Zeller, M., Cottin, Y., & Vergely, C. (2013). Direct and indirect antioxidant properties of α‐lipoic acid and therapeutic potential.</p><p>Maughan, R. J., & Shirreffs, S. M. (1997). Recovery from prolonged exercise: Restoration of water and electrolyte balance.</p><p>Kennedy, D. (2016). B vitamins and the brain: Mechanisms, dose and efficacy—a review.</p><p>Maffei, M. E. (2020). 5-hydroxytryptophan (5-HTP): Natural occurrence, analysis, biosynthesis, biotechnology, physiology and toxicology.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_P9B7Rh",
+        "block_6GKAWc",
+        "block_YzF47W",
+        "block_aWVnYy",
+        "block_qYd6j8"
+      ],
+      "name": "Science Accordion",
+      "settings": {
+        "heading": "NO ES MAGIA, ES CIENCIA",
+        "subtitle": "Usamos ingredientes de origen natural, cuya efectividad está avalada por diversos estudios científicos. Todas las formulaciones tienen registro FDA y buenas prácticas de manufactura",
+        "background_color": "#ffffff",
+        "wave_image": "shopify://shop_images/INICIO_SECCION_3.svg",
+        "check_icon": "shopify://shop_images/Check_-_SECCION_2.svg"
+      }
+    },
+    "image_focus_carousel_mm9UR3": {
+      "type": "image-focus-carousel",
+      "blocks": {
+        "image_9wMm7p": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_1_1.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_VAWBV3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_2.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_4pmFUt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_3.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_FzUtJx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_4.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_3aU8GH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SLIDER_5.webp",
+            "crop": "",
+            "image_shape": "default",
+            "heading": "",
+            "caption": "",
+            "button_text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_9wMm7p",
+        "image_VAWBV3",
+        "image_4pmFUt",
+        "image_FzUtJx",
+        "image_3aU8GH"
+      ],
+      "name": "t:sections.image_focus_carousel.name",
+      "settings": {
+        "title": "Somos la nueva generación de ravers",
+        "subheading": "¿Te vas a quedar atrás? 😏",
+        "enlarge_active_slide": true,
+        "disable_media_style": false,
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 20,
+        "color_scheme": "scheme3",
+        "use_gradient_background": false
+      }
+    },
+    "marquee_banner_WCw7px": {
+      "type": "marquee-banner",
+      "blocks": {
+        "text_X8CkgR": {
+          "type": "text",
+          "settings": {
+            "text": "Paga en linea con nuestro checkout seguro"
+          }
+        },
+        "text_mDKn7x": {
+          "type": "text",
+          "settings": {
+            "text": "Envíos seguros"
+          }
+        },
+        "text_6WwYnc": {
+          "type": "text",
+          "settings": {
+            "text": "📦 Recibe tu pedido hoy mismo 📦 En Bogotá, Medellín y Cali 🚀"
+          }
+        }
+      },
+      "block_order": [
+        "text_X8CkgR",
+        "text_mDKn7x",
+        "text_6WwYnc"
+      ],
+      "name": "Marquee Banner",
+      "settings": {
+        "enable_marquee": true,
+        "background_color": "#6a0dad",
+        "text_color": "#ffffff",
+        "speed": 48,
+        "direction": "left"
+      }
+    },
+    "ravekit_product_U4a6cU": {
+      "type": "ravekit-product",
+      "name": "Ravekit Product Section",
+      "settings": {
+        "product_handle": "3-ravekit",
+        "feature_image_1": "shopify://shop_images/VEGAN.svg",
+        "feature_text_1": "100% vegano",
+        "feature_image_2": "shopify://shop_images/KETO_2.svg",
+        "feature_text_2": "Keto friendly",
+        "feature_image_3": "shopify://shop_images/FDA_1.svg",
+        "feature_text_3": "Registrado en FDA",
+        "text_single_label": "Compra una sola vez",
+        "text_subs_label": "Suscríbete y ahorra",
+        "sub_bullet_1": "Modifica, pausa o cancela en cualquier momento",
+        "sub_bullet_2": "Acceso a la comunidad RAVEKIT VIP",
+        "sub_bullet_3": "¡Descuentos y beneficios únicos!",
+        "badge_save_text": "Ahorra un 15%",
+        "badge_shipping_text": "Envió gratis",
+        "text_qty_label": "Cantidad",
+        "text_button_label": "Añadir al carrito",
+        "timer_text": "Tienes",
+        "timer_suffix_text": "para tener envío gratis",
+        "timer_duration_minutes": 10,
+        "free_shipping_threshold": 65000
+      }
+    },
+    "scrolling_logos_bayt9y": {
+      "type": "scrolling-logos",
+      "blocks": {
+        "logo_Dnj9hh": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MEDIOS_DE_PAGO.webp",
+            "link": ""
+          }
+        },
+        "logo_TXUqqk": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/MEDIOS_DE_PAGO.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_Dnj9hh",
+        "logo_TXUqqk"
+      ],
+      "name": "t:sections.scrolling_logos.name",
+      "settings": {
+        "title": "",
+        "max_width": 270,
+        "speed": 190,
+        "direction": "normal",
+        "color_scheme": "",
+        "use_gradient_background": false
+      }
+    },
+    "testimonials_fXHeBU": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_Gm8EHy": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_Dx8r87": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_KyAtYg": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
+            "source": "LIZ S"
+          }
+        },
+        "testimonial_gpifJe": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/testimonio-ravekit-1.png",
+            "rating": "5_stars",
+            "quote": "Amigos! 20 de 10. Estoy lista para la otra",
+            "step": "",
+            "step_description": "",
+            "source": "LIZ S"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Gm8EHy",
+        "testimonial_Dx8r87",
+        "testimonial_KyAtYg",
+        "testimonial_gpifJe"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "display_on_card": true,
+        "is_step": false,
+        "title": "Más de 5000 ravers felices",
+        "subtitle": "",
+        "text_color": "#000000",
+        "max_width": 240,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "transition_speed": 2000,
+        "autoplay_enabled": true,
+        "autoplay_interval": 3600,
+        "autoscroll_mode": "1",
+        "star_icon": "shopify://shop_images/star-svgrepo-com.svg",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_5_1.svg",
+        "wave_bottom_image": "shopify://shop_images/FINAL_SECCION_5-1.svg",
+        "alien_image": "shopify://shop_images/STICKER_ALIEN.webp",
+        "color_scheme": "scheme1",
+        "use_gradient_background": false
+      }
+    },
+    "testimonials_ADyNHj": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_3jQci8": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_1_1.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 1: vitaminas",
+            "step_description": "<p>Prepara tu cuerpo para él estalle con vitaminas y antioxidantes.</p>",
+            "source": ""
+          }
+        },
+        "testimonial_zqrQmn": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_2.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 2: chicles",
+            "step_description": "<p><strong>DURANTE EL RAVE</strong></p><p>Prueba estos chicles de magnesio y dile \"bye bye\" al bruxismo.</p>",
+            "source": ""
+          }
+        },
+        "testimonial_cNe87X": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/PASO_3.gif",
+            "rating": "none",
+            "quote": "",
+            "step": "Paso 3: Hidrantante",
+            "step_description": "<p><strong>AL LLEGAR A CASA. </strong></p><p>Bebe este rehidratante con melatonina y recuperate mientras duermes.</p>",
+            "source": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_3jQci8",
+        "testimonial_zqrQmn",
+        "testimonial_cNe87X"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "display_on_card": true,
+        "is_step": true,
+        "title": "Cuídate en 3 simples pasos",
+        "subtitle": "Antes, durante y después de ponerte astral",
+        "text_color": "#ffffff",
+        "max_width": 370,
+        "disable_media_style": false,
+        "crop": "",
+        "image_shape": "default",
+        "desktop_slide_width": 20,
+        "transition_speed": 600,
+        "autoplay_enabled": false,
+        "autoplay_interval": 500,
+        "autoscroll_mode": "1",
+        "color_scheme": "scheme-62501108-4b3c-4a36-a249-ed0f905e2bd1",
+        "use_gradient_background": false
+      }
+    },
+    "video_LVhPQK": {
+      "type": "video",
+      "name": "t:sections.video.name",
+      "settings": {
+        "title": "Lo que dicen de nosotros 👀 👇",
+        "style": "inset",
+        "aspect_ratio": "natural",
+        "video": "shopify://files/videos/VideoDocThomas.mp4",
+        "mode": "autoplay",
+        "playback": "inline",
+        "sound_enabled": true,
+        "show_controls": true,
+        "button_label": "¡ Pedir mi ravekit !",
+        "button_link": "#ravekit-product",
+        "color_scheme": "scheme3",
+        "use_gradient_background": false
+      }
+    },
+    "shape_carousel_Urp7Kn": {
+      "type": "shape-carousel",
+      "blocks": {
+        "image_chMfaC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_62_2x_9ee60b4b-c6de-4a7b-801d-c903365cdbda.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_GWkjqr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_61_2x_b8ec9602-bee4-4614-9e64-d28ee46f317a.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_B6MBBM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_60_2x_750b3e5e-f1d9-49a8-bc59-b4ab30b97812.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_JdiX8d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_59_2x_1d977630-48d7-40e8-968f-d020b9d401f9.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_NqN7xR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_58_2x_8ee4578d-f09a-45f9-8146-f96ff475b718.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        },
+        "image_k6ErUM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTESMesa_de_trabajo_57_2x_6974655e-fa29-43d5-af80-70d1095bc661.png",
+            "image_shape": "default",
+            "button_text": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_chMfaC",
+        "image_GWkjqr",
+        "image_B6MBBM",
+        "image_JdiX8d",
+        "image_NqN7xR",
+        "image_k6ErUM"
+      ],
+      "name": "t:sections.shape_slideshow.name",
+      "settings": {
+        "title": "Los ingredientes más pro  😎",
+        "slideshow_focus": "center",
+        "wave_top_image": "shopify://shop_images/SEPARADOR_4-1.svg",
+        "wave_bottom_image": "shopify://shop_images/SEPARADOR_SECCION_9.webp",
+        "subtitle": "<p></p><p><strong>Ingredientes de origen natural</strong></p><p>científicamente comprobados y registrados por la FDA con buenas prácticas de manufactura.</p><p></p>",
+        "certification_icon_1": "shopify://shop_images/LOGO_FDA_2.svg",
+        "certification_icon_2": "shopify://shop_images/LOGO_GMP.svg",
+        "link_text": "Ver tabla nutricional",
+        "link_url": "https://docs.google.com/gview?url=https://cdn.shopify.com/s/files/1/0613/8730/9146/files/Tablas_nutricionales_RAVE_KIT.pdf?v=1740875820&embedded=true",
+        "mobile_slide_width": "three_fifths",
+        "desktop_slide_width": 20,
+        "autoscroll_mode": "1",
+        "crop": "",
+        "button_style": "push-btn__surface",
+        "show_buttons_on_mobile": false,
+        "only_show_button_on_hover": true,
+        "color_scheme": "",
+        "use_gradient_background": false
+      }
+    },
+    "ravekit_comparison_tacR86": {
+      "type": "ravekit-comparison",
+      "blocks": {
+        "comparison_item_HaEH7j": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Solución integral de ravers para ravers</p>",
+            "right_text": "<p>Productos farma-ceuticos tradicionales</p>"
+          }
+        },
+        "comparison_item_CMPezj": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Previene la severidad de los síntomas</p>",
+            "right_text": "<p>Tratan, más no previenen síntomas</p>"
+          }
+        },
+        "comparison_item_f7f3PD": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Suplementos de vitaminas & minerales</p>",
+            "right_text": "<p>Medicamentos con efectos secundarios</p>"
+          }
+        },
+        "comparison_item_76YfCw": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Un kit que trae todo lo que necesitas</p>",
+            "right_text": "<p>Debes armar tu propia \"solución\"</p>"
+          }
+        },
+        "comparison_item_T6e9Pt": {
+          "type": "comparison_item",
+          "settings": {
+            "left_text": "<p>Llega GRATIS a tu casa</p>",
+            "right_text": "<p>Pierdes tiempo y energía buscándolos</p>"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_item_HaEH7j",
+        "comparison_item_CMPezj",
+        "comparison_item_f7f3PD",
+        "comparison_item_76YfCw",
+        "comparison_item_T6e9Pt"
+      ],
+      "name": "Ravekit vs El Resto",
+      "settings": {
+        "title": "RAVEKIT VS EL RESTO",
+        "title_color": "#ffffff",
+        "main_image": "shopify://shop_images/Screenshot_2025-04-26_at_11.21.31_PM.png",
+        "background_color": "#131410",
+        "button_text": "LO QUIERO AHORA",
+        "button_link": "#ravekit-product"
+      }
+    },
+    "curved_text_TtWW9B": {
+      "type": "curved-text",
+      "name": "t:sections.curved_text.name",
+      "settings": {
+        "text": "SOMOS LA NUEVA GENERACIÓN DE RAVERS",
+        "link": "",
+        "wave_height": 250,
+        "wave_width": 250,
+        "speed": 1,
+        "mobile_text_scale": 2,
+        "desktop_text_scale": 4,
+        "font": "font-heading",
+        "enable_animation": true,
+        "pause_on_hover": false,
+        "direction": "rtl",
+        "color_scheme": "scheme-2888fe4e-d88f-4c5d-9729-71801167fff1",
+        "use_gradient_background": false
+      }
+    },
+    "faq_FFLPRM": {
+      "type": "faq",
+      "blocks": {
+        "question_FdDdif": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿RAVEKIT afecta el efecto de s.p.a?",
+            "answer": "<p><strong>De ninguna manera.</strong></p><p>El kit está diseñado para no tener interacción alguna con tu experiencia recreativa. No afecta los efectos de ninguna sustancia spa.</p>"
+          }
+        },
+        "question_33jELk": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo usar el kit si tengo alguna condición médica?",
+            "answer": "<p>Si estás en un tratamiento con antidepresivos o inhibidores IMAO NO consumas Ravekit. 🙅‍♀️⛔🙅‍♂️</p><p>Si es otra condición médica la respuesta es: <strong>Depende</strong>.  Las condiciones médicas son muy variables y algunas implican necesidades y restricciones muy puntuales. Ante la duda, lo mejor siempre será consultar con tu médico</p>"
+          }
+        },
+        "question_enbcbx": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Puedo comprar cada paso por aparte?",
+            "answer": "<p><strong>No.</strong></p><p>Todos los Ravekit vienen sellados. Únicamente ofreceremos chicles de magnesio en presentación individual cuando tengamos participación en eventos físicos.</p>"
+          }
+        },
+        "question_gfLbrY": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Hay algún efecto adverso al usar RaveKit?",
+            "answer": "<p>En algunos casos muy puntuales podrías experimentar malestar estomacal por hipersensibilidad a alguno de sus componentes. Recuerda consultar las tablas nutricionales de Ravekit con tu doctor si tienes alguna condición particular.</p>"
+          }
+        },
+        "question_PnNkbn": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Es seguro mezclar RaveKit con alcohol?",
+            "answer": "<p>No. Si bien Ravekit sólo es un conjunto de vitaminas y suplementos, no se recomienda mezclarlo con alcohol. No por la posible interacción del kit y el alcohol, sino por la interacción misma del alcohol con las sustancias psicoactivas. Recuerda que el alcohol es un potente deshidratante, y al ser mezclado con psicoactivos puede reaccionar y dar lugar a sustancias nocivas en tu cuerpo.</p>"
+          }
+        },
+        "question_UPWdWe": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "Soy vegano, ¿puedo hacer uso de RaveKit?",
+            "answer": "<p><strong>¡Claro que sí! </strong></p><p>Todos nuestros productos son de origen vegetal, libres de crueldad animal y aptos para dietas keto.</p>"
+          }
+        },
+        "question_DTBNdG": {
+          "type": "question",
+          "settings": {
+            "icon": "none",
+            "title": "¿Dónde puedo comprar RaveKit?",
+            "answer": "<p><strong>¡Aquí mismo! </strong></p><p>Sólo busca el botón que dice “Comprar Ahora”, ingresa tus datos y recibirás tu Ravekit directamente en tu casa a la mayor brevedad posible. También puedes encontrarnos en activaciones físicas que anunciemos únicamente en nuestras redes sociales oficiales.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_FdDdif",
+        "question_33jELk",
+        "question_enbcbx",
+        "question_gfLbrY",
+        "question_PnNkbn",
+        "question_UPWdWe",
+        "question_DTBNdG"
+      ],
+      "name": "t:sections.faq.name",
+      "settings": {
+        "display_on_card": true,
+        "heading_text_style": "body",
+        "two_columns_desktop": true,
+        "title": "FAQ",
+        "wave_top_image": "shopify://shop_images/INICIO_SECCION_FAQ-3.svg",
+        "richtext": "¿Te quedan dudas? Aquí fijo encuentras la respuesta 👇",
+        "color_scheme": "scheme1",
+        "use_gradient_background": false
+      }
+    }
+  },
+  "order": [
+    "header",
+    "free-shipping-banner",
+    "hero_product_aDJwei",
+    "marquee_banner_jAnxqT",
+    "science_accordion_ixbjxR",
+    "image_focus_carousel_mm9UR3",
+    "marquee_banner_WCw7px",
+    "ravekit_product_U4a6cU",
+    "scrolling_logos_bayt9y",
+    "testimonials_fXHeBU",
+    "testimonials_ADyNHj",
+    "video_LVhPQK",
+    "shape_carousel_Urp7Kn",
+    "ravekit_comparison_tacR86",
+    "curved_text_TtWW9B",
+    "faq_FFLPRM"
+  ]
+}

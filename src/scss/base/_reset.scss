@@ -1,5 +1,7 @@
-@use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
 
 *, *::before, *::after {
   margin: 0;
@@ -8,10 +10,10 @@
 }
 
 body {
-  font-family: variables.$font-family-primary;
-  font-size: variables.$font-size-base;
-  color: variables.$color-gray-dark;
-  background-color: variables.$color-white;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  color: $color-gray-dark;
+  background-color: $color-white;
 }
 
 img, picture {

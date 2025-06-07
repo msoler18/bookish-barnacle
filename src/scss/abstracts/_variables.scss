@@ -1,15 +1,26 @@
 $color-primary: #6A0DAD; 
-$color-secondary: #00FFA3; 
+$color-secondary: #00FF79;
+$color-tertiary:#ff31ed; 
 $color-accent: #FF006E; 
 
 $color-white: #ffffff;
-$color-black: #000000;
+$color-black: #131410;
 $color-gray-light: #f7f7f7;
 $color-gray-dark: #333333;
 
 $font-family-primary: 'Inter', sans-serif;
+
+$font-family-buttons: 'FS Koopman', sans-serif;
+$font-family-body: 'CocogooseRegular', sans-serif;
+$font-family-headings: 'PPMonumentExtended', sans-serif;
+$font-family-alternative: 'Dela Gothic One', sans-serif;
+
 $font-size-base: 16px;
+$font-scale: 1.2;
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
 $spacing-unit: 8px;
+
+$grid-columns: 12;
+$gutter-width: 20px;

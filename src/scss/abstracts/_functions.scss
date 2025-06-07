@@ -1,0 +1,13 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@use 'sass:math';
+
+@function px-to-rem($px) {
+  $rem-value: math.div($px, 16px);
+  @return #{$rem-value}rem;
+}
+
+@function font-size($level: 0) {
+  @return px-to-rem($font-size-base * math.pow($font-scale, $level));
+}

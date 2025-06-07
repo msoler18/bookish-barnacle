@@ -11,6 +11,9 @@
   @else if $breakpoint == 'xlarge' {
     @media (min-width: 1200px) { @content; }
   }
+  @else if $breakpoint == 'xxlarge' {
+    @media (min-width: 1480px) { @content; }
+  }
 }
 
 @mixin flex-center($direction: row) {
@@ -18,4 +21,32 @@
   flex-direction: $direction;
   justify-content: center;
   align-items: center;
+}
+
+
+@mixin floating($duration: 2.5s, $distance: 8px) {
+  animation: floatingAnimation $duration ease-in-out infinite alternate;
+  
+  @keyframes floatingAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY($distance); }
+  }
+}
+
+@mixin bouncing($duration: 2s, $distance: 20px) {
+  animation: bouncingAnimation $duration ease-in-out infinite;
+
+  @keyframes bouncingAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-$distance); }
+  }
+}
+
+@mixin wiggle($duration: 3s, $angle: 5deg) {
+  animation: wiggleAnimation $duration ease-in-out infinite alternate;
+  
+  @keyframes wiggleAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate($angle); }
+  }
 }

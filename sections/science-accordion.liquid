@@ -1,0 +1,155 @@
+{%- comment -%}
+  Science Accordion
+  • New `check_icon` setting
+  • If set, use the uploaded image_url
+  • Otherwise fall back to default icon-check.svg
+{%- endcomment -%}
+
+{%- style -%}
+  .rte ul li::before {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    {%- if section.settings.check_icon != blank -%}
+      /* use merchant’s custom icon */
+      background-image: url('{{ section.settings.check_icon | image_url }}');
+    {%- else -%}
+      /* default theme asset */
+      background-image: url('{{ "icon-check.svg" | asset_url }}');
+    {%- endif -%}
+  }
+{%- endstyle -%}
+
+<div class="wave--container" id="science-accordion">
+
+  <section
+    class="science-accordion {% if section.settings.wave_image != blank %}science-accordion--with-wave{% endif %}"
+    style="background-color: {{ section.settings.background_color }}">
+
+    <div class="container">
+      <h2 class="science-accordion__title">{{ section.settings.heading }}</h2>
+
+      {% if section.settings.subtitle != blank %}
+        <p class="science-accordion__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+
+      <div class="science-accordion__divider"></div>
+
+      <div class="science-accordion__items">
+        {% if section.blocks.size > 0 %}
+          <div class="science-accordion__titles">
+            {% for block in section.blocks %}
+              <h3
+                class="science-accordion__item-title {% if forloop.first %}is-active{% endif %}"
+                data-accordion-trigger
+                data-index="{{ forloop.index0 }}"
+              >
+                {{ block.settings.title }}
+              </h3>
+            {% endfor %}
+          </div>
+
+          <div class="science-accordion__contents">
+            {% for block in section.blocks %}
+              <div
+                class="science-accordion__item-content {% if forloop.first %}is-active{% endif %}"
+                data-accordion-content
+                data-content-index="{{ forloop.index0 }}"
+              >
+                <div class="rte">
+                  {{ block.settings.content }}
+                  <span class="small__text">
+                    {{ block.settings.short_content }}
+                  </span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+        {% else %}
+          <p>No hay items configurados aún.</p>
+        {% endif %}
+      </div>
+    </div>
+
+  </section>
+
+  {% if section.settings.wave_image != blank %}
+    <div class="section-wave">
+      {% render 'render-image',
+        class: "wave-bottom", 
+        img: section.settings.wave_image,
+        img_src: section.settings.wave_image | image_url: width: 1200,
+        alt: 'Wave Divider',
+        width: "1200",
+        height: "auto",
+        size: "400 800 1200"
+      %}
+    </div>
+  {% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Science Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (optional)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "wave_image",
+      "label": "Bottom Wave (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "check_icon",
+      "label": "Icono bullets",
+      "info": "Si lo dejas en blanco se carga un icono por defecto icon-check.svg"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Item Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Full Content"
+        },
+        {
+          "type": "richtext",
+          "id": "short_content",
+          "label": "Additional Short Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science Accordion"
+    }
+  ]
+}
+{% endschema %}
