@@ -176,6 +176,11 @@
         "type": "shopify://apps/referrly/blocks/main-app-embed/75b5ccd5-af90-4f81-ab89-2c28499171fd",
         "disabled": false,
         "settings": {}
+      },
+      "2391397090251692709": {
+        "type": "shopify://apps/cartylabs-upsellcart/blocks/app-embed/87f48470-496b-4581-9be3-6b264b1ba440",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
