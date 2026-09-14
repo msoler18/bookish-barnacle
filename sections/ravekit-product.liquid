@@ -32,13 +32,7 @@
           {% assign text = section.settings[txt_key] %}
           <div class="feature-item">
             {% if icon %}
-              {% render 'render-image',
-                img:     icon,
-                img_src: icon | image_url: width:200,
-                alt:     text,
-                width:   "80",
-                height:  "80",
-                size:    "80" %}
+              {% render 'render-image', img: icon, img_src: icon, image_url: width['200'], alt: text, width: "80", height: "80", size: "80" %}
             {% endif %}
             <p>{{ text }}</p>
           </div>
@@ -56,13 +50,7 @@
               data-price="{{ variant.price }}"
             >
               {% if variant.featured_image %}
-                {% render 'render-image',
-                  img:     variant.featured_image,
-                  img_src: variant.featured_image | image_url: width:300,
-                  alt:     variant.title,
-                  width:   "80",
-                  height:  "80",
-                  size:    "80" %}
+                {% render 'render-image', img: variant.featured_image, img_src: variant.featured_image, image_url: width['300'], alt: variant.title, width: "80", height: "80", size: "80" %}
               {% else %}
                 {{ variant.title }}
               {% endif %}
@@ -327,3 +315,33 @@
 
 
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+                    img:     icon,
+                    img_src: icon | image_url: width:200,
+                    alt:     text,
+                    width:   "80",
+                    height:  "80",
+                    size:    "80" %}
+  to: '{% render ''render-image'', img: icon, img_src: icon, image_url: width[''200''],
+    alt: text, width: "80", height: "80", size: "80" %}'
+  position: 1143..1271
+- from: |-
+    {% render 'render-image',
+                      img:     variant.featured_image,
+                      img_src: variant.featured_image | image_url: width:300,
+                      alt:     variant.title,
+                      width:   "80",
+                      height:  "80",
+                      size:    "80" %}
+  to: '{% render ''render-image'', img: variant.featured_image, img_src: variant.featured_image,
+    image_url: width[''300''], alt: variant.title, width: "80", height: "80", size:
+    "80" %}'
+  position: 1779..1952
+{% endcomment %}

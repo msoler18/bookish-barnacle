@@ -77,15 +77,7 @@
 
   {% if section.settings.wave_image != blank %}
     <div class="section-wave">
-      {% render 'render-image',
-        class: "wave-bottom", 
-        img: section.settings.wave_image,
-        img_src: section.settings.wave_image | image_url: width: 1200,
-        alt: 'Wave Divider',
-        width: "1200",
-        height: "auto",
-        size: "400 800 1200"
-      %}
+      {% render 'render-image', class: "wave-bottom", img: section.settings.wave_image, img_src: section.settings.wave_image, image_url: width, alt: 'Wave Divider', width: "1200", height: "auto", size: "400 800 1200" %}
     </div>
   {% endif %}
 
@@ -153,3 +145,18 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'render-image',\n        class: \"wave-bottom\", \n        img:
+    section.settings.wave_image,\n        img_src: section.settings.wave_image | image_url:
+    width: 1200,\n        alt: 'Wave Divider',\n        width: \"1200\",\n        height:
+    \"auto\",\n        size: \"400 800 1200\"\n      %}"
+  to: '{% render ''render-image'', class: "wave-bottom", img: section.settings.wave_image,
+    img_src: section.settings.wave_image, image_url: width, alt: ''Wave Divider'',
+    width: "1200", height: "auto", size: "400 800 1200" %}'
+  position: 2549..2762
+{% endcomment %}

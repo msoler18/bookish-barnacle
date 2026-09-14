@@ -31,15 +31,7 @@
 
   {% if section.settings.wave_top_image %}
     <div class="section-wave">
-      {% render 'render-image',
-        class:    "wave-top",
-        img:      section.settings.wave_top_image,
-        img_src:  section.settings.wave_top_image | image_url: width: 1200,
-        alt:      'Wave top',
-        width:    "1200",
-        height:   "auto",
-        size:     "400 800 1200"
-      %}
+      {% render 'render-image', class: "wave-top", img: section.settings.wave_top_image, img_src: section.settings.wave_top_image, image_url: width, alt: 'Wave top', width: "1200", height: "auto", size: "400 800 1200" %}
     </div>
   {% endif %}
 
@@ -73,15 +65,7 @@
 
       {% if section.settings.alien_image != blank %}
         <div class="alien_container">
-          {% render 'render-image',
-            class:   "alien_ravekit",
-            img:     section.settings.alien_image,
-            img_src: section.settings.alien_image | image_url: width: 200,
-            alt:     section.settings.alien_image.alt | default: "Alien",
-            width:   "200",
-            height:  "auto",
-            size:    "200 400 800"
-          %}
+          {% render 'render-image', class: "alien_ravekit", img: section.settings.alien_image, img_src: section.settings.alien_image, image_url: width, alt: section.settings.alien_image.alt, default: "Alien", width: "200", height: "auto", size: "200 400 800" %}
         </div>
       {% endif %}
 
@@ -170,15 +154,7 @@
                         <div class="testimonial__stars">
                           {%- for i in (1..stars) -%}
                             {% if section.settings.star_icon %}
-                              {% render 'render-image',
-                                class:   "testimonial__star",
-                                img:     section.settings.star_icon,
-                                img_src: section.settings.star_icon | image_url: width: 16,
-                                alt:     "Star",
-                                width:   "16",
-                                height:  "16",
-                                size:    "16"
-                              %}
+                              {% render 'render-image', class: "testimonial__star", img: section.settings.star_icon, img_src: section.settings.star_icon, image_url: width, alt: "Star", width: "16", height: "16", size: "16" %}
                             {% else %}
                               <span class="testimonial__star fallback-star">★</span>
                             {% endif %}
@@ -228,15 +204,7 @@
 
   {% if section.settings.wave_bottom_image %}
     <div class="section-wave">
-      {% render 'render-image',
-        class:    "wave-bottom",
-        img:      section.settings.wave_bottom_image,
-        img_src:  section.settings.wave_bottom_image | image_url: width: 1200,
-        alt:      'Wave bottom',
-        width:    "1200",
-        height:   "auto",
-        size:     "400 800 1200"
-      %}
+      {% render 'render-image', class: "wave-bottom", img: section.settings.wave_bottom_image, img_src: section.settings.wave_bottom_image, image_url: width, alt: 'Wave bottom', width: "1200", height: "auto", size: "400 800 1200" %}
     </div>
   {% endif %}
 
@@ -2357,4 +2325,66 @@
     ]
   }
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+            class:    "wave-top",
+            img:      section.settings.wave_top_image,
+            img_src:  section.settings.wave_top_image | image_url: width: 1200,
+            alt:      'Wave top',
+            width:    "1200",
+            height:   "auto",
+            size:     "400 800 1200"
+          %}
+  to: '{% render ''render-image'', class: "wave-top", img: section.settings.wave_top_image,
+    img_src: section.settings.wave_top_image, image_url: width, alt: ''Wave top'',
+    width: "1200", height: "auto", size: "400 800 1200" %}'
+  position: 1310..1524
+- from: |-
+    {% render 'render-image',
+                class:   "alien_ravekit",
+                img:     section.settings.alien_image,
+                img_src: section.settings.alien_image | image_url: width: 200,
+                alt:     section.settings.alien_image.alt | default: "Alien",
+                width:   "200",
+                height:  "auto",
+                size:    "200 400 800"
+              %}
+  to: '{% render ''render-image'', class: "alien_ravekit", img: section.settings.alien_image,
+    img_src: section.settings.alien_image, image_url: width, alt: section.settings.alien_image.alt,
+    default: "Alien", width: "200", height: "auto", size: "200 400 800" %}'
+  position: 2842..3093
+- from: |-
+    {% render 'render-image',
+                                    class:   "testimonial__star",
+                                    img:     section.settings.star_icon,
+                                    img_src: section.settings.star_icon | image_url: width: 16,
+                                    alt:     "Star",
+                                    width:   "16",
+                                    height:  "16",
+                                    size:    "16"
+                                  %}
+  to: '{% render ''render-image'', class: "testimonial__star", img: section.settings.star_icon,
+    img_src: section.settings.star_icon, image_url: width, alt: "Star", width: "16",
+    height: "16", size: "16" %}'
+  position: 7777..7972
+- from: |-
+    {% render 'render-image',
+            class:    "wave-bottom",
+            img:      section.settings.wave_bottom_image,
+            img_src:  section.settings.wave_bottom_image | image_url: width: 1200,
+            alt:      'Wave bottom',
+            width:    "1200",
+            height:   "auto",
+            size:     "400 800 1200"
+          %}
+  to: '{% render ''render-image'', class: "wave-bottom", img: section.settings.wave_bottom_image,
+    img_src: section.settings.wave_bottom_image, image_url: width, alt: ''Wave bottom'',
+    width: "1200", height: "auto", size: "400 800 1200" %}'
+  position: 9636..9862
+{%- endcomment -%}

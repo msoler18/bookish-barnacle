@@ -11,15 +11,7 @@
 
   {% if section.settings.wave_top_image %}
     <div class="section-wave">
-      {% render 'render-image',
-        class: "wave-top",
-        img_src: section.settings.wave_top_image | image_url: width: 1920,
-        img: section.settings.wave_top_image,
-        alt: section.settings.wave_top_image.alt,
-        width: "1920",
-        height: "auto",
-        size: "800 1200 1600 1920"
-      %}
+      {% render 'render-image', class: "wave-top", img_src: section.settings.wave_top_image, image_url: width, img: section.settings.wave_top_image, alt: section.settings.wave_top_image.alt, width: "1920", height: "auto", size: "800 1200 1600 1920" %}
     </div>
   {% endif %}
 
@@ -1975,3 +1967,24 @@
   }
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+            class: "wave-top",
+            img_src: section.settings.wave_top_image | image_url: width: 1920,
+            img: section.settings.wave_top_image,
+            alt: section.settings.wave_top_image.alt,
+            width: "1920",
+            height: "auto",
+            size: "800 1200 1600 1920"
+          %}
+  to: '{% render ''render-image'', class: "wave-top", img_src: section.settings.wave_top_image,
+    image_url: width, img: section.settings.wave_top_image, alt: section.settings.wave_top_image.alt,
+    width: "1920", height: "auto", size: "800 1200 1600 1920" %}'
+  position: 313..558
+{% endcomment %}
