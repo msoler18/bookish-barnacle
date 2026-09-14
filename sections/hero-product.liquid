@@ -15,42 +15,16 @@
 
     <div class="hero-product__images">
       {% if section.settings.texture %}
-        {% render 'render-image',
-          class: "hero-product__texture lazyloadimage lazyload blur-up",
-          img_src: section.settings.texture | image_url: width: 1380,
-          img: section.settings.texture,
-          alt: section.settings.texture.alt,
-          width: "1380",
-          height: "800",
-          size: "400 800 1200 1380",
-        %}
+        {% render 'render-image', class: "hero-product__texture lazyloadimage lazyload blur-up", img_src: section.settings.texture, image_url: width, img: section.settings.texture, alt: section.settings.texture.alt, width: "1380", height: "800", size: "400 800 1200 1380" %}
       {% endif %}
 
       {% if section.settings.product %}
-        {% render 'render-image',
-          class: "hero-product__product lazyloadimage lazyload blur-up",
-          img_src: section.settings.product | image_url: width: 600,
-          img: section.settings.product,
-          alt: section.settings.product.alt,
-          width: "600",
-          height: "800",
-          size: "300 600 900 1200",
-          attributes: 'data-parallax-speed="0.3"'
-        %}
+        {% render 'render-image', class: "hero-product__product lazyloadimage lazyload blur-up", img_src: section.settings.product, image_url: width, img: section.settings.product, alt: section.settings.product.alt, width: "600", height: "800", size: "300 600 900 1200", attributes: 'data-parallax-speed="0.3"' %}
       {% endif %}
 
       {% if section.settings.sticker %}
         <div class="hero-product__sticker-wrapper">
-          {% render 'render-image',
-            class: "hero-product__sticker lazyloadimage lazyload blur-up",
-            img_src: section.settings.sticker | image_url: width: 120,
-            img: section.settings.sticker,
-            alt: section.settings.sticker.alt,
-            width: "120",
-            height: "120",
-            size: "60 90 120",
-            attributes: 'data-rotate-on-scroll="0.3"'
-          %}
+          {% render 'render-image', class: "hero-product__sticker lazyloadimage lazyload blur-up", img_src: section.settings.sticker, image_url: width, img: section.settings.sticker, alt: section.settings.sticker.alt, width: "120", height: "120", size: "60 90 120", attributes: 'data-rotate-on-scroll="0.3"' %}
         </div>
       {% endif %}
     </div>
@@ -64,15 +38,7 @@
     <div class="hero-product__safe-text">
       <div class="icon-wrapper">
         {% if section.settings.safe_icon %}
-          {% render 'render-image',
-            class: "safe-icon",
-            img: section.settings.safe_icon,
-            img_src: section.settings.safe_icon | image_url: width: 18,
-            alt: section.settings.safe_icon.alt,
-            width: "18",
-            height: "18",
-            size: "18"
-          %}
+          {% render 'render-image', class: "safe-icon", img: section.settings.safe_icon, img_src: section.settings.safe_icon, image_url: width, alt: section.settings.safe_icon.alt, width: "18", height: "18", size: "18" %}
           {% else %}
             {% render 'icon-shield' %}
           {% endif %}
@@ -149,3 +115,71 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+              class: "hero-product__texture lazyloadimage lazyload blur-up",
+              img_src: section.settings.texture | image_url: width: 1380,
+              img: section.settings.texture,
+              alt: section.settings.texture.alt,
+              width: "1380",
+              height: "800",
+              size: "400 800 1200 1380",
+            %}
+  to: '{% render ''render-image'', class: "hero-product__texture lazyloadimage lazyload
+    blur-up", img_src: section.settings.texture, image_url: width, img: section.settings.texture,
+    alt: section.settings.texture.alt, width: "1380", height: "800", size: "400 800
+    1200 1380" %}'
+  position: 590..856
+- from: |-
+    {% render 'render-image',
+              class: "hero-product__product lazyloadimage lazyload blur-up",
+              img_src: section.settings.product | image_url: width: 600,
+              img: section.settings.product,
+              alt: section.settings.product.alt,
+              width: "600",
+              height: "800",
+              size: "300 600 900 1200",
+              attributes: 'data-parallax-speed="0.3"'
+            %}
+  to: '{% render ''render-image'', class: "hero-product__product lazyloadimage lazyload
+    blur-up", img_src: section.settings.product, image_url: width, img: section.settings.product,
+    alt: section.settings.product.alt, width: "600", height: "800", size: "300 600
+    900 1200", attributes: ''data-parallax-speed="0.3"'' %}'
+  position: 924..1229
+- from: |-
+    {% render 'render-image',
+                class: "hero-product__sticker lazyloadimage lazyload blur-up",
+                img_src: section.settings.sticker | image_url: width: 120,
+                img: section.settings.sticker,
+                alt: section.settings.sticker.alt,
+                width: "120",
+                height: "120",
+                size: "60 90 120",
+                attributes: 'data-rotate-on-scroll="0.3"'
+              %}
+  to: '{% render ''render-image'', class: "hero-product__sticker lazyloadimage lazyload
+    blur-up", img_src: section.settings.sticker, image_url: width, img: section.settings.sticker,
+    alt: section.settings.sticker.alt, width: "120", height: "120", size: "60 90 120",
+    attributes: ''data-rotate-on-scroll="0.3"'' %}'
+  position: 1351..1651
+- from: |-
+    {% render 'render-image',
+                class: "safe-icon",
+                img: section.settings.safe_icon,
+                img_src: section.settings.safe_icon | image_url: width: 18,
+                alt: section.settings.safe_icon.alt,
+                width: "18",
+                height: "18",
+                size: "18"
+              %}
+  to: '{% render ''render-image'', class: "safe-icon", img: section.settings.safe_icon,
+    img_src: section.settings.safe_icon, image_url: width, alt: section.settings.safe_icon.alt,
+    width: "18", height: "18", size: "18" %}'
+  position: 2004..2215
+{% endcomment %}

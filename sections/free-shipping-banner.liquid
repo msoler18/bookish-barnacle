@@ -13,15 +13,7 @@
   {% if section.settings.banner_image %}
     <div class="free-shipping-banner__image-container">
       <div class="container">
-        {% render 'render-image',
-          class: "free-shipping-banner__image",
-          img_src: section.settings.banner_image | image_url: width: 1380,
-          img: section.settings.banner_image,
-          alt: section.settings.banner_image.alt,
-          width: "1380",
-          height: "256",
-          size: "400 800 1200 1380"
-        %}
+        {% render 'render-image', class: "free-shipping-banner__image", img_src: section.settings.banner_image, image_url: width, img: section.settings.banner_image, alt: section.settings.banner_image.alt, width: "1380", height: "256", size: "400 800 1200 1380" %}
       </div>
     </div>
   {% endif %}
@@ -51,3 +43,25 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+              class: "free-shipping-banner__image",
+              img_src: section.settings.banner_image | image_url: width: 1380,
+              img: section.settings.banner_image,
+              alt: section.settings.banner_image.alt,
+              width: "1380",
+              height: "256",
+              size: "400 800 1200 1380"
+            %}
+  to: '{% render ''render-image'', class: "free-shipping-banner__image", img_src:
+    section.settings.banner_image, image_url: width, img: section.settings.banner_image,
+    alt: section.settings.banner_image.alt, width: "1380", height: "256", size: "400
+    800 1200 1380" %}'
+  position: 516..772
+{% endcomment %}
