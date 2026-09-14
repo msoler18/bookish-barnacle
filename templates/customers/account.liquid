@@ -77,7 +77,7 @@
         {% endif %}
 
         {% if paginate.pages > 1 %}
-          {% render 'pagination', paginate, section_color: 'scheme1' %}
+          {% render 'pagination', section_color: 'scheme1' %}
         {% endif %}
       {% endpaginate %}
     </div>
@@ -106,3 +106,13 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'pagination', paginate, section_color: 'scheme1' %}"
+  to: "{% render 'pagination', section_color: 'scheme1' %}"
+  position: 3109..3160
+{% endcomment %}

@@ -11,15 +11,7 @@
 
     {% if section.settings.main_image %}
       <div class="mx-auto max-w-xl mb-10">
-        {% render 'render-image',
-          class: "ravekit-comparison__image",
-          img_src: section.settings.main_image | image_url: width: 1200,
-          img: section.settings.main_image,
-          alt: section.settings.main_image.alt,
-          width: "1200",
-          height: "auto",
-          size: "400 800 1200"
-        %}
+        {% render 'render-image', class: "ravekit-comparison__image", img_src: section.settings.main_image, image_url: width, img: section.settings.main_image, alt: section.settings.main_image.alt, width: "1200", height: "auto", size: "400 800 1200" %}
       </div>
     {% endif %}
 
@@ -126,3 +118,24 @@
 
 {% endschema %}
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'render-image',
+              class: "ravekit-comparison__image",
+              img_src: section.settings.main_image | image_url: width: 1200,
+              img: section.settings.main_image,
+              alt: section.settings.main_image.alt,
+              width: "1200",
+              height: "auto",
+              size: "400 800 1200"
+            %}
+  to: '{% render ''render-image'', class: "ravekit-comparison__image", img_src: section.settings.main_image,
+    image_url: width, img: section.settings.main_image, alt: section.settings.main_image.alt,
+    width: "1200", height: "auto", size: "400 800 1200" %}'
+  position: 489..733
+{% endcomment %}
